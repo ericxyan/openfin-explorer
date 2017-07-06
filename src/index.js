@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { render } from 'react-dom';
 import { MuiThemeProvider } from 'material-ui/styles';
 import { Grid } from 'material-ui';
@@ -8,16 +9,18 @@ import Body from './components/Body.js';
 
 function App() {
     return(
-        <MuiThemeProvider>
-            <Grid container>
-                <Grid item xs={4}>
-                    <Navigation />
+        <BrowserRouter>
+            <MuiThemeProvider>
+                <Grid container>
+                    <Grid item xs={4}>
+                        <Navigation />
+                    </Grid>
+                    <Grid item xs={8}>
+                        <Body />
+                    </Grid>
                 </Grid>
-                <Grid item xs={8}>
-                    <Body />
-                </Grid>
-            </Grid>
-        </MuiThemeProvider>
+            </MuiThemeProvider>
+        </BrowserRouter>
     )
 }
 
