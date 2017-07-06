@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Typography from 'material-ui/Typography';
 
-export default class Headline extends Component {
+export default class Navigation extends Component {
     constructor(props) {
         super(props)
     }
