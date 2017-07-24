@@ -20,5 +20,11 @@ module.exports = {
       { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig],
+  devServer: {
+    hot: true,
+    historyApiFallback: {
+      index: path.resolve('dist')
+    }
+  }
 }

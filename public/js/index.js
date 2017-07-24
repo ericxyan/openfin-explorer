@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 import App from '../react/App.jsx';
 
 //event listeners.
@@ -17,4 +19,8 @@ function onMain() {
     fin.desktop.System.showDeveloperTools(app.uuid, app.uuid);
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render((
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+), document.getElementById('root'));
