@@ -22,7 +22,6 @@ module.exports = {
   },
   plugins: [HtmlWebpackPluginConfig],
   devServer: {
-    hot: true,
     historyApiFallback: {
       index: path.resolve('dist')
     }
