@@ -1,6 +1,4 @@
-# OpenFin Application Template
-
-A simple unopinionated OpenFin Application template.
+# OpenFin Explorer
 
 ### What you get:
 
@@ -26,6 +24,10 @@ A simple unopinionated OpenFin Application template.
 	run `yarn start` and `yarn build`
 
 
-#### Material UI
+#### Bootstrap 4
 
-https://material-ui-1dab0.firebaseapp.com/
+https://v4-alpha.getbootstrap.com/
+
+#### React Router Docs
+
+https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf

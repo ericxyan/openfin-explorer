@@ -1,15 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import List, { ListItem } from 'material-ui/List';
 
 export default class SideNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  navHeader() {
+    return (
+      <div className='header'>
+        <Link to='/'><h1>OpenFin</h1></Link>
+      </div>
+    );
+  }
+
+  listSection(label, icon) {
+    return (
+      <div className='of-list-section'>{label}</div>
+    )
+  }
+
+  listItem(label, linkTo) {
+    return (
+      <Link to={linkTo} className='of-list-item'>
+        <span>{label}</span>
+      </Link>
+    )
+  }
+
   render() {
     return (
-      <div id='side-nav'>
-        <List>
-          <Link to='/'><ListItem>Welcome</ListItem></Link>
-          <Link to='/windows/child-window'><ListItem>Create a Child Window</ListItem></Link>
-        </List>
+      <div className='side-nav'>
+        {this.navHeader()}
+        {this.listSection('Windows')}
+        {this.listItem('Child Windows', '/windows/child-window')}
       </div>
     );
   }

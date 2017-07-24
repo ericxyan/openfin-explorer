@@ -1,3 +1,12 @@
-#side-nav {
+.side-nav {
     background: #F4F5F4;
+    border-right: 2px solid #E0E1E0;
+
+    .header {
+      border-bottom: 2px solid #E0E1E0;
+    }
+
+    .of-list-item {
+      margin-left: 20px;
+    }
 }
