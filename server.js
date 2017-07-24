@@ -9,7 +9,7 @@ const serverParams = {
     root: path.resolve('public'),
     open: false,
     logLevel: 2,
-    port: 8081
+    port: 8082
 };
 
 //Update our config and launch openfin.
