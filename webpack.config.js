@@ -24,7 +24,8 @@ module.exports = {
   plugins: [HtmlWebpackPluginConfig],
   devServer: {
     historyApiFallback: {
-      index: path.resolve('dist')
-    }
+      index: 'index.html'
+    },
+    port: 8081
   }
 }
