@@ -8,7 +8,7 @@ import SideNav from './Side-Nav.jsx';
 export default class App extends React.Component {
   render() {
     return (
-      <div>
+      <div id='main'>
         <Grid container gutter={0}>
           <Grid item xs={12} sm={4}>
              <SideNav />
