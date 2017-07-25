@@ -1,0 +1,30 @@
+[
+  {
+    "path": "/",
+    "section": "welcome",
+    "header": "this is openfin",
+    "subHeader": "html5 containers.",
+    "description": "plus security and other cools stuff."
+  },
+  {
+    "path": "/windows/child-window",
+    "section": "windows",
+    "header": "create and child windows",
+    "subHeader": "create and manage windows throught the parent.",
+    "description": "create, destroy, etc."
+  },
+  {
+    "path": "/windows/parent-window",
+    "section": "windows",
+    "header": "control child windows",
+    "subHeader": "create and manage windows throught the parent.",
+    "description": "create, destroy, etc."
+  },
+  {
+    "path": "/communication",
+    "section": "communication",
+    "header": "another setion",
+    "subHeader": "send data between different windows.",
+    "description": "there are many ways to do so."
+  }
+]
