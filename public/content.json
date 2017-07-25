@@ -16,12 +16,16 @@
       {
         "header": "launch a window",
         "subHeader": "version xyz",
-        "content": "will be able to have sub-sections and markdown."
+        "subSections": [
+          {"type": "markdown", "content": "### this is some markdown"}
+        ]
       },
       {
         "header": "close a window",
         "subHeader": "version xyz.21",
-        "content": "not sure how to handle this yet."
+        "subSections": [
+          {"type": "code", "content": "console.log('this code is from json')"}
+        ]
       }
     ]
   },
