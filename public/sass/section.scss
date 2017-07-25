@@ -1,4 +1,12 @@
 .of-section {
+  margin-left: 15px;
+
+  div, p, span {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+  
   .of-section-title {
     .of-section-header {}
     .of-section-sub-header {}

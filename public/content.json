@@ -2,13 +2,24 @@
   {
     "path": "/",
     "section": "welcome",
+    "sectionIcon": "sentiment_very_satisfied",
     "header": "this is openfin",
     "subHeader": "html5 containers.",
-    "description": "plus security and other cools stuff."
+    "description": "plus security and other cools stuff.",
+    "sections": [
+      {
+        "header": "hey there",
+        "subHeader": "version xyz",
+        "subSections": [
+          {"type": "text", "content": "welcome"}
+        ]
+      }
+    ]
   },
   {
     "path": "/windows/child-window",
     "section": "windows",
+    "sectionIcon": "open_in_browser",
     "header": "create and child windows",
     "description": "create, destroy, etc.",
     "sections": [
@@ -23,7 +34,7 @@
         "header": "close a window",
         "subHeader": "version xyz.21",
         "subSections": [
-          {"type": "code", "content": "console.log('this code is from json')"}
+          {"type": "code", "content": "alert('this code is from json')"}
         ]
       }
     ]
@@ -31,6 +42,7 @@
   {
     "path": "/windows/parent-window",
     "section": "windows",
+    "sectionIcon": "open_in_browser",
     "header": "control child windows",
     "subHeader": "create and manage windows throught the parent.",
     "description": "create, destroy, etc.",
@@ -46,7 +58,7 @@
         "header": "close a window",
         "subHeader": "version xyz.21",
         "subSections": [
-          {"type": "code", "content": "console.log('this code is from json. Demo!')"}
+          {"type": "code", "content": "alert('this code is from json. Demo!')"}
         ]
       }
     ]
@@ -54,7 +66,8 @@
   {
     "path": "/communication",
     "section": "communication",
-    "header": "another setion",
+    "sectionIcon": "phone_in_talk",
+    "header": "another section",
     "subHeader": "send data between different windows.",
     "description": "there are many ways to do so."
   }

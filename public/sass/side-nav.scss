@@ -1,13 +1,46 @@
+@import 'partials/_colors';
+
 .side-nav {
-    background: #F4F5F4;
-    border-right: 2px solid #E0E1E0;
+  padding-top: 10px;
+  background: $OF-Second;
+  border-right: 2px solid $OF-First;
+  min-height: 550px;
 
-    .header {
-      border-bottom: 2px solid #E0E1E0;
+  .header {
+    border-bottom: 2px solid $OF-First;
+    h1 {
+      margin-left: 15px;
+    }
+  }
+
+  .of-list-section {
+    margin-top: 15px;
+    margin-left: 15px;
+
+    i {
+      vertical-align: bottom;
+      margin-right: 5px;
+    }
+  }
+
+  .of-list-section-label {
+    text-transform: uppercase;
+  }
+
+  .of-list-item {
+    padding-left: 25px;
+    margin-left: -15px;
+    display: block;
+    text-transform: capitalize;
+
+    &:hover {
+      text-decoration: none;
+      background-color: $OF-Third;
     }
 
-    .of-list-item {
-      margin-left: 20px;
-      display: block;
+    &:focus {
+      text-decoration: none;
+      background-color: $OF-Fourth;
     }
+  }
 }

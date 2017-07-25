@@ -15,10 +15,11 @@ export default class SideNav extends React.Component {
     );
   }
 
-  listSection(label, sectionItems, key, icon) {
+  listSection(label, sectionItems, key) {
     return (
       <div className='of-list-section' key={key}>
         <div className='of-list-section-label' key={key}>
+          <i className="material-icons">{sectionItems[0].icon}</i>
           {label}
         </div>
         {sectionItems.map((item, i) => {
@@ -40,13 +41,15 @@ export default class SideNav extends React.Component {
 
   render() {
     const sections = Object.keys(this.props.data);
+    console.log(this.props.data)
 
     return (
       <div className='side-nav'>
         {this.navHeader()}
         {sections.map((section, i) => {
+          let sectionArray = this.props.data[section];
           return (
-            this.listSection(section, this.props.data[section], i)
+            this.listSection(section, sectionArray, i)
           )
         })}
       </div>

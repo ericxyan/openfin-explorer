@@ -17,7 +17,8 @@ export default class App extends React.Component {
       let page = inititalData[i];
       let navItem = {
         path: page.path,
-        header: page.header
+        header: page.header,
+        icon: page.sectionIcon
       };
 
       if (navigation[page.section]) {
@@ -33,7 +34,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div id='main' className='container-fluid'>
-        <div className='row no-gutters justify-content-start'>
+        <div className='row no-gutters'>
           <div className='col-4'>
              <SideNav data={this.makeSideNavData()} />
           </div>

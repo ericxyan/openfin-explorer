@@ -1,7 +1,23 @@
-.page {
-    background: #F4F5F4;
+@import 'partials/_colors';
 
-    .header {
-      border-bottom: 2px solid #E0E1E0;
+.page {
+  padding-top: 10px;
+  background: $OF-Third;
+  min-height: 550px;
+
+  .header {
+    border-bottom: 2px solid $OF-First;
+
+    h2 {
+      text-transform: capitalize;
     }
+
+    h2, h5, p {
+      margin-left: 15px;
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
 }
