@@ -10,7 +10,6 @@
     "path": "/windows/child-window",
     "section": "windows",
     "header": "create and child windows",
-    "subHeader": "create and manage windows throught the parent.",
     "description": "create, destroy, etc.",
     "sections": [
       {
@@ -34,7 +33,23 @@
     "section": "windows",
     "header": "control child windows",
     "subHeader": "create and manage windows throught the parent.",
-    "description": "create, destroy, etc."
+    "description": "create, destroy, etc.",
+    "sections": [
+      {
+        "header": "launch a window",
+        "subHeader": "version xyz",
+        "subSections": [
+          {"type": "text", "content": "### this is some markdown"}
+        ]
+      },
+      {
+        "header": "close a window",
+        "subHeader": "version xyz.21",
+        "subSections": [
+          {"type": "code", "content": "console.log('this code is from json. Demo!')"}
+        ]
+      }
+    ]
   },
   {
     "path": "/communication",

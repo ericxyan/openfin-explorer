@@ -10,12 +10,6 @@ export default class PageSection extends React.Component {
 
   sectionContentConatiner() {
     if (this.state.showConent) {
-      // return (
-      //   <div className='of-section-content'>
-      //     {this.props.data.subSections}
-      //   </div>
-      // );
-
       return (
         <div className='of-section-content'>
           {this.props.data.subSections.map((section, i) => {
@@ -33,8 +27,7 @@ export default class PageSection extends React.Component {
   }
 
   sectionTypeCode(code, key) {
-    // TODO: make a button that executes the code
-    // TODO: display the code in markdown
+    // TODO: display the code as markdown
 
     let executable = function() {
       eval(code);
@@ -42,7 +35,8 @@ export default class PageSection extends React.Component {
 
     return (
       <div key={key}>
-        <button onClick={executable}>click here</button>
+        <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
+        <div>{code}</div>
       </div>
     );
   }

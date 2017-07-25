@@ -31,3 +31,21 @@ https://v4-alpha.getbootstrap.com/
 #### React Router Docs
 
 https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf
+
+### Populate the Docs
+
+#### content.json
+
+- An array of page objects.
+- Pages MUST have:
+	- path
+	- section
+- Pages CAN have:
+	- header
+	- subHeader
+	- description
+	- sections (array)
+		- header
+		- subHeader
+		- subSections
+			- type (code, markdown, text)
