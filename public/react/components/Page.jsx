@@ -9,17 +9,25 @@ export default class PageComponent extends React.Component {
     this.state = {};
   }
 
-  render() {
-    console.log('page props', this.props)
-    console.log('page data', this.props.data)
+  pageSections() {
+    if (this.props.data.hasOwnProperty('sections')) {
+      let sections = this.props.data.sections;
+      return (
+        sections.map((section, i) => {
+          return <PageSection key={i} data={section} />
+        })
+      );
+    }
+  }
 
+  render() {
     return (
       <div className='page'>
         <PageHeader
           header={this.props.data.header}
           subHeader={this.props.data.subHeader}
           description={this.props.data.description}/>
-        <PageSection />
+        {this.pageSections()}
       </div>);
   }
 }
