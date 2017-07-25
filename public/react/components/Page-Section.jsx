@@ -30,7 +30,18 @@ export default class PageSection extends React.Component {
     // TODO: display the code as markdown
 
     let executable = function() {
-      eval(code);
+      // eval(code);
+      const name = `Child Window # ${(Math.random()).toString()}`;
+      const newWindow = new fin.desktop.Window(
+        {
+          name: name,
+          autoShow: true,
+          defaultCentered: true,
+          url: '/html/child.html'
+        },
+        (resp) => { console.log('success: ', resp) },
+        (e) => { console.log('error') }
+      )
     };
 
     return (

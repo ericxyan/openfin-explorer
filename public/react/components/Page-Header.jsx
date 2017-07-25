@@ -10,7 +10,10 @@ export default class PageHeader extends React.Component {
   render() {
     return (
       <div className='header'>
-        <h2>{this.props.header}</h2>
+        <h2>
+          <i className="material-icons">{this.props.sectionIcon} </i>
+          {this.props.header}
+        </h2>
         <h5>{this.props.subHeader}</h5>
         <p>{this.props.description}</p>
       </div>);

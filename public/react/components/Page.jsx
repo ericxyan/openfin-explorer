@@ -26,7 +26,8 @@ export default class PageComponent extends React.Component {
         <PageHeader
           header={this.props.data.header}
           subHeader={this.props.data.subHeader}
-          description={this.props.data.description}/>
+          description={this.props.data.description}
+          sectionIcon={this.props.data.sectionIcon}/>
         {this.pageSections()}
       </div>);
   }
