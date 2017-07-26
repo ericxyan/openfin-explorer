@@ -68,11 +68,16 @@ export default class PageSection extends React.Component {
     return (
       <div className='of-section'>
         <div onClick={this.toggleContent.bind(this)} className='of-section-title'>
-          <div className='of-section-header'>
-            {this.props.data.header}
+          <div className='of-section-icon'>
+            <i className="material-icons">more_vert</i>
           </div>
-          <div className='of-section-sub-header'>
-            {this.props.data.subHeader}
+          <div className='of-section-title-text'>
+            <div className='of-section-header'>
+              {this.props.data.header}
+            </div>
+            <div className='of-section-sub-header'>
+              {this.props.data.subHeader}
+            </div>
           </div>
         </div>
         {this.sectionContentConatiner()}

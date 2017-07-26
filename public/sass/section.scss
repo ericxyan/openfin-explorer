@@ -1,15 +1,38 @@
 .of-section {
   margin-left: 15px;
+  margin-top: 15px;
 
   div, p, span {
     &::first-letter {
       text-transform: uppercase;
     }
   }
-  
+
   .of-section-title {
-    .of-section-header {}
-    .of-section-sub-header {}
+    .of-section-icon {
+      position: relative;
+      display: inline-block;
+
+      i {
+        font-size: 40px;
+      }
+    }
+
+    .of-section-title-text {
+      display: inline-block;
+
+      .of-section-header {
+        font-weight: bolder;
+      }
+
+      .of-section-sub-header {
+        font-weight: lighter;
+      }
+    }
   }
-  .of-section-content {}
+  .of-section-content {
+    background-color: $OF-Fourth;
+    margin: 10px 25px 25px 25px;
+    padding: 10px;
+  }
 }
