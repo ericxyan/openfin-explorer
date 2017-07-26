@@ -1,4 +1,5 @@
 import React from 'react';
+import { demoModule } from '../../js/demo.js';
 
 export default class PageSection extends React.Component {
   constructor(props) {
@@ -27,27 +28,15 @@ export default class PageSection extends React.Component {
   }
 
   sectionTypeCode(code, key) {
-    // TODO: display the code as markdown
-
     let executable = function() {
-      // eval(code);
-      const name = `Child Window # ${(Math.random()).toString()}`;
-      const newWindow = new fin.desktop.Window(
-        {
-          name: name,
-          autoShow: true,
-          defaultCentered: true,
-          url: '/html/child.html'
-        },
-        (resp) => { console.log('success: ', resp) },
-        (e) => { console.log('error') }
-      )
+      demoModule[code]();
     };
 
+    // TODO: display the code as markdown
     return (
       <div key={key}>
         <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
-        <div>{code}</div>
+        <div>{demoModule[code].toString()}</div>
       </div>
     );
   }

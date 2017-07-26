@@ -34,17 +34,17 @@
         "header": "close a window",
         "subHeader": "version xyz.21",
         "subSections": [
-          {"type": "code", "content": "alert('this code is from json')"}
+          {"type": "code", "content": "openWindow"}
         ]
       }
     ]
   },
   {
-    "path": "/windows/parent-window",
+    "path": "/windows/move-window",
     "section": "windows",
     "sectionIcon": "open_in_browser",
-    "header": "control child windows",
-    "subHeader": "create and manage windows throught the parent.",
+    "header": "move windows",
+    "subHeader": "move windows using the api.",
     "description": "create, destroy, etc.",
     "sections": [
       {
@@ -58,7 +58,7 @@
         "header": "close a window",
         "subHeader": "version xyz.21",
         "subSections": [
-          {"type": "code", "content": "alert('this code is from json. Demo!')"}
+          {"type": "code", "content": "openWindow"}
         ]
       }
     ]

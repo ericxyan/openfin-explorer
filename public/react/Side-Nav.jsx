@@ -41,7 +41,6 @@ export default class SideNav extends React.Component {
 
   render() {
     const sections = Object.keys(this.props.data);
-    console.log(this.props.data)
 
     return (
       <div className='side-nav'>
