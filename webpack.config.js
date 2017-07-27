@@ -1,10 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './public/index.html',
   filename: 'index.html',
   inject: 'body'
 })
+
+const CopyWebpackPluginConfig = new CopyWebpackPlugin([
+    { from: 'cdn-app.json', to: 'app.json' }
+])
 
 module.exports = {
   entry: {
@@ -21,7 +27,7 @@ module.exports = {
       { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'], exclude: /node_modules/ }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig],
+  plugins: [HtmlWebpackPluginConfig, CopyWebpackPluginConfig],
   devServer: {
     port: 8081
   }
