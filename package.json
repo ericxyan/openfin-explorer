@@ -2,7 +2,8 @@
   "name": "openfin-explorer",
   "version": "0.0.0",
   "scripts": {
-    "build": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "build": "webpack"
   },
   "devDependencies": {
     "@types/openfin": "^16.0.1",
