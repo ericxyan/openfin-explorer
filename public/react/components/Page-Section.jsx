@@ -53,13 +53,21 @@ export default class PageSection extends React.Component {
     this.setState({showConent: !this.state.showConent});
   }
 
+  sectionContentIcon() {
+    if (this.props.data.hasOwnProperty('subSections')) {
+        return (
+          <div className='of-section-icon'>
+            <i className="material-icons">more_vert</i>
+          </div>
+        );
+    }
+  }
+
   render() {
     return (
       <div className='of-section'>
         <div onClick={this.toggleContent.bind(this)} className='of-section-title'>
-          <div className='of-section-icon'>
-            <i className="material-icons">more_vert</i>
-          </div>
+          {this.sectionContentIcon()}
           <div className='of-section-title-text'>
             <div className='of-section-header'>
               {this.props.data.header}
