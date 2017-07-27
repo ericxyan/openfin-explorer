@@ -31,7 +31,16 @@ export default class App extends React.Component {
     return navigation;
   }
 
+  setTitle() {
+    fin.desktop.System.getVersion(version => {
+	     const ofVersion = document.querySelector('title');
+	     ofVersion.innerText = `OpenFin Explorer | Version: ${version}`;
+    });
+  }
+
   render() {
+    this.setTitle();
+
     return (
       <div id='main' className='container-fluid'>
         <div className='row no-gutters'>

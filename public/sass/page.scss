@@ -2,8 +2,10 @@
 
 .page {
   padding-top: 10px;
+  padding-bottom: 10px;
   background: $OF-Third;
-  min-height: 550px;
+  min-height: 500px;
+  height: 100%;
 
   .header {
     border-bottom: 2px solid $OF-First;
