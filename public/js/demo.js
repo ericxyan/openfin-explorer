@@ -1,12 +1,12 @@
 var demoModule = {
   openWindow: function() {
-    const name = `Child Window # ${(Math.random()).toString()}`;
+    const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
     const newWindow = new fin.desktop.Window(
       {
         name: name,
         autoShow: true,
         defaultCentered: true,
-        url: 'index.html'
+        url: 'child.html'
       },
       (resp) => { console.log('success: ', resp) },
       (e) => { console.log('error') }
@@ -14,13 +14,13 @@ var demoModule = {
   },
 
   closeWindow: function() {
-    const name = `Child Window # ${(Math.random()).toString()}`;
+    const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
     const newWindow = new fin.desktop.Window(
       {
         name: name,
         autoShow: true,
         defaultCentered: true,
-        url: 'index.html'
+        url: 'child.html'
       },
       (resp) => { console.log('success: ', resp) },
       (e) => { console.log('error') }
