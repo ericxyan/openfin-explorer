@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 export default class Child extends React.Component {
   constructor(props) {
@@ -23,6 +24,11 @@ export default class Child extends React.Component {
     let func = function() {
       const container = parentDocument.querySelector('#demo-data-container');
       container.appendChild(parentElement);
+
+      const Current = fin.desktop.Window.getCurrent();
+      Current.getOptions((opt) => {
+        console.log(opt.customData)
+      })
     }
 
     return (
@@ -36,7 +42,7 @@ export default class Child extends React.Component {
     return (
       <div id='' className=''>
         <h1>Child created!</h1>
-        {this.temp()}
+        <div>{this.temp()}</div>
       </div>
     );
   }

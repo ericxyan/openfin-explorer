@@ -1,14 +1,19 @@
 var parentDemoModule = {
   openWindow: function() {
     const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
+    const container = document.querySelector('#demo-data-container');
     const newWindow = new fin.desktop.Window(
       {
         name: name,
         autoShow: true,
         defaultCentered: true,
-        url: 'child.html'
+        url: 'child.html',
+        customData: 'shared-data'
       },
-      (resp) => { console.log('success: ', resp) },
+      (resp) => {
+        const ele = document.createElement('div')
+        ele.innerText = 'runThis';
+      },
       (e) => { console.log('error') }
     );
   },
@@ -84,9 +89,14 @@ var parentDemoModule = {
       const container = document.querySelector('body');
       container.innerText = data;
     }
-  }
+  },
+
 }
 
-var childDemoModule = {};
+var childDemoModule = {
+  runThis: function() {
+    console.log('this ran')
+  }
+};
 
 export { parentDemoModule, childDemoModule };
