@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
+import { childDemoModule } from '../js/demo.js';
+
 export default class Child extends React.Component {
   constructor(props) {
     super(props);
@@ -10,25 +12,17 @@ export default class Child extends React.Component {
   setTitle() {
     const Current = fin.desktop.Window.getCurrent();
     const currentTitle = document.querySelector('title');
-
     currentTitle.innerText = `${Current.name}`;
-    console.log(Current);
   }
 
   temp() {
-    const data = 'this is the data i am sending'
-    const parentDocument = window.opener.document;
-    const parentElement = parentDocument.createElement('h1');
-    parentElement.innerText = data;
-
-    let func = function() {
-      const container = parentDocument.querySelector('#demo-data-container');
-      container.appendChild(parentElement);
-
+    const func = function() {
       const Current = fin.desktop.Window.getCurrent();
       Current.getOptions((opt) => {
-        console.log(opt.customData)
-      })
+        const funcName = opt.customData;
+        console.log(funcName)
+        childDemoModule[funcName]();
+      });
     }
 
     return (

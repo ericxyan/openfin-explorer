@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof fin != 'undefined') {
 	     fin.desktop.main(onMain);
     } else {
-        console.log('OpenFin is not available - you are probably running in a browser.');
+      console.log('OpenFin is not available - you are probably running in a browser.');
     }
 });
 
@@ -22,9 +22,11 @@ function onMain() {
 }
 
 function renderReact() {
-  ReactDOM.render((
-    <HashRouter>
+  if (document.getElementById('root')) {
+    ReactDOM.render((
+      <HashRouter>
       <App />
-    </HashRouter>
-  ), document.getElementById('root'));
+      </HashRouter>
+    ), document.getElementById('root'));
+  }
 }

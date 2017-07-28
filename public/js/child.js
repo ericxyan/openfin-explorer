@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof fin != 'undefined') {
       renderReact();
     } else {
-        console.log('OpenFin is not available - you are probably running in a browser.');
+      console.log('OpenFin is not available - you are probably running in a browser.');
     }
 });
 
 function renderReact() {
-  ReactDOM.render((
-    <Child />
-  ), document.getElementById('child'));
+  if (document.getElementById('child')) {
+    ReactDOM.render((
+      <Child />
+    ), document.getElementById('child'));
+  }
 }
