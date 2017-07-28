@@ -6,6 +6,16 @@
 
 run `yarn start` and `yarn build`
 
+### Window Launcher
+
+[Windows Launcher](https://dl.openfin.co/services/download?fileName=OpenFinExplorer&config=http://cdn.openfin.co/demos/openfin-explorer/app.json)
+
+### Launch On Mac
+
+```bash
+npm install --global openfin-cli
+openfin --launch --config http://cdn.openfin.co/demos/openfin-explorer/app.json
+```
 
 ### Populate the Docs
 
