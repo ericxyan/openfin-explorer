@@ -7,11 +7,14 @@ require('../sass/index.scss');
 //event listeners.
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof fin != 'undefined') {
+      renderReact();
     } else {
-        ofVersion.innerText = 'OpenFin is not available - you are probably running in a browser.';
+        console.log('OpenFin is not available - you are probably running in a browser.');
     }
 });
 
-ReactDOM.render((
-  <Child />
-), document.getElementById('child'));
+function renderReact() {
+  ReactDOM.render((
+    <Child />
+  ), document.getElementById('child'));
+}

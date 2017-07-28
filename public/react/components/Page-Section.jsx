@@ -1,5 +1,5 @@
 import React from 'react';
-import { demoModule } from '../../js/demo.js';
+import { parentDemoModule } from '../../js/demo.js';
 
 export default class PageSection extends React.Component {
   constructor(props) {
@@ -29,14 +29,15 @@ export default class PageSection extends React.Component {
 
   sectionTypeCode(code, key) {
     let executable = function() {
-      demoModule[code]();
+      parentDemoModule[code]();
     };
 
     // TODO: display the code as markdown
     return (
       <div key={key}>
         <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
-        <div>{demoModule[code].toString()}</div>
+        <h1 id='demo-data-container'></h1>
+        <div>{parentDemoModule[code].toString()}</div>
       </div>
     );
   }

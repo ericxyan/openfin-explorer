@@ -1,4 +1,4 @@
-var demoModule = {
+var parentDemoModule = {
   openWindow: function() {
     const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
     const newWindow = new fin.desktop.Window(
@@ -65,7 +65,28 @@ var demoModule = {
       (resp) => { console.log('success') },
       (e) => { console.log('error') }
     );
+  },
+
+  sharedMemoryCommunication: function() {
+    const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
+    const newWindow = new fin.desktop.Window(
+      {
+        name: name,
+        autoShow: true,
+        defaultCentered: true,
+        url: 'child.html'
+      },
+      (resp) => { console.log('success: ', resp) },
+      (e) => { console.log('error') }
+    );
+
+    let recieveData = function(data) {
+      const container = document.querySelector('body');
+      container.innerText = data;
+    }
   }
 }
 
-export {demoModule};
+var childDemoModule = {};
+
+export { parentDemoModule, childDemoModule };
