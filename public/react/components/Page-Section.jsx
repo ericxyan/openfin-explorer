@@ -38,7 +38,7 @@ export default class PageSection extends React.Component {
     return (
       <div key={key}>
         <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
-        <h1 id='demo-data-container'></h1>
+        <div id='demo-data-container'></div>
         <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
       </div>
     );

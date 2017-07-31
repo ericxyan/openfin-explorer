@@ -90,13 +90,5 @@
         ]
       }
     ]
-  },
-  {
-    "path": "/communication/inter-app-bus",
-    "section": "communication",
-    "sectionIcon": "phone_in_talk",
-    "header": "inter application bus",
-    "subHeader": "communicate between windows from different applications",
-    "description": "works cross origin."
   }
 ]

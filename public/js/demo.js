@@ -6,13 +6,9 @@ var parentDemoModule = {
         name: name,
         autoShow: true,
         defaultCentered: true,
-        url: 'child.html',
-        customData: 'sharedMemory'
+        url: 'child.html'
       },
-      (resp) => {
-        const ele = document.createElement('div')
-        ele.innerText = 'runThis';
-      },
+      (resp) => { console.log('success') },
       (e) => { console.log('error') }
     );
   },
@@ -78,7 +74,8 @@ var parentDemoModule = {
         name: name,
         autoShow: true,
         defaultCentered: true,
-        url: 'child.html'
+        url: 'child.html',
+        customData: 'sharedMemory'
       },
       (resp) => { console.log('success: ', resp) },
       (e) => { console.log('error') }
@@ -88,16 +85,15 @@ var parentDemoModule = {
       const container = document.querySelector('body');
       container.innerText = data;
     }
-  },
-
+  }
 }
 
 var childDemoModule = {
   sharedMemory: function() {
     const data = `data from the child ${Math.random()}`;
     const parentDocument = window.opener.document;
-    const parentElement = parentDocument.createElement('h4');
     const container = parentDocument.querySelector('#demo-data-container');
+    const parentElement = parentDocument.createElement('h4');
 
     parentElement.innerText = data;
     container.appendChild(parentElement);

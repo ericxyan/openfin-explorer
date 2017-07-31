@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/styles';
 
 import { childDemoModule } from '../js/demo.js';
 
@@ -17,8 +19,8 @@ export default class Child extends React.Component {
 
   childExecutable() {
     const func = function() {
-      const Current = fin.desktop.Window.getCurrent();
-      Current.getOptions((opt) => {
+      const current = fin.desktop.Window.getCurrent();
+      current.getOptions((opt) => {
         const funcName = opt.customData;
         childDemoModule[funcName]();
       });
@@ -29,6 +31,20 @@ export default class Child extends React.Component {
     )
   }
 
+  getChildFunction() {
+    const current = fin.desktop.Window.getCurrent();
+    const func = function() {
+      current.getOptions((opt) => {
+        const funcName = opt.customData;
+        return childDemoModule[funcName];
+      });
+    }
+
+    return (
+      <SyntaxHighlighter language='javascript' style={docco}>{func.toString()}</SyntaxHighlighter>
+    )
+  }
+
   render() {
     this.setTitle();
 
@@ -36,8 +52,9 @@ export default class Child extends React.Component {
       <div id='' className='container-fluid'>
         <div className='row no-gutters'>
           <div className='col-12'>
-            <h1>Child created!</h1>
-            <div>{this.childExecutable()}</div>
+            <h1>Child window created!</h1>
+            {this.childExecutable()}
+            {this.getChildFunction()}
           </div>
         </div>
       </div>
