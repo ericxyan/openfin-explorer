@@ -15,12 +15,11 @@ export default class Child extends React.Component {
     currentTitle.innerText = `${Current.name}`;
   }
 
-  temp() {
+  childExecutable() {
     const func = function() {
       const Current = fin.desktop.Window.getCurrent();
       Current.getOptions((opt) => {
         const funcName = opt.customData;
-        console.log(funcName)
         childDemoModule[funcName]();
       });
     }
@@ -34,9 +33,13 @@ export default class Child extends React.Component {
     this.setTitle();
 
     return (
-      <div id='' className=''>
-        <h1>Child created!</h1>
-        <div>{this.temp()}</div>
+      <div id='' className='container-fluid'>
+        <div className='row no-gutters'>
+          <div className='col-12'>
+            <h1>Child created!</h1>
+            <div>{this.childExecutable()}</div>
+          </div>
+        </div>
       </div>
     );
   }

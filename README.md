@@ -4,7 +4,7 @@
 
 `yarn install`
 
-run `yarn start` and `yarn build`
+run `yarn start` and `yarn dev`
 
 ### Window Launcher
 

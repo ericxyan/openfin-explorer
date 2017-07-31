@@ -1,6 +1,10 @@
 @import 'partials/_colors';
 
 #child {
+  h1, p, h2, div {
+    color: $OF-Fifth;
+  }
+  
   h1 {
     text-align: center;
   }

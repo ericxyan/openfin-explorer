@@ -97,8 +97,9 @@ var childDemoModule = {
     const data = `data from the child ${Math.random()}`;
     const parentDocument = window.opener.document;
     const parentElement = parentDocument.createElement('h4');
-    parentElement.innerText = data;
     const container = parentDocument.querySelector('#demo-data-container');
+
+    parentElement.innerText = data;
     container.appendChild(parentElement);
   }
 };
