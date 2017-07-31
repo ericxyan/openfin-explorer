@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function renderReact() {
   if (document.getElementById('child')) {
-    ReactDOM.render((
-      <Child />
-    ), document.getElementById('child'));
+    ReactDOM.render(<Child />, document.getElementById('child'));
   }
 }

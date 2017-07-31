@@ -25,7 +25,7 @@ function renderReact() {
   if (document.getElementById('root')) {
     ReactDOM.render((
       <HashRouter>
-      <App />
+        <App />
       </HashRouter>
     ), document.getElementById('root'));
   }

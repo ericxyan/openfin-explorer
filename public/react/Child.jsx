@@ -33,7 +33,7 @@ export default class Child extends React.Component {
 
   getChildFunction() {
     const current = fin.desktop.Window.getCurrent();
-    const func = function() {
+    const childWindowFunction = function() {
       current.getOptions((opt) => {
         const funcName = opt.customData;
         return childDemoModule[funcName];
@@ -41,7 +41,7 @@ export default class Child extends React.Component {
     }
 
     return (
-      <SyntaxHighlighter language='javascript' style={docco}>{func.toString()}</SyntaxHighlighter>
+      <SyntaxHighlighter language='javascript' style={docco}>{childWindowFunction.toString()}</SyntaxHighlighter>
     )
   }
 

@@ -9,7 +9,7 @@ var parentDemoModule = {
         url: 'child.html'
       },
       (resp) => { console.log('success') },
-      (e) => { console.log('error') }
+      (e) => { console.log('error: ', e) }
     );
   },
 
@@ -23,7 +23,7 @@ var parentDemoModule = {
         url: 'child.html'
       },
       (resp) => { console.log('success: ', resp) },
-      (e) => { console.log('error') }
+      (e) => { console.log('error: ', e) }
     );
 
     const timeoutClose = window.setTimeout(() => {
@@ -36,7 +36,7 @@ var parentDemoModule = {
     currentWindow.moveBy(
       20, 30,
       (resp) => { console.log('success') },
-      (e) => { console.log('error') }
+      (e) => { console.log('error: ', e) }
     );
   },
 
@@ -45,7 +45,7 @@ var parentDemoModule = {
     currentWindow.moveTo(
       100, 200,
       (resp) => { console.log('success') },
-      (e) => { console.log('error') }
+      (e) => { console.log('error: ', e) }
     );
   },
 
@@ -63,7 +63,7 @@ var parentDemoModule = {
         interrupt: false
       },
       (resp) => { console.log('success') },
-      (e) => { console.log('error') }
+      (e) => { console.log('error: ', e) }
     );
   },
 
@@ -78,7 +78,7 @@ var parentDemoModule = {
         customData: 'sharedMemory'
       },
       (resp) => { console.log('success: ', resp) },
-      (e) => { console.log('error') }
+      (e) => { console.log('error: ', e) }
     );
 
     let recieveData = function(data) {

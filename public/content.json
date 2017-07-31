@@ -85,7 +85,7 @@
         "header": "send data",
         "subHeader": "send data",
         "subSections": [
-          {"type": "text", "content": "try the demo below to send data to parent windo."},
+          {"type": "text", "content": "try the demo below to send data to parent window."},
           {"type": "code", "content": "sharedMemoryCommunication"}
         ]
       }
