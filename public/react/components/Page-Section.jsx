@@ -1,4 +1,6 @@
 import React from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/styles';
 
 import { parentDemoModule } from '../../js/demo.js';
 
@@ -33,12 +35,11 @@ export default class PageSection extends React.Component {
       parentDemoModule[code]();
     };
 
-    // TODO: display the code as markdown
     return (
       <div key={key}>
         <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
         <h1 id='demo-data-container'></h1>
-        <div>{parentDemoModule[code].toString()}</div>
+        <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
       </div>
     );
   }
