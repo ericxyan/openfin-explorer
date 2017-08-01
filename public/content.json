@@ -74,11 +74,21 @@
     ]
   },
   {
-    "path": "/communication",
+    "path": "/communication/shared-memory",
     "section": "communication",
     "sectionIcon": "phone_in_talk",
-    "header": "inter application bus",
-    "subHeader": "communicate between windows from different applications",
-    "description": "works cross origin."
+    "header": "shared memory",
+    "subHeader": "access the DOM and javascript",
+    "description": "communicate between windows using javascript memory.",
+    "sections": [
+      {
+        "header": "send data",
+        "subHeader": "send data",
+        "subSections": [
+          {"type": "text", "content": "try the demo below to send data to parent window."},
+          {"type": "code", "content": "sharedMemoryCommunication"}
+        ]
+      }
+    ]
   }
 ]

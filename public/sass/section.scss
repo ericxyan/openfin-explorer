@@ -15,6 +15,17 @@
 
       i {
         font-size: 40px;
+
+        &:hover {
+          text-decoration: none;
+          color: white;
+          cursor: pointer;
+        }
+
+        &:focus {
+          text-decoration: none;
+          color: white;
+        }
       }
     }
 
@@ -30,9 +41,14 @@
       }
     }
   }
+
   .of-section-content {
     background-color: $OF-Fourth;
     margin: 10px 25px 25px 25px;
     padding: 10px;
+
+    pre {
+      margin-top: 10px;
+    }
   }
 }

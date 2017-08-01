@@ -1,7 +1,8 @@
 import React from 'react';
-import { demoModule } from '../../js/demo.js';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
+
+import { parentDemoModule } from '../../js/demo.js';
 
 export default class PageSection extends React.Component {
   constructor(props) {
@@ -31,13 +32,14 @@ export default class PageSection extends React.Component {
 
   sectionTypeCode(code, key) {
     let executable = function() {
-      demoModule[code]();
+      parentDemoModule[code]();
     };
 
     return (
       <div key={key}>
         <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
-        <SyntaxHighlighter language='javascript' style={docco}>{demoModule[code].toString()}</SyntaxHighlighter>
+        <div id='demo-data-container'></div>
+        <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
       </div>
     );
   }
