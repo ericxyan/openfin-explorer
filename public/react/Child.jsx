@@ -8,7 +8,7 @@ import { childDemoModule } from '../js/demo.js';
 export default class Child extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {code: ''};
   }
 
   setTitle() {
@@ -18,38 +18,29 @@ export default class Child extends React.Component {
   }
 
   childExecutable() {
-    const func = function() {
-      const current = fin.desktop.Window.getCurrent();
-      current.getOptions((opt) => {
-        const funcName = opt.customData;
-        if (funcName != '') {
-          childDemoModule[funcName]();
-        }
-      });
-    }
-
     // TODO: if no function from parent button should close the window.
     return (
-      <button onClick={func.bind(this)}  className='btn btn-outline-primary'>Click</button>
+      <button onClick={this.state.code} className='btn btn-outline-primary'>Click</button>
     )
   }
 
   getChildFunction() {
-    const current = fin.desktop.Window.getCurrent();
-    const childWindowFunction = function() {
-      current.getOptions((opt) => {
-        const funcName = opt.customData;
-        return childDemoModule[funcName];
-      });
-    }
-
     return (
-      <SyntaxHighlighter language='javascript' style={docco}>{childWindowFunction.toString()}</SyntaxHighlighter>
+      <SyntaxHighlighter language='javascript' style={docco}>{this.state.code.toString()}</SyntaxHighlighter>
     )
+  }
+
+  getInitialData() {
+    const current = fin.desktop.Window.getCurrent();
+    current.getOptions((opt) => {
+      const funcName = opt.customData;
+      this.setState({code: childDemoModule[funcName]})
+    });
   }
 
   render() {
     this.setTitle();
+    this.getInitialData();
 
     return (
       <div id='' className='container-fluid'>
