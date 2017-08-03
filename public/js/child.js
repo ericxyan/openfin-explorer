@@ -6,11 +6,11 @@ require('../sass/index.scss');
 
 //event listeners.
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof fin != 'undefined') {
-      renderReact();
-    } else {
-      console.log('OpenFin is not available - you are probably running in a browser.');
-    }
+  if (typeof fin != 'undefined') {
+    renderReact();
+  } else {
+    console.log('OpenFin is not available - you are probably running in a browser.');
+  }
 });
 
 function renderReact() {

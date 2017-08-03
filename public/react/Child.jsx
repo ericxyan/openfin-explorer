@@ -22,10 +22,13 @@ export default class Child extends React.Component {
       const current = fin.desktop.Window.getCurrent();
       current.getOptions((opt) => {
         const funcName = opt.customData;
-        childDemoModule[funcName]();
+        if (funcName != '') {
+          childDemoModule[funcName]();
+        }
       });
     }
 
+    // TODO: if no function from parent button should close the window.
     return (
       <button onClick={func.bind(this)}  className='btn btn-outline-primary'>Click</button>
     )

@@ -80,11 +80,34 @@ var parentDemoModule = {
       (resp) => { console.log('success: ', resp) },
       (e) => { console.log('error: ', e) }
     );
+  },
 
-    let recieveData = function(data) {
-      const container = document.querySelector('body');
-      container.innerText = data;
-    }
+  interAppBusCommunication: function() {
+    const name = `Sibling Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
+    const newApp = new fin.desktop.Application(
+      {
+        url: "http://localhost:8081/index.html", // TODO: make a new sibling html/react file
+        uuid: name,
+        name: name,
+        mainWindowOptions: {
+          autoShow: true,
+          defaultCentered: true
+        }
+      },
+      (resp) => { newApp.run() },
+      (e) => { console.log('error: ', e) }
+    );
+
+    fin.desktop.InterApplicationBus.subscribe('*', 'a topic', function(message, uuid, name) {
+      alert(`a message was received throught the bus! From: ${name}`);
+    });
+  },
+
+  interAppBusCommunication2: function() {
+    fin.desktop.InterApplicationBus.publish('a topic', {
+      field1: "value1",
+      field2: "value2"
+    });
   }
 }
 
