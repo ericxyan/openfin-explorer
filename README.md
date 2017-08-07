@@ -43,6 +43,19 @@ yarn build
 
 The build process will copy the necessary HTML, Javascript, and Application Manifest files to the `dist` folder. Host that directory as a static site and target `app.json` to launch the application.
 
+Currently Hosted on OpenFin S3
+`Amazon S3 > cdn.openfin.co > demos > openfin-explorer`
+
+#### Metadata
+Set the cache-control max age when uploading
+```
+Cache-Control max-age=60
+```
+For app.json, set the content-type to `text\plain` to prevent the `app.json` from being downloaded when accessed via the browser
+```
+Content-Type text/plain
+```
+
 ### What you get:
 
 #### [Visual Studio code](https://code.visualstudio.com/) integration, thanks to @jcarter
