@@ -35,6 +35,13 @@ openfin --launch --config http://cdn.openfin.co/demos/openfin-explorer/app.json
 		- subSections
 			- type (code, markdown, text)
 
+### Deploying
+
+```bash
+yarn build
+```
+
+The build process will copy the necessary HTML, Javascript, and Application Manifest files to the `dist` folder. Host that directory as a static site and target `app.json` to launch the application.
 
 ### What you get:
 
