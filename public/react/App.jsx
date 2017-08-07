@@ -3,6 +3,7 @@ import React from 'react';
 import PageContainer from './Page-Container.jsx';
 import SideNav from './Side-Nav.jsx';
 import inititalData from '../content.json';
+import { HashRouter } from 'react-router-dom';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -42,15 +43,18 @@ export default class App extends React.Component {
     this.setTitle();
 
     return (
-      <div id='main' className='container-fluid'>
-        <div className='row no-gutters'>
-          <div className='col-4'>
-             <SideNav data={this.makeSideNavData()} />
+        <HashRouter>
+          <div id='main' className='container-fluid'>
+            <div className='row no-gutters'>
+              <div className='col-4'>
+                 <SideNav data={this.makeSideNavData()} />
+              </div>
+              <div className='col-8'>
+                 <PageContainer data={inititalData} />
+              </div>
+            </div>
           </div>
-          <div className='col-8'>
-             <PageContainer data={inititalData} />
-          </div>
-        </div>
-      </div>);
+        </HashRouter>
+    );
   }
 }
