@@ -82,7 +82,7 @@ var parentDemoModule = {
     );
   },
 
-  interAppBusCommunication: function() {
+  interAppBusSubscribe: function() {
     const name = `Sibling Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
     const newApp = new fin.desktop.Application(
       {
@@ -103,13 +103,40 @@ var parentDemoModule = {
     });
   },
 
-  interAppBusCommunication2: function() {
+  interAppBusPublish: function() {
     fin.desktop.InterApplicationBus.publish('a topic', {
       field1: "value1",
       field2: "value2"
     });
+  },
+
+  groupWindows: function() {
+    const mainWindow = fin.desktop.Window.getCurrent();
+    const name = `Child Window #: ${(Math.floor(Math.random() * 100)).toString()}`;
+    const childWindow = new fin.desktop.Window(
+      {
+        name: name,
+        autoShow: true,
+        url: 'child.html',
+        customData: 'leaveGroup'
+      },
+      function() {
+        childWindow.joinGroup(mainWindow)
+      }
+    );
+  },
+
+  groupWindowsMoveyBy: function() {
+    const mainWindow = fin.desktop.Window.getCurrent();
+    mainWindow.moveBy(
+      20, 30,
+      (resp) => { console.log('success') },
+      (e) => { console.log('error: ', e) }
+    );
   }
 }
+
+
 
 var childDemoModule = {
   sharedMemory: function() {
@@ -120,6 +147,11 @@ var childDemoModule = {
 
     parentElement.innerText = data;
     container.appendChild(parentElement);
+  },
+
+  leaveGroup: function() {
+    const currentWindow = fin.desktop.Window.getCurrent();
+    currentWindow.leaveGroup();
   }
 };
 

@@ -40,6 +40,27 @@
     ]
   },
   {
+    "path": "/windows/group",
+    "section": "windows",
+    "sectionIcon": "open_in_browser",
+    "header": "group windows",
+    "subHeader": "group windows together.",
+    "description": "Supports: Windows",
+    "sections": [
+      {
+        "header": "create group",
+        "subHeader": "create child windows in the group of the parent window.",
+        "subSections": [
+          {"type": "text", "content": "try demo below to create group."},
+          {"type": "code", "content": "groupWindows"},
+          {"type": "text", "content": "try demo below to move the group."},
+          {"type": "text", "content": "(Not supported by OSX)."},
+          {"type": "code", "content": "groupWindowsMoveyBy"}
+        ]
+      }
+    ]
+  },
+  {
     "path": "/windows/move-window",
     "section": "windows",
     "sectionIcon": "open_in_browser",
@@ -104,7 +125,7 @@
         "subHeader": "subscribe to data sent by other applications.",
         "subSections": [
           {"type": "text", "content": "try the demo below to send data to a subscribed application."},
-          {"type": "code", "content": "interAppBusCommunication"},
+          {"type": "code", "content": "interAppBusSubscribe"},
           {"type": "text", "content": "publish from the new window to send data to the original application."}
         ]
       },
@@ -113,7 +134,7 @@
         "subHeader": "publish data to other applications that are subscribed.",
         "subSections": [
           {"type": "text", "content": "publish data through the bus to subcribers."},
-          {"type": "code", "content": "interAppBusCommunication2"}
+          {"type": "code", "content": "interAppBusPublish"}
         ]
       }
     ]
