@@ -32,8 +32,5 @@ module.exports = {
       { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'], exclude: /node_modules/ }
     ]
   },
-  plugins: [HtmlIndexFilePlugin, HtmlChildFilePlugin, CopyWebpackPluginConfig],
-  devServer: {
-    port: 8081
-  }
+  plugins: [HtmlIndexFilePlugin, HtmlChildFilePlugin, CopyWebpackPluginConfig]
 }
