@@ -4,9 +4,9 @@ const openfinLauncher = require('openfin-launcher');
 const path = require('path');
 
 let target;
-const configPath = path.resolve('public/app.json');
+const configPath = path.resolve('dist/app.json');
 const serverParams = {
-    root: path.resolve('public'),
+    root: path.resolve('dist'),
     open: false,
     logLevel: 2,
     port: 8081
