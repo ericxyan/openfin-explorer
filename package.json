@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node server.js",
-    "dev": "node watch-server.js",
+    "dev": "node dev-server.js",
     "build": "webpack",
     "test": "mocha --require babel-register test/setup.js --recursive test"
   },
