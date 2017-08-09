@@ -1,7 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class SideNav extends React.Component {
+export interface SideNavProps {data: any}
+
+export default class SideNav extends React.Component<SideNavProps, any> {
   constructor(props) {
     super(props);
     this.state = {};
