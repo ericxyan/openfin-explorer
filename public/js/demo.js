@@ -13,6 +13,15 @@ function figureOutWhereThisWindowIs() {
 }
 
 var parentDemoModule = {
+    getBounds: function() {
+        const thisWindow = fin.desktop.Window.getCurrent();
+        thisWindow.getBounds( bounds => {
+            const boundsContainerInDemo = document.querySelector('#demo-data-container');
+            const responseString = `The top of this window is at ${bounds.top}, the right side is at ${bounds.right}`
+            boundsContainerInDemo.innerText = responseString;
+        })
+    },
+
   openWindow: function() {
     const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
     const newWindow = new fin.desktop.Window(
