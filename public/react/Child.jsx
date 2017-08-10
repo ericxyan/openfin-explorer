@@ -9,6 +9,8 @@ export default class Child extends React.Component {
   constructor(props) {
     super(props);
     this.state = {code: ''};
+    this.setTitle();
+    this.getInitialData();
   }
 
   setTitle() {
@@ -42,8 +44,6 @@ export default class Child extends React.Component {
   }
 
   render() {
-    this.setTitle();
-    this.getInitialData();
 
     return (
       <div id='' className='container-fluid'>
