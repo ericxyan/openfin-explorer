@@ -18,7 +18,6 @@ export default class Child extends React.Component {
   }
 
   childExecutable() {
-    // TODO: if no function from parent button should close the window.
     return (
       <button onClick={this.state.code} className='btn btn-outline-primary'>Click</button>
     )
@@ -34,7 +33,11 @@ export default class Child extends React.Component {
     const current = fin.desktop.Window.getCurrent();
     current.getOptions((opt) => {
       const funcName = opt.customData;
-      this.setState({code: childDemoModule[funcName]})
+      if (funcName) {
+        this.setState({code: childDemoModule[funcName]})
+      } else {
+        this.setState({code: childDemoModule.closeCurrent})
+      }
     });
   }
 

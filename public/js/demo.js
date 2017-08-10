@@ -152,6 +152,11 @@ var childDemoModule = {
   leaveGroup: function() {
     const currentWindow = fin.desktop.Window.getCurrent();
     currentWindow.leaveGroup();
+  },
+
+  closeCurrent: function() {
+    const currentWindow = fin.desktop.Window.getCurrent();
+    currentWindow.close();
   }
 };
 
