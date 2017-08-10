@@ -1,4 +1,27 @@
+let topOfThisWindow;
+let rightSideOfThisWindow;
+
+function figureOutWhereThisWindowIs() {
+    return new Promise (resolve => {
+        const thisWindow = fin.desktop.Window.getCurrent();
+        thisWindow.getBounds(bounds => {
+            topOfThisWindow = bounds.top;
+            rightSideOfThisWindow = bounds.right;
+            resolve();
+        });
+    })
+}
+
 var parentDemoModule = {
+    getBounds: function() {
+        const thisWindow = fin.desktop.Window.getCurrent();
+        thisWindow.getBounds( bounds => {
+            const boundsContainerInDemo = document.querySelector('#demo-data-container');
+            const responseString = `The top of this window is at ${bounds.top}, the right side is at ${bounds.right}`
+            boundsContainerInDemo.innerText = responseString;
+        })
+    },
+
   openWindow: function() {
     const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
     const newWindow = new fin.desktop.Window(
@@ -110,22 +133,29 @@ var parentDemoModule = {
     });
   },
 
-  groupWindows: function() {
-    const mainWindow = fin.desktop.Window.getCurrent();
-    const name = `Child Window #: ${(Math.floor(Math.random() * 100)).toString()}`;
-    const childWindow = new fin.desktop.Window(
-      {
-        name: name,
-        autoShow: true,
-        url: 'child.html',
-        customData: 'leaveGroup'
-      },
-      function() {
-        childWindow.joinGroup(mainWindow)
-      }
-    );
-  },
 
+    groupWindows: function(){
+        figureOutWhereThisWindowIs().then(function() {
+        const mainWindow = fin.desktop.Window.getCurrent();
+        const name = `Child Window #: ${(Math.floor(Math.random() * 100)).toString()}`;
+        const childWindow = 
+            new fin.desktop.Window(
+              {
+                name: name,
+                autoShow: true,
+                url: 'child.html',
+                customData: 'leaveGroup',
+                defaultTop: topOfThisWindow,
+                defaultLeft: rightSideOfThisWindow,
+                saveWindowState: false
+              },
+              function() {
+                childWindow.joinGroup(mainWindow)
+              }
+            );
+          })
+    }
+            ,
   groupWindowsMoveyBy: function() {
     const mainWindow = fin.desktop.Window.getCurrent();
     mainWindow.moveBy(
@@ -152,6 +182,11 @@ var childDemoModule = {
   leaveGroup: function() {
     const currentWindow = fin.desktop.Window.getCurrent();
     currentWindow.leaveGroup();
+  },
+
+  closeCurrent: function() {
+    const currentWindow = fin.desktop.Window.getCurrent();
+    currentWindow.close();
   }
 };
 

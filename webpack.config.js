@@ -36,8 +36,5 @@ module.exports = {
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ]
   },
-  plugins: [HtmlIndexFilePlugin, HtmlChildFilePlugin, CopyWebpackPluginConfig],
-  devServer: {
-    port: 8081
-  }
+  plugins: [HtmlIndexFilePlugin, HtmlChildFilePlugin, CopyWebpackPluginConfig]
 }
