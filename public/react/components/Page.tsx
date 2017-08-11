@@ -1,9 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 
-import PageHeader from './Page-Header.jsx';
-import PageSection from './Page-Section.jsx';
+import PageHeader from './Page-Header';
+import PageSection from './Page-Section';
 
-export default class PageComponent extends React.Component {
+export default class PageComponent extends React.Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {};

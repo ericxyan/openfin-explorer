@@ -1,9 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import PageComponent from './components/Page.jsx';
+import PageComponent from './components/Page';
 
-export default class PageContainer extends React.Component {
+export interface PageContainerProps {data: any}
+
+export default class PageContainer extends React.Component<PageContainerProps, any> {
   constructor(props) {
     super(props);
     this.state = {};

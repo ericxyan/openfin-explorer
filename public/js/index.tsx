@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
-import App from '../react/App.jsx';
+import App from '../react/App';
 require('../sass/index.scss');
 
 //event listeners.
@@ -23,7 +23,7 @@ function onMain() {
 function renderReact() {
   if (document.getElementById('root')) {
     ReactDOM.render((
-        <App />
+      <App />
     ), document.getElementById('root'));
   }
 }

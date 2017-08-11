@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
-export default class PageHeader extends React.Component {
+export default class PageHeader extends React.Component<any, any> {
   // Props: header, icon, subHeader, description
   constructor(props) {
     super(props);

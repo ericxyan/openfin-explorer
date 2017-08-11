@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
 
-import { parentDemoModule } from '../../js/demo.js';
+import { parentDemoModule } from '../../js/demo';
 
-export default class PageSection extends React.Component {
+export default class PageSection extends React.Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {

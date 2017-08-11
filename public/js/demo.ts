@@ -58,7 +58,7 @@ var parentDemoModule = {
     const currentWindow = fin.desktop.Window.getCurrent();
     currentWindow.moveBy(
       20, 30,
-      (resp) => { console.log('success') },
+      () => { console.log('success') },
       (e) => { console.log('error: ', e) }
     );
   },
@@ -67,7 +67,7 @@ var parentDemoModule = {
     const currentWindow = fin.desktop.Window.getCurrent();
     currentWindow.moveTo(
       100, 200,
-      (resp) => { console.log('success') },
+      () => { console.log('success') },
       (e) => { console.log('error: ', e) }
     );
   },
@@ -160,7 +160,7 @@ var parentDemoModule = {
     const mainWindow = fin.desktop.Window.getCurrent();
     mainWindow.moveBy(
       20, 30,
-      (resp) => { console.log('success') },
+      () => { console.log('success') },
       (e) => { console.log('error: ', e) }
     );
   }

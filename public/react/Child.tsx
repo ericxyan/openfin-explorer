@@ -1,11 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
 
-import { childDemoModule } from '../js/demo.js';
+import { childDemoModule } from '../js/demo';
 
-export default class Child extends React.Component {
+export default class Child extends React.Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {code: ''};
