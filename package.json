@@ -5,7 +5,7 @@
     "build": "webpack",
     "start": "node server.js",
     "dev": "node dev-server.js",
-    "test": "./node_modules/.bin/ts-mocha --require test/setup.ts test/*.tsx"
+    "test": "./node_modules/.bin/ts-mocha --require test/setup.ts test/*.spec.tsx"
   },
   "devDependencies": {
     "@types/openfin": "^16.0.1",
