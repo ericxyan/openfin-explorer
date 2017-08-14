@@ -5,7 +5,9 @@ import { docco } from 'react-syntax-highlighter/dist/styles';
 
 import { childDemoModule } from '../js/demo';
 
-export default class Child extends React.Component<any, any> {
+export interface ChildState {code: any}
+
+export default class Child extends React.Component<any, ChildState> {
   constructor(props) {
     super(props);
     this.state = {code: ''};
@@ -44,7 +46,6 @@ export default class Child extends React.Component<any, any> {
   }
 
   render() {
-
     return (
       <div id='' className='container-fluid'>
         <div className='row no-gutters'>

@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 export interface SideNavProps {data: any}
 
-export default class SideNav extends React.Component<SideNavProps, any> {
+export default class SideNav extends React.Component<SideNavProps> {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   navHeader() {

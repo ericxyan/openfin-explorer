@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export default class PageHeader extends React.Component<any, any> {
-  // Props: header, icon, subHeader, description
+export interface PageHeaderProps {header: string, sectionIcon: string, subHeader: string, description: string}
+
+export default class PageHeader extends React.Component<PageHeaderProps> {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {

@@ -3,10 +3,18 @@ import * as React from 'react';
 import PageHeader from './Page-Header';
 import PageSection from './Page-Section';
 
-export default class PageComponent extends React.Component<any, any> {
+export interface PageComponentData {
+  header: string,
+  sectionIcon: string,
+  subHeader: string,
+  description: string,
+  sections: Array<any>
+}
+export interface PageComponentProps {data: PageComponentData}
+
+export default class PageComponent extends React.Component<PageComponentProps> {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   pageSections() {

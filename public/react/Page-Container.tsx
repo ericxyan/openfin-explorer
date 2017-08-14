@@ -5,10 +5,9 @@ import PageComponent from './components/Page';
 
 export interface PageContainerProps {data: any}
 
-export default class PageContainer extends React.Component<PageContainerProps, any> {
+export default class PageContainer extends React.Component<PageContainerProps> {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
