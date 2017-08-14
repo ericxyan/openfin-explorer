@@ -1,12 +1,11 @@
-// import React from 'react';
 import * as React from 'react';
 import * as assert from 'assert';
 import { mount, shallow } from 'enzyme';
 
-import App from '../public/react/App.tsx';
-import PageComponent from '../public/react/components/Page.tsx';
-import PageHeader from '../public/react/components/Page-Header.tsx';
-import PageSection from '../public/react/components/Page-Section.tsx';
+import App from '../public/react/App';
+import PageComponent from '../public/react/components/Page';
+import PageHeader from '../public/react/components/Page-Header';
+import PageSection from '../public/react/components/Page-Section';
 import * as content from '../public/content.json';
 
 describe('<App />', () => {
