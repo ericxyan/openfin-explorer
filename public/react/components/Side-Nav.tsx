@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 
 export default class SideNav extends React.Component<SideNavProps> {
-  constructor(props) {
+  constructor(props: SideNavProps) {
     super(props);
   }
 
@@ -14,11 +14,11 @@ export default class SideNav extends React.Component<SideNavProps> {
     );
   }
 
-  private listSection(label, sectionItems, key) {
+  private listSection(label: string, sectionItems: any, key: number) {
     return (
       <div className='of-list-section' key={key}>
         <div className='of-list-section-label' key={key}>
-          <i className="material-icons">{sectionItems[0].icon}</i>
+          <i className='material-icons'>{sectionItems[0].icon}</i>
           {label}
         </div>
         {sectionItems.map((item, i) => {
@@ -27,15 +27,15 @@ export default class SideNav extends React.Component<SideNavProps> {
           );
         })}
       </div>
-    )
+    );
   }
 
-  private listItem(label, linkTo, key) {
+  private listItem(label: string, linkTo: string, key: number) {
     return (
       <Link key={key} to={linkTo} className='of-list-item'>
         <span>{label}</span>
       </Link>
-    )
+    );
   }
 
   public render() {
@@ -45,10 +45,9 @@ export default class SideNav extends React.Component<SideNavProps> {
       <div className='side-nav'>
         {this.navHeader()}
         {sections.map((section, i) => {
-          let sectionArray = this.props.data[section];
           return (
-            this.listSection(section, sectionArray, i)
-          )
+            this.listSection(section, this.props.data[section], i)
+          );
         })}
       </div>
     );

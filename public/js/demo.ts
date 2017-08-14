@@ -1,3 +1,4 @@
+/* tslint:disable */
 let topOfThisWindow;
 let rightSideOfThisWindow;
 
@@ -138,7 +139,7 @@ var parentDemoModule = {
         figureOutWhereThisWindowIs().then(function() {
         const mainWindow = fin.desktop.Window.getCurrent();
         const name = `Child Window #: ${(Math.floor(Math.random() * 100)).toString()}`;
-        const childWindow = 
+        const childWindow =
             new fin.desktop.Window(
               {
                 name: name,
@@ -191,3 +192,4 @@ var childDemoModule = {
 };
 
 export { parentDemoModule, childDemoModule };
+/* tslint:enable */

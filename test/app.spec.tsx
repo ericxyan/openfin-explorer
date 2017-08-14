@@ -6,7 +6,7 @@ import App from '../public/react/App';
 import PageComponent from '../public/react/components/Page';
 import PageHeader from '../public/react/components/Page-Header';
 import PageSection from '../public/react/components/Page-Section';
-var content = require('../public/content.json');
+const content = require('../public/content.json');
 
 describe('<App />', () => {
   const wrapper = mount(<App />);
@@ -65,7 +65,6 @@ describe('<PageHeader />', () => {
 
 describe('<PageSection /> and JSON Content Format', () => {
   for (let i = 0; i < content.length; i++) {
-    content[i];
     for (let j = 0; j < content[i].sections.length; j++) {
       const sectionContent = content[i].sections[j];
       const section = mount(<PageSection data={sectionContent} />);
@@ -98,7 +97,7 @@ describe('<PageSection /> and JSON Content Format', () => {
           });
 
           it('should format sub-section content types differently', () => {
-            let typeCount = {code: 0, text: 0, markdown: 0};
+            const typeCount = {code: 0, text: 0, markdown: 0};
             sectionContent.subSections.map((sub) => {
               typeCount[sub.type] += 1;
             });

@@ -29,6 +29,11 @@ openfin --launch --config http://cdn.openfin.co/demos/openfin-explorer/app.json
 [Chai Assertion Library](http://chaijs.com/api/assert/)
 
 
+### Linting
+
+`$ yarn lint`
+
+
 ### Populate the Docs with content.json
 
 - An array of page objects.

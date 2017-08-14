@@ -6,7 +6,7 @@ import { docco } from 'react-syntax-highlighter/dist/styles';
 import { childDemoModule } from '../js/demo';
 
 export default class Child extends React.Component<any, ChildState> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {code: ''};
     this.setTitle();
@@ -22,13 +22,13 @@ export default class Child extends React.Component<any, ChildState> {
   private runChildFunction() {
     return (
       <button onClick={this.state.code} className='btn btn-outline-primary'>Click</button>
-    )
+    );
   }
 
   private displayChildFunction() {
     return (
       <SyntaxHighlighter language='javascript' style={docco}>{this.state.code.toString()}</SyntaxHighlighter>
-    )
+    );
   }
 
   private getInitialData(): void {
@@ -36,9 +36,9 @@ export default class Child extends React.Component<any, ChildState> {
     current.getOptions((opt) => {
       const funcName = opt.customData;
       if (funcName) {
-        this.setState({code: childDemoModule[funcName]})
+        this.setState({code: childDemoModule[funcName]});
       } else {
-        this.setState({code: childDemoModule.closeCurrent})
+        this.setState({code: childDemoModule.closeCurrent});
       }
     });
   }

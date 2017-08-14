@@ -5,7 +5,7 @@ import { docco } from 'react-syntax-highlighter/dist/styles';
 import { parentDemoModule } from '../../js/demo';
 
 export default class PageSection extends React.Component<PageSectionProps, PageSectionState> {
-  constructor(props) {
+  constructor(props: PageSectionProps) {
     super(props);
     this.state = {
       showContent: false
@@ -19,19 +19,19 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
           {this.props.data.subSections.map((section, i) => {
             if (section.type === 'code') {
               return (this.sectionTypeCode(section.content, i));
+            } else if (section.type === 'markdown') {
+              return (this.sectionTypeMarkdown(section.content, i));
+            } else if (section.type === 'text') {
+              return (this.sectionTypeText(section.content, i));
             }
-            else if (section.type === 'markdown') {
-              return (this.sectionTypeMarkdown(section.content, i));}
-            else if (section.type === 'text') {
-              return (this.sectionTypeText(section.content, i));}
           })}
         </div>
       );
     }
   }
 
-  private sectionTypeCode(code, key) {
-    let executable = function() {
+  private sectionTypeCode(code: any, key: number) {
+    const executable = () => {
       parentDemoModule[code]();
     };
 
@@ -44,11 +44,11 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
     );
   }
 
-  private sectionTypeMarkdown(markdown, key) {
+  private sectionTypeMarkdown(markdown: string, key: number) {
     return (<div className='sub-section markdown' key={key}>{markdown}</div>);
   }
 
-  private sectionTypeText(text, key) {
+  private sectionTypeText(text: string, key: number) {
     return (<div className='sub-section text' key={key}>{text}</div>);
   }
 
@@ -62,7 +62,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
     if (this.props.data.hasOwnProperty('subSections')) {
         return (
           <div className='of-section-icon'>
-            <i className="material-icons">more_vert</i>
+            <i className='material-icons'>more_vert</i>
           </div>
         );
     }

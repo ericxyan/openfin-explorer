@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export default class PageHeader extends React.Component<PageHeaderProps> {
-  constructor(props) {
+  constructor(props: PageHeaderProps) {
     super(props);
   }
 
@@ -9,7 +9,7 @@ export default class PageHeader extends React.Component<PageHeaderProps> {
     return (
       <div className='page-header'>
         <h2>
-          <i className="material-icons">{this.props.sectionIcon} </i>
+          <i className='material-icons'>{this.props.sectionIcon} </i>
           {this.props.header}
         </h2>
         <h5>{this.props.subHeader}</h5>

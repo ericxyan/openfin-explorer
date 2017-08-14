@@ -3,19 +3,19 @@ import { HashRouter } from 'react-router-dom';
 
 import PageContainer from './components/Page-Container';
 import SideNav from './components/Side-Nav';
-var inititalData = require('../content.json');
+const inititalData = require('../content.json');
 
-export default class App extends React.Component<any> {
-  constructor(props) {
+export default class App extends React.Component {
+  constructor(props: any) {
     super(props);
   }
 
-  private makeSideNavData(){
-    let navigation = {};
+  private makeSideNavData() {
+    const navigation = {};
 
     for (let i = 0; i < inititalData.length; i++) {
-      let page = inititalData[i];
-      let navItem = {
+      const page = inititalData[i];
+      const navItem = {
         path: page.path,
         header: page.header,
         icon: page.sectionIcon
@@ -33,8 +33,8 @@ export default class App extends React.Component<any> {
 
   private setTitle(): void {
     fin.desktop.System.getVersion(version => {
-	     const ofVersion = document.querySelector('title');
-	     ofVersion.innerText = `OpenFin Explorer | Version: ${version}`;
+      const ofVersion = document.querySelector('title');
+      ofVersion.innerText = `OpenFin Explorer | Version: ${version}`;
     });
   }
 
