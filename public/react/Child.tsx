@@ -14,18 +14,18 @@ export default class Child extends React.Component<any, ChildState> {
   }
 
   private setTitle() {
-    const Current = fin.desktop.Window.getCurrent();
-    const currentTitle = document.querySelector('title');
-    currentTitle.innerText = `${Current.name}`;
+    const current = fin.desktop.Window.getCurrent();
+    const windowTitle = document.querySelector('title');
+    windowTitle.innerText = `${current.name}`;
   }
 
-  private childExecutable() {
+  private runChildFunction() {
     return (
       <button onClick={this.state.code} className='btn btn-outline-primary'>Click</button>
     )
   }
 
-  private getChildFunction() {
+  private displayChildFunction() {
     return (
       <SyntaxHighlighter language='javascript' style={docco}>{this.state.code.toString()}</SyntaxHighlighter>
     )
@@ -45,12 +45,12 @@ export default class Child extends React.Component<any, ChildState> {
 
   public render() {
     return (
-      <div id='' className='container-fluid'>
+      <div className='container-fluid'>
         <div className='row no-gutters'>
           <div className='col-12'>
             <h1>Child window created!</h1>
-            {this.childExecutable()}
-            {this.getChildFunction()}
+            {this.runChildFunction()}
+            {this.displayChildFunction()}
           </div>
         </div>
       </div>
