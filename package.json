@@ -5,9 +5,10 @@
     "build": "webpack",
     "start": "node server.js",
     "dev": "node dev-server.js",
-    "test": "./node_modules/.bin/ts-mocha --require test/setup.ts test/*.tsx"
+    "test": "./node_modules/.bin/ts-mocha --require test/setup.ts test/*.spec.tsx"
   },
   "devDependencies": {
+    "@types/mocha": "^2.2.41",
     "@types/openfin": "^16.0.1",
     "awesome-typescript-loader": "^3.2.2",
     "copy-webpack-plugin": "^4.0.1",

@@ -8,12 +8,12 @@ export default class PageSection extends React.Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      showConent: false
+      showContent: false
     };
   }
 
   sectionContentConatiner() {
-    if (this.state.showConent) {
+    if (this.state.showContent) {
       return (
         <div className='of-section-content'>
           {this.props.data.subSections.map((section, i) => {
@@ -36,7 +36,7 @@ export default class PageSection extends React.Component<any, any> {
     };
 
     return (
-      <div key={key}>
+      <div className='sub-section code' key={key}>
         <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
         <div id='demo-data-container'></div>
         <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
@@ -45,15 +45,17 @@ export default class PageSection extends React.Component<any, any> {
   }
 
   sectionTypeMarkdown(markdown, key) {
-    return (<div key={key}>{markdown}</div>);
+    return (<div className='sub-section markdown' key={key}>{markdown}</div>);
   }
 
   sectionTypeText(text, key) {
-    return (<div key={key}>{text}</div>);
+    return (<div className='sub-section text' key={key}>{text}</div>);
   }
 
   toggleContent() {
-    this.setState({showConent: !this.state.showConent});
+    if (this.props.data.hasOwnProperty('subSections')) {
+      this.setState({showContent: !this.state.showContent});
+    }
   }
 
   sectionContentIcon() {

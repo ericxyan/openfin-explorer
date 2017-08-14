@@ -4,7 +4,11 @@
 
 `yarn install`
 
-run `yarn start` and `yarn dev`
+To run
+`$ yarn start`
+
+For live reload
+`$ yarn dev`
 
 ### Window Launcher
 
@@ -17,9 +21,15 @@ npm install --global openfin-cli
 openfin --launch --config http://cdn.openfin.co/demos/openfin-explorer/app.json
 ```
 
-### Populate the Docs
+### Testing
 
-#### content.json
+`$ yarn test`
+
+[Enzyme](https://github.com/airbnb/enzyme/blob/master/docs/api/mount.md)
+[Chai Assertion Library](http://chaijs.com/api/assert/)
+
+
+### Populate the Docs with content.json
 
 - An array of page objects.
 - Pages MUST have:
