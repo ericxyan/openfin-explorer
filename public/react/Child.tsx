@@ -5,8 +5,6 @@ import { docco } from 'react-syntax-highlighter/dist/styles';
 
 import { childDemoModule } from '../js/demo';
 
-export interface ChildState {code: any}
-
 export default class Child extends React.Component<any, ChildState> {
   constructor(props) {
     super(props);

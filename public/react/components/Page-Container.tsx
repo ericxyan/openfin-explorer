@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import PageComponent from './components/Page';
-
-export interface PageContainerProps {data: any}
+import PageComponent from './Page';
 
 export default class PageContainer extends React.Component<PageContainerProps> {
   constructor(props) {

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { HashRouter } from 'react-router-dom';
 
-import PageContainer from './Page-Container';
-import SideNav from './Side-Nav';
+import PageContainer from './components/Page-Container';
+import SideNav from './components/Side-Nav';
 var inititalData = require('../content.json');
 
 export default class App extends React.Component<any> {

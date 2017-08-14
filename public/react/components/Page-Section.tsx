@@ -4,10 +4,6 @@ import { docco } from 'react-syntax-highlighter/dist/styles';
 
 import { parentDemoModule } from '../../js/demo';
 
-export interface PageSectionData {header: string, subHeader: string, subSections: Array<any>}
-export interface PageSectionProps {data: PageSectionData}
-export interface PageSectionState {showContent: boolean}
-
 export default class PageSection extends React.Component<PageSectionProps, PageSectionState> {
   constructor(props) {
     super(props);
