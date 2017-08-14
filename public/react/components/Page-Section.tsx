@@ -16,7 +16,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
     };
   }
 
-  sectionContentConatiner() {
+  private sectionContentConatiner() {
     if (this.state.showContent) {
       return (
         <div className='of-section-content'>
@@ -34,7 +34,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
     }
   }
 
-  sectionTypeCode(code, key) {
+  private sectionTypeCode(code, key) {
     let executable = function() {
       parentDemoModule[code]();
     };
@@ -48,21 +48,21 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
     );
   }
 
-  sectionTypeMarkdown(markdown, key) {
+  private sectionTypeMarkdown(markdown, key) {
     return (<div className='sub-section markdown' key={key}>{markdown}</div>);
   }
 
-  sectionTypeText(text, key) {
+  private sectionTypeText(text, key) {
     return (<div className='sub-section text' key={key}>{text}</div>);
   }
 
-  toggleContent() {
+  private toggleContent() {
     if (this.props.data.hasOwnProperty('subSections')) {
       this.setState({showContent: !this.state.showContent});
     }
   }
 
-  sectionContentIcon() {
+  private sectionContentIcon() {
     if (this.props.data.hasOwnProperty('subSections')) {
         return (
           <div className='of-section-icon'>
@@ -72,7 +72,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
     }
   }
 
-  render() {
+  public render() {
     return (
       <div className='of-section'>
         <div onClick={this.toggleContent.bind(this)} className='of-section-title'>

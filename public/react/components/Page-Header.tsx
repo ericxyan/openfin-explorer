@@ -7,7 +7,7 @@ export default class PageHeader extends React.Component<PageHeaderProps> {
     super(props);
   }
 
-  render() {
+  public render() {
     return (
       <div className='page-header'>
         <h2>

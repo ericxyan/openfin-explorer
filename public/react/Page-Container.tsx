@@ -10,7 +10,7 @@ export default class PageContainer extends React.Component<PageContainerProps> {
     super(props);
   }
 
-  render() {
+  public render() {
     return (
       <Switch>
         {this.props.data.map((pageData, i) => {

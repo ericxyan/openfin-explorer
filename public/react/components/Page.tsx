@@ -17,7 +17,7 @@ export default class PageComponent extends React.Component<PageComponentProps> {
     super(props);
   }
 
-  pageSections() {
+  private pageSections() {
     if (this.props.data.hasOwnProperty('sections')) {
       let sections = this.props.data.sections;
       return (
@@ -28,7 +28,7 @@ export default class PageComponent extends React.Component<PageComponentProps> {
     }
   }
 
-  render() {
+  public render() {
     return (
       <div className='page'>
         <PageHeader

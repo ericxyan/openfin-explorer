@@ -8,7 +8,7 @@ export default class SideNav extends React.Component<SideNavProps> {
     super(props);
   }
 
-  navHeader() {
+  private navHeader() {
     return (
       <div className='header'>
         <h1>OpenFin</h1>
@@ -16,7 +16,7 @@ export default class SideNav extends React.Component<SideNavProps> {
     );
   }
 
-  listSection(label, sectionItems, key) {
+  private listSection(label, sectionItems, key) {
     return (
       <div className='of-list-section' key={key}>
         <div className='of-list-section-label' key={key}>
@@ -32,7 +32,7 @@ export default class SideNav extends React.Component<SideNavProps> {
     )
   }
 
-  listItem(label, linkTo, key) {
+  private listItem(label, linkTo, key) {
     return (
       <Link key={key} to={linkTo} className='of-list-item'>
         <span>{label}</span>
@@ -40,7 +40,7 @@ export default class SideNav extends React.Component<SideNavProps> {
     )
   }
 
-  render() {
+  public render() {
     const sections = Object.keys(this.props.data);
 
     return (

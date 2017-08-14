@@ -15,25 +15,25 @@ export default class Child extends React.Component<any, ChildState> {
     this.getInitialData();
   }
 
-  setTitle() {
+  private setTitle() {
     const Current = fin.desktop.Window.getCurrent();
     const currentTitle = document.querySelector('title');
     currentTitle.innerText = `${Current.name}`;
   }
 
-  childExecutable() {
+  private childExecutable() {
     return (
       <button onClick={this.state.code} className='btn btn-outline-primary'>Click</button>
     )
   }
 
-  getChildFunction() {
+  private getChildFunction() {
     return (
       <SyntaxHighlighter language='javascript' style={docco}>{this.state.code.toString()}</SyntaxHighlighter>
     )
   }
 
-  getInitialData() {
+  private getInitialData(): void {
     const current = fin.desktop.Window.getCurrent();
     current.getOptions((opt) => {
       const funcName = opt.customData;
@@ -45,7 +45,7 @@ export default class Child extends React.Component<any, ChildState> {
     });
   }
 
-  render() {
+  public render() {
     return (
       <div id='' className='container-fluid'>
         <div className='row no-gutters'>

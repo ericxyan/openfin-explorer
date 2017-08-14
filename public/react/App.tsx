@@ -5,13 +5,12 @@ import PageContainer from './Page-Container';
 import SideNav from './Side-Nav';
 var inititalData = require('../content.json');
 
-export default class App extends React.Component {
+export default class App extends React.Component<any> {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
-  makeSideNavData() {
+  private makeSideNavData(){
     let navigation = {};
 
     for (let i = 0; i < inititalData.length; i++) {
@@ -32,14 +31,14 @@ export default class App extends React.Component {
     return navigation;
   }
 
-  setTitle() {
+  private setTitle(): void {
     fin.desktop.System.getVersion(version => {
 	     const ofVersion = document.querySelector('title');
 	     ofVersion.innerText = `OpenFin Explorer | Version: ${version}`;
     });
   }
 
-  render() {
+  public render() {
     this.setTitle();
 
     return (
