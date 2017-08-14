@@ -70,7 +70,7 @@ describe('<PageSection /> and JSON Content Format', () => {
       const sectionContent = content[i].sections[j];
       const section = mount(<PageSection data={sectionContent} />);
 
-      describe(`Page # ${i} and its sections`, () => {
+      describe(`Page # ${i} -- section ${j}`, () => {
         it('should display title and description', () => {
           assert.equal(section.find('.of-section-title-text').length, 1);
           assert.equal(section.find('.of-section-header').length, 1);
