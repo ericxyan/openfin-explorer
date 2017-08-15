@@ -4,39 +4,39 @@ import { docco } from 'react-syntax-highlighter/dist/styles';
 
 import { parentDemoModule } from '../../js/demo';
 
-export default class PageSection extends React.Component<any, any> {
-  constructor(props) {
+export default class PageSection extends React.Component<PageSectionProps, PageSectionState> {
+  constructor(props: PageSectionProps) {
     super(props);
     this.state = {
-      showConent: false
+      showContent: false
     };
   }
 
-  sectionContentConatiner() {
-    if (this.state.showConent) {
+  private sectionContentConatiner() {
+    if (this.state.showContent) {
       return (
         <div className='of-section-content'>
           {this.props.data.subSections.map((section, i) => {
             if (section.type === 'code') {
               return (this.sectionTypeCode(section.content, i));
+            } else if (section.type === 'markdown') {
+              return (this.sectionTypeMarkdown(section.content, i));
+            } else if (section.type === 'text') {
+              return (this.sectionTypeText(section.content, i));
             }
-            else if (section.type === 'markdown') {
-              return (this.sectionTypeMarkdown(section.content, i));}
-            else if (section.type === 'text') {
-              return (this.sectionTypeText(section.content, i));}
           })}
         </div>
       );
     }
   }
 
-  sectionTypeCode(code, key) {
-    let executable = function() {
+  private sectionTypeCode(code: any, key: number) {
+    const executable = () => {
       parentDemoModule[code]();
     };
 
     return (
-      <div key={key}>
+      <div className='sub-section code' key={key}>
         <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
         <div id='demo-data-container'></div>
         <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
@@ -44,29 +44,31 @@ export default class PageSection extends React.Component<any, any> {
     );
   }
 
-  sectionTypeMarkdown(markdown, key) {
-    return (<div key={key}>{markdown}</div>);
+  private sectionTypeMarkdown(markdown: string, key: number) {
+    return (<div className='sub-section markdown' key={key}>{markdown}</div>);
   }
 
-  sectionTypeText(text, key) {
-    return (<div key={key}>{text}</div>);
+  private sectionTypeText(text: string, key: number) {
+    return (<div className='sub-section text' key={key}>{text}</div>);
   }
 
-  toggleContent() {
-    this.setState({showConent: !this.state.showConent});
+  private toggleContent() {
+    if (this.props.data.hasOwnProperty('subSections')) {
+      this.setState({showContent: !this.state.showContent});
+    }
   }
 
-  sectionContentIcon() {
+  private sectionContentIcon() {
     if (this.props.data.hasOwnProperty('subSections')) {
         return (
           <div className='of-section-icon'>
-            <i className="material-icons">more_vert</i>
+            <i className='material-icons'>more_vert</i>
           </div>
         );
     }
   }
 
-  render() {
+  public render() {
     return (
       <div className='of-section'>
         <div onClick={this.toggleContent.bind(this)} className='of-section-title'>

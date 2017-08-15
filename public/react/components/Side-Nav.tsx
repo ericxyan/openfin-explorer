@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-export interface SideNavProps {data: any}
-
-export default class SideNav extends React.Component<SideNavProps, any> {
-  constructor(props) {
+export default class SideNav extends React.Component<SideNavProps> {
+  constructor(props: SideNavProps) {
     super(props);
-    this.state = {};
   }
 
-  navHeader() {
+  private navHeader() {
     return (
       <div className='header'>
         <h1>OpenFin</h1>
@@ -17,11 +14,11 @@ export default class SideNav extends React.Component<SideNavProps, any> {
     );
   }
 
-  listSection(label, sectionItems, key) {
+  private listSection(label: string, sectionItems: any, key: number) {
     return (
       <div className='of-list-section' key={key}>
         <div className='of-list-section-label' key={key}>
-          <i className="material-icons">{sectionItems[0].icon}</i>
+          <i className='material-icons'>{sectionItems[0].icon}</i>
           {label}
         </div>
         {sectionItems.map((item, i) => {
@@ -30,28 +27,27 @@ export default class SideNav extends React.Component<SideNavProps, any> {
           );
         })}
       </div>
-    )
+    );
   }
 
-  listItem(label, linkTo, key) {
+  private listItem(label: string, linkTo: string, key: number) {
     return (
       <Link key={key} to={linkTo} className='of-list-item'>
         <span>{label}</span>
       </Link>
-    )
+    );
   }
 
-  render() {
+  public render() {
     const sections = Object.keys(this.props.data);
 
     return (
       <div className='side-nav'>
         {this.navHeader()}
         {sections.map((section, i) => {
-          let sectionArray = this.props.data[section];
           return (
-            this.listSection(section, sectionArray, i)
-          )
+            this.listSection(section, this.props.data[section], i)
+          );
         })}
       </div>
     );

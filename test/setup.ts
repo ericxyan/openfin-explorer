@@ -16,6 +16,7 @@ global.navigator = {
   userAgent: 'node.js',
 };
 
+// mock fin
 global.fin = {
     desktop: {
         Application: () => {},

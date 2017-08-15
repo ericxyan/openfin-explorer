@@ -5,53 +5,52 @@ import { docco } from 'react-syntax-highlighter/dist/styles';
 
 import { childDemoModule } from '../js/demo';
 
-export default class Child extends React.Component<any, any> {
-  constructor(props) {
+export default class Child extends React.Component<any, ChildState> {
+  constructor(props: any) {
     super(props);
     this.state = {code: ''};
     this.setTitle();
     this.getInitialData();
   }
 
-  setTitle() {
-    const Current = fin.desktop.Window.getCurrent();
-    const currentTitle = document.querySelector('title');
-    currentTitle.innerText = `${Current.name}`;
+  private setTitle() {
+    const current = fin.desktop.Window.getCurrent();
+    const windowTitle = document.querySelector('title');
+    windowTitle.innerText = `${current.name}`;
   }
 
-  childExecutable() {
+  private runChildFunction() {
     return (
       <button onClick={this.state.code} className='btn btn-outline-primary'>Click</button>
-    )
+    );
   }
 
-  getChildFunction() {
+  private displayChildFunction() {
     return (
       <SyntaxHighlighter language='javascript' style={docco}>{this.state.code.toString()}</SyntaxHighlighter>
-    )
+    );
   }
 
-  getInitialData() {
+  private getInitialData(): void {
     const current = fin.desktop.Window.getCurrent();
     current.getOptions((opt) => {
       const funcName = opt.customData;
       if (funcName) {
-        this.setState({code: childDemoModule[funcName]})
+        this.setState({code: childDemoModule[funcName]});
       } else {
-        this.setState({code: childDemoModule.closeCurrent})
+        this.setState({code: childDemoModule.closeCurrent});
       }
     });
   }
 
-  render() {
-
+  public render() {
     return (
-      <div id='' className='container-fluid'>
+      <div className='container-fluid'>
         <div className='row no-gutters'>
           <div className='col-12'>
             <h1>Child window created!</h1>
-            {this.childExecutable()}
-            {this.getChildFunction()}
+            {this.runChildFunction()}
+            {this.displayChildFunction()}
           </div>
         </div>
       </div>
