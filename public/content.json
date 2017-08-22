@@ -4,7 +4,7 @@
     "section": "welcome",
     "sectionIcon": "sentiment_very_satisfied",
     "header": "this is OpenFin",
-    "subHeader": "an html5 container build on Electron.",
+    "subHeader": "an html5 container built on Electron.",
     "description": "Increased security features and user permission settings.",
     "sections": [
       {
