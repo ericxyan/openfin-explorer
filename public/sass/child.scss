@@ -1,9 +1,6 @@
 @import 'partials/_colors';
 
 #child {
-  background-color: $OF-Fourth;
-  min-height: 500px;
-  height: 100%;
 
   h1, p, h2, div {
     color: $OF-Fifth;
@@ -16,4 +13,9 @@
   pre {
     margin-top: 10px;
   }
+}
+
+#child-body {
+  background-color: $OF-Fourth;
+  height: 100%;
 }
