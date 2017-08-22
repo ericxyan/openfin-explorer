@@ -24,15 +24,11 @@ function launchOpenFin() {
         startup_app: {
             url: target + '/index.html',
             applicationIcon: target + '/favicon.ico',
-            saveWindowState: true,
+            saveWindowState: false,
             defaultWidth: 800,
-            maxWidth: 800,
-            minWidth: 800,
-            maxHeight: 500,
-            defaultHeight: 500,
-            minHeight: 500,
+            defaultHeight: 600,
             defaultTop: 50,
-            defaultLeft: 10,
+            defaultLeft: 10
         },
         runtime: {
             arguments: '--remote-debugging-port=9090 --v=1 --enable-logging --debug',
