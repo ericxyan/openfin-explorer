@@ -1,5 +1,4 @@
 const { JSDOM } = require('jsdom');
-const global: any = global;
 
 const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
 const { window } = jsdom;
