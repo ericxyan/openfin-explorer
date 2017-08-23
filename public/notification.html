@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TEMPLATE</title>
+        <style>
+            body {
+                background-color: #879dc2;
+            }
+            #message {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='message'>
+            Desktop Notification
+        </div>
+    <script>
+function onNotificationMessage(message) {
+    const messageDiv = document.getElementById('message');
+    if (message !== '') {
+        messageDiv.innerText = message;
+    }
+}
+    </script>
+    </body>
+</html>

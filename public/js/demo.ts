@@ -136,6 +136,7 @@ var parentDemoModule = {
 
 
     groupWindows: function(){
+        // We'll figure out where the window is using .getBounds first
         figureOutWhereThisWindowIs().then(function() {
         const mainWindow = fin.desktop.Window.getCurrent();
         const name = `Child Window #: ${(Math.floor(Math.random() * 100)).toString()}`;
@@ -155,8 +156,7 @@ var parentDemoModule = {
               }
             );
           })
-    }
-            ,
+    },
   groupWindowsMoveyBy: function() {
     const mainWindow = fin.desktop.Window.getCurrent();
     mainWindow.moveBy(
@@ -164,7 +164,20 @@ var parentDemoModule = {
       () => { console.log('success') },
       (e) => { console.log('error: ', e) }
     );
-  }
+  },
+
+    launchNotification: function() {
+        new fin.desktop.Notification({
+            url: 'notification.html'
+        })
+    },
+    sendNotificationWithMessage: function(message) {
+        // The message is read from the Input Box above
+        new fin.desktop.Notification({
+            url: 'notification.html',
+            message: message
+        })
+    }
 }
 
 

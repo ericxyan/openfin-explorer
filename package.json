@@ -6,7 +6,8 @@
     "start": "node server.js",
     "dev": "node dev-server.js",
     "test": "./node_modules/.bin/ts-mocha --require test/setup.ts test/*.spec.tsx",
-    "lint": "tslint -c tslint.json 'public/**/*.tsx' 'public/**/*.ts' 'test/**/*.tsx'"
+    "lint": "tslint -c tslint.json 'public/**/*.tsx' 'public/**/*.ts' 'test/**/*.tsx'",
+    "tsc": "tsc"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.41",
