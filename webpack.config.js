@@ -13,7 +13,8 @@ const HtmlChildFilePlugin = new HtmlWebpackPlugin({
 });
 
 const CopyWebpackPluginConfig = new CopyWebpackPlugin([
-    { from: 'cdn-app.json', to: 'app.json' }
+    { from: 'cdn-app.json', to: 'app.json' },
+    { from: './public/notification.html', to: 'notification.html' }
 ]);
 
 module.exports = {
@@ -25,16 +26,16 @@ module.exports = {
     path: path.resolve('dist'),
     filename: '[name]_bundle.js'
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'], exclude: /node_modules/ },
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
     ]
   },
   plugins: [HtmlIndexFilePlugin, HtmlChildFilePlugin, CopyWebpackPluginConfig]
-}
+};

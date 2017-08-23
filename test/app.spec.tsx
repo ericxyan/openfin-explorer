@@ -97,7 +97,7 @@ describe('<PageSection /> and JSON Content Format', () => {
           });
 
           it('should format sub-section content types differently', () => {
-            const typeCount = {code: 0, text: 0, markdown: 0};
+            const typeCount = {code: 0, text: 0, markdown: 0, codeWithInput: 0};
             sectionContent.subSections.map((sub) => {
               typeCount[sub.type] += 1;
             });
@@ -107,6 +107,7 @@ describe('<PageSection /> and JSON Content Format', () => {
             assert.equal(section.find('.code').length, typeCount.code);
             assert.equal(section.find('.text').length, typeCount.text);
             assert.equal(section.find('.markdown').length, typeCount.markdown);
+            assert.equal(section.find('.codeWithInput').length, typeCount.codeWithInput);
           });
         } else {
           it('should NOT toggle when clicked if it has NO content', () => {

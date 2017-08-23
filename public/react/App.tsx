@@ -45,10 +45,10 @@ export default class App extends React.Component {
         <HashRouter>
           <div id='main' className='container-fluid'>
             <div className='row no-gutters'>
-              <div className='col-4'>
+              <div className='col-3'>
                  <SideNav data={this.makeSideNavData()} />
               </div>
-              <div className='col-8'>
+              <div className='col-9'>
                  <PageContainer data={inititalData} />
               </div>
             </div>

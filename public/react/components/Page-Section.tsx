@@ -8,8 +8,11 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
   constructor(props: PageSectionProps) {
     super(props);
     this.state = {
-      showContent: false
+      showContent: false,
+        inputValue: ''
     };
+
+      this.handleChange = this.handleChange.bind(this);
   }
 
   private sectionContentConatiner() {
@@ -23,6 +26,8 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
               return (this.sectionTypeMarkdown(section.content, i));
             } else if (section.type === 'text') {
               return (this.sectionTypeText(section.content, i));
+            } else if (section.type === 'codeWithInput') {
+                return (this.sectionTypeCodeWithInput(section.content, i, section.inputLabel));
             }
           })}
         </div>
@@ -39,6 +44,28 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
       <div className='sub-section code' key={key}>
         <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
         <div id='demo-data-container'></div>
+        <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
+      </div>
+    );
+  }
+
+    private handleChange(event: any) {
+        this.setState({ inputValue: event.target.value });
+    }
+
+  private sectionTypeCodeWithInput(code: any, key: number, label: string) {
+    const executable = () => {
+      parentDemoModule[code](this.state.inputValue);
+    };
+
+    return (
+      <div className='sub-section codeWithInput' key={key}>
+        <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
+        <div id='demo-data-container'></div>
+        <label>
+            {label}
+        <input type='text' value={this.state.inputValue} onChange={this.handleChange} />
+        </label>
         <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
       </div>
     );

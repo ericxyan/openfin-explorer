@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //Once the DOM has loaded and the OpenFin API is ready
 function onMain() {
   const app = fin.desktop.Application.getCurrent();
-  fin.desktop.System.showDeveloperTools(app.uuid, app.uuid);
+  // fin.desktop.System.showDeveloperTools(app.uuid, app.uuid);
   renderReact();
 }
 
