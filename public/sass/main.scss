@@ -36,3 +36,19 @@
 #index-html {
 	height: 100%;
 }
+
+.page-header, .header {
+    -webkit-app-region: drag;
+}
+
+.closebutton {
+    float: right;
+    margin-right: 10px;
+    font-size: small;
+    -webkit-app-region: no-drag;
+}
+
+.closebutton:hover {
+    font-size: large;
+    cursor: pointer;
+}

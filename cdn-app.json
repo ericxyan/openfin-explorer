@@ -7,7 +7,12 @@
         "autoShow": true,
         "saveWindowState": true,
         "defaultTop": 50,
-        "defaultLeft": 10
+        "defaultLeft": 10,
+        "frame": false,
+        "cornerRounding": {
+            "height": 5,
+            "width": 5
+        }
     },
     "runtime": {
         "arguments": "",
