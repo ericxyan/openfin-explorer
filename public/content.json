@@ -9,7 +9,7 @@
     "sections": [
       {
         "header": "welcome!",
-        "subHeader": "explor some features of the OpenFin's API"
+        "subHeader": "explore some features of the OpenFin's API"
       }
     ]
   },
@@ -18,9 +18,13 @@
     "section": "windows",
     "sectionIcon": "open_in_browser",
     "header": "child windows",
-    "subHeader": "open, close and interact with child windows.",
+    "subHeader": "Create a collection of windows to build your Application interface",
     "description": "child windows share their parent renderer.",
     "sections": [
+        {
+            "header": "About Windows",
+            "subHeader": "Child windows are fully customizable and controllable HTML your users can interact with."
+        },
       {
         "header": "create window",
         "subHeader": "launch a new window from a parent application",
@@ -148,7 +152,7 @@
     ]
   },
   {
-    "path": "/notifications/inter-app-bus",
+    "path": "/notifications/about",
     "section": "notifications",
     "sectionIcon": "chat_bubble_outline",
     "header": "Desktop Alerts",
