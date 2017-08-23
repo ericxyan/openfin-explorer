@@ -3,16 +3,16 @@ interface PageContainerProps { data: any; }
 interface SideNavProps { data: any; }
 
 interface PageHeaderProps {
-  header: string;
-  sectionIcon: string;
-  subHeader: string;
-  description: string;
+    header: string;
+    sectionIcon: string;
+    subHeader: string;
+    description: string;
 }
 
 interface PageSectionData {
-  header: string;
-  subHeader: string;
-  subSections: Array<any>;
+    header: string;
+    subHeader: string;
+    subSections: Array<any>;
 }
 
 interface PageSectionProps { data: PageSectionData; }
@@ -20,11 +20,11 @@ interface PageSectionProps { data: PageSectionData; }
 interface PageSectionState { showContent: boolean; }
 
 interface PageComponentData {
-  header: string;
-  sectionIcon: string;
-  subHeader: string;
-  description: string;
-  sections: Array<any>;
+    header: string;
+    sectionIcon: string;
+    subHeader: string;
+    description: string;
+    sections: Array<any>;
 }
 
 interface PageComponentProps { data: PageComponentData; }

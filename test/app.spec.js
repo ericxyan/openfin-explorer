@@ -18,7 +18,7 @@ describe('<App />', () => {
     it('Displays an of-list-section for each unique section in the content json', () => {
         assert.equal(wrapper.find('.of-list-section').length, uniqueSections.length);
     });
-    
+
     it('Displays an of-list-item for each path in a section', () => {
         assert.equal(wrapper.find('.of-list-item').length, pathItems.length);
     });
