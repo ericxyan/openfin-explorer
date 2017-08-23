@@ -1,184 +1,269 @@
 [
-  {
-    "path": "/",
-    "section": "welcome",
-    "sectionIcon": "sentiment_very_satisfied",
-    "header": "this is OpenFin",
-    "subHeader": "an html5 container built on Electron.",
-    "description": "Increased security features and user permission settings.",
-    "sections": [
-      {
-        "header": "welcome!",
-        "subHeader": "explore some features of the OpenFin's API"
-      }
-    ]
-  },
-  {
-    "path": "/windows/child-window",
-    "section": "windows",
-    "sectionIcon": "open_in_browser",
-    "header": "child windows",
-    "subHeader": "Create a collection of windows to build your Application interface",
-    "description": "child windows share their parent renderer.",
-    "sections": [
-        {
-            "header": "About Windows",
-            "subHeader": "Child windows are fully customizable and controllable HTML your users can interact with."
-        },
-      {
-        "header": "create window",
-        "subHeader": "launch a new window from a parent application",
-        "subSections": [
-          {"type": "text", "content": "try demo below to open a child window."},
-          {"type": "code", "content": "openWindow"}
+    {
+        "path": "/",
+        "section": "welcome",
+        "sectionIcon": "sentiment_very_satisfied",
+        "header": "this is OpenFin",
+        "subHeader": "an html5 container built on Electron.",
+        "description": "Increased security features and user permission settings.",
+        "sections": [
+            {
+                "header": "welcome!",
+                "subHeader": "explore some features of the OpenFin's API"
+            }
         ]
-      },
-      {
-        "header": "window details",
-        "subHeader": "retrieve information about the current window",
-        "subSections": [
-          {"type": "text", "content": "You can retrieve relevant information about the window via the OpenFin API. Let's retrieve the window bounds which we'll use to launch a window next to ours."},
-          {"type": "code", "content": "getBounds"}
+    },
+    {
+        "path": "/windows/child-window",
+        "section": "windows",
+        "sectionIcon": "open_in_browser",
+        "header": "child windows",
+        "subHeader": "Create a collection of windows to build your Application interface",
+        "description": "child windows share their parent renderer.",
+        "sections": [
+            {
+                "header": "About Windows",
+                "subHeader": "Child windows are fully customizable and controllable HTML your users can interact with."
+            },
+            {
+                "header": "create window",
+                "subHeader": "launch a new window from a parent application",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "try demo below to open a child window."
+                    },
+                    {
+                        "type": "code",
+                        "content": "openWindow"
+                    }
+                ]
+            },
+            {
+                "header": "window details",
+                "subHeader": "retrieve information about the current window",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "You can retrieve relevant information about the window via the OpenFin API. Let's retrieve the window bounds which we'll use to launch a window next to ours."
+                    },
+                    {
+                        "type": "code",
+                        "content": "getBounds"
+                    }
+                ]
+            },
+            {
+                "header": "close window",
+                "subHeader": "close a window from a parent application",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "try demo below to open a child window that will close when the timer expires."
+                    },
+                    {
+                        "type": "code",
+                        "content": "closeWindow"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "header": "close window",
-        "subHeader": "close a window from a parent application",
-        "subSections": [
-          {"type": "text", "content": "try demo below to open a child window that will close when the timer expires."},
-          {"type": "code", "content": "closeWindow"}
+    },
+    {
+        "path": "/windows/group",
+        "section": "windows",
+        "sectionIcon": "open_in_browser",
+        "header": "group windows",
+        "subHeader": "group windows together.",
+        "description": "Supports: Windows",
+        "sections": [
+            {
+                "header": "create group",
+                "subHeader": "create child windows in the group of the parent window.",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "try demo below to create group."
+                    },
+                    {
+                        "type": "code",
+                        "content": "groupWindows"
+                    },
+                    {
+                        "type": "text",
+                        "content": "try demo below to move the group."
+                    },
+                    {
+                        "type": "text",
+                        "content": "(Not supported by OSX)."
+                    },
+                    {
+                        "type": "code",
+                        "content": "groupWindowsMoveyBy"
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  {
-    "path": "/windows/group",
-    "section": "windows",
-    "sectionIcon": "open_in_browser",
-    "header": "group windows",
-    "subHeader": "group windows together.",
-    "description": "Supports: Windows",
-    "sections": [
-      {
-        "header": "create group",
-        "subHeader": "create child windows in the group of the parent window.",
-        "subSections": [
-          {"type": "text", "content": "try demo below to create group."},
-          {"type": "code", "content": "groupWindows"},
-          {"type": "text", "content": "try demo below to move the group."},
-          {"type": "text", "content": "(Not supported by OSX)."},
-          {"type": "code", "content": "groupWindowsMoveyBy"}
+    },
+    {
+        "path": "/windows/move-window",
+        "section": "windows",
+        "sectionIcon": "open_in_browser",
+        "header": "move windows",
+        "subHeader": "interact with windows using the OpenFin API",
+        "description": "move windows to a location or by a specific amount. add animations to make movements smoother.",
+        "sections": [
+            {
+                "header": "move by",
+                "subHeader": "move by a certain amount",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "try the demo below to move the current window."
+                    },
+                    {
+                        "type": "code",
+                        "content": "moveBy"
+                    }
+                ]
+            },
+            {
+                "header": "move to",
+                "subHeader": "move to a specific location",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "try the demo below to move the current window to a fixed location."
+                    },
+                    {
+                        "type": "code",
+                        "content": "moveTo"
+                    }
+                ]
+            },
+            {
+                "header": "animate",
+                "subHeader": "animate the window",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "try the demo below to move the current window to a fixed location with an animation."
+                    },
+                    {
+                        "type": "code",
+                        "content": "animate"
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  {
-    "path": "/windows/move-window",
-    "section": "windows",
-    "sectionIcon": "open_in_browser",
-    "header": "move windows",
-    "subHeader": "interact with windows using the OpenFin API",
-    "description": "move windows to a location or by a specific amount. add animations to make movements smoother.",
-    "sections": [
-      {
-        "header": "move by",
-        "subHeader": "move by a certain amount",
-        "subSections": [
-          {"type": "text", "content": "try the demo below to move the current window."},
-          {"type": "code", "content": "moveBy"}
+    },
+    {
+        "path": "/communication/shared-memory",
+        "section": "communication",
+        "sectionIcon": "phone_in_talk",
+        "header": "shared memory",
+        "subHeader": "access the DOM and javascript",
+        "description": "communicate between windows using javascript memory.",
+        "sections": [
+            {
+                "header": "send data from child to parent",
+                "subHeader": "used shared memory to send data",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "try the demo below to send data to parent window."
+                    },
+                    {
+                        "type": "code",
+                        "content": "sharedMemoryCommunication"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "header": "move to",
-        "subHeader": "move to a specific location",
-        "subSections": [
-          {"type": "text", "content": "try the demo below to move the current window to a fixed location."},
-          {"type": "code", "content": "moveTo"}
+    },
+    {
+        "path": "/communication/inter-app-bus",
+        "section": "communication",
+        "sectionIcon": "phone_in_talk",
+        "header": "inter application bus",
+        "subHeader": "communicate between different applications",
+        "description": "emit event messages that can be subscribed to by other applicaitons and windows.",
+        "sections": [
+            {
+                "header": "subscribe",
+                "subHeader": "subscribe to data sent by other applications.",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "try the demo below to send data to a subscribed application."
+                    },
+                    {
+                        "type": "code",
+                        "content": "interAppBusSubscribe"
+                    },
+                    {
+                        "type": "text",
+                        "content": "publish from the new window to send data to the original application."
+                    }
+                ]
+            },
+            {
+                "header": "publish",
+                "subHeader": "publish data to other applications that are subscribed.",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "publish data through the bus to subcribers."
+                    },
+                    {
+                        "type": "code",
+                        "content": "interAppBusPublish"
+                    }
+                ]
+            }
         ]
-      },
-      {
-        "header": "animate",
-        "subHeader": "animate the window",
-        "subSections": [
-          {"type": "text", "content": "try the demo below to move the current window to a fixed location with an animation."},
-          {"type": "code", "content": "animate"}
+    },
+    {
+        "path": "/notifications/about",
+        "section": "notifications",
+        "sectionIcon": "chat_bubble_outline",
+        "header": "Desktop Alerts",
+        "subHeader": "Keep users informed of important events",
+        "description": "Notifications are HTML assets capapble of communicating with the rest of your App",
+        "sections": [
+            {
+                "header": "About Notifications",
+                "subHeader": "Notifications are created just like an OpenFin window, but display in the bottom right corner of the user's screen."
+            },
+            {
+                "header": "Create Notification",
+                "subHeader": "The notification constructor lets users create a notification",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "Create a new desktop notification"
+                    },
+                    {
+                        "type": "code",
+                        "content": "launchNotification"
+                    }
+                ]
+            },
+            {
+                "header": "Message Passing",
+                "subHeader": "Send and receive messages from Notifications",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": ""
+                    },
+                    {
+                        "type": "codeWithInput",
+                        "content": "sendNotificationWithMessage",
+                        "inputLabel": "Enter Your Message: "
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  {
-    "path": "/communication/shared-memory",
-    "section": "communication",
-    "sectionIcon": "phone_in_talk",
-    "header": "shared memory",
-    "subHeader": "access the DOM and javascript",
-    "description": "communicate between windows using javascript memory.",
-    "sections": [
-      {
-        "header": "send data from child to parent",
-        "subHeader": "used shared memory to send data",
-        "subSections": [
-          {"type": "text", "content": "try the demo below to send data to parent window."},
-          {"type": "code", "content": "sharedMemoryCommunication"}
-        ]
-      }
-    ]
-  },
-  {
-    "path": "/communication/inter-app-bus",
-    "section": "communication",
-    "sectionIcon": "phone_in_talk",
-    "header": "inter application bus",
-    "subHeader": "communicate between different applications",
-    "description": "emit event messages that can be subscribed to by other applicaitons and windows.",
-    "sections": [
-      {
-        "header": "subscribe",
-        "subHeader": "subscribe to data sent by other applications.",
-        "subSections": [
-          {"type": "text", "content": "try the demo below to send data to a subscribed application."},
-          {"type": "code", "content": "interAppBusSubscribe"},
-          {"type": "text", "content": "publish from the new window to send data to the original application."}
-        ]
-      },
-      {
-        "header": "publish",
-        "subHeader": "publish data to other applications that are subscribed.",
-        "subSections": [
-          {"type": "text", "content": "publish data through the bus to subcribers."},
-          {"type": "code", "content": "interAppBusPublish"}
-        ]
-      }
-    ]
-  },
-  {
-    "path": "/notifications/about",
-    "section": "notifications",
-    "sectionIcon": "chat_bubble_outline",
-    "header": "Desktop Alerts",
-    "subHeader": "Keep users informed of important events",
-    "description": "Notifications are HTML assets capapble of communicating with the rest of your App",
-    "sections": [
-      {
-        "header": "About Notifications",
-        "subHeader": "Notifications are created just like an OpenFin window, but display in the bottom right corner of the user's screen."
-      },
-      {
-          "header": "Create Notification",
-          "subHeader": "The notification constructor lets users create a notification",
-          "subSections": [
-              {"type": "text", "content": "Create a new desktop notification"},
-              {"type": "code", "content": "launchNotification"}
-          ]
-      },
-      {
-          "header": "Message Passing",
-          "subHeader": "Send and receive messages from Notifications",
-          "subSections": [
-              {"type": "text", "content": ""},
-              {"type": "codeWithInput", "content": "sendNotificationWithMessage", "inputLabel": "Enter Your Message: "}
-          ]
-      }
-    ]
-  }
+    }
 ]

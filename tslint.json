@@ -137,7 +137,11 @@
             "check-whitespace"
         ],
         "one-variable-per-declaration": true,
-        "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
+        "only-arrow-functions": [
+            true,
+            "allow-declarations",
+            "allow-named-functions"
+        ],
         "ordered-imports": [
             false
         ],

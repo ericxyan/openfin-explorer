@@ -39,13 +39,13 @@ function launchOpenFin() {
         }
     }, configPath)
         .then(openfinLauncher.launchOpenFin({ configPath: configPath }).then(() => {
-                console.log('OpenFin closed')
-                watching.close(() => {
-                    console.log('Watcher closed')
-                    liveServer.shutdown();
-                    console.log('live-server shutdown')
-                })
+            console.log('OpenFin closed')
+            watching.close(() => {
+                console.log('Watcher closed')
+                liveServer.shutdown();
+                console.log('live-server shutdown')
             })
+        })
         )
         .catch(err => console.log(err));
 }
@@ -56,7 +56,7 @@ const watching = compiler.watch({}, (err, stats) => {
         //Start the server server and launch our app.
         liveServer.start(serverParams).on('listening', () => {
             const { address, port } = liveServer.server.address();
-            target = `http://localhost:${ port }`;
+            target = `http://localhost:${port}`;
             launchOpenFin();
         });
         initialLaunch = false;
