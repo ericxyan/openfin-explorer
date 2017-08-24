@@ -191,6 +191,13 @@ var parentDemoModule = {
             const responseString = `Your cursor is at ${mousePosition.left}, ${mousePosition.top}`
             boundsContainerInDemo.innerText = responseString;
         } )
+    },
+    showDeveloperTools: function() {
+        const thisApp = fin.desktop.Application.getCurrent();
+        fin.desktop.System.showDeveloperTools(thisApp.uuid, thisApp.name,
+            () => { console.log('Hello from the dev tools!') },
+            (err) => { console.log(`Error! ${err}`) }
+        ); 
     }
 }
 

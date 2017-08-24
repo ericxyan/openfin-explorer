@@ -305,6 +305,20 @@
                         "content": "getMousePosition"
                     }
                 ]
+            },
+            {
+                "header": "Developer Tools",
+                "subHeader": "Built on Chromium, OpenFin gives developers access to the Chrome DevTools",
+                "subSections": [
+                    {
+                        "type": "text",
+                        "content": "Access the traditional way, with a right click -> Inspect, or make an API call to show the DevTools"
+                    },
+                    {
+                        "type": "code",
+                        "content": "showDeveloperTools"
+                    }
+                ]
             }
         ]
     }
