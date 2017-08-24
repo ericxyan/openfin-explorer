@@ -177,6 +177,20 @@ var parentDemoModule = {
             url: 'notification.html',
             message: message
         })
+    },
+    getMonitorInfo: function() {
+        fin.desktop.System.getMonitorInfo( (monitorInfo) => {
+            const boundsContainerInDemo = document.querySelector('#demo-data-container');
+            const responseString = `You are using a ${monitorInfo.primaryMonitor.availableRect.right} x ${monitorInfo.primaryMonitor.availableRect.bottom} monitor`
+            boundsContainerInDemo.innerText = responseString;
+        } )
+    },
+    getMousePosition: function() {
+        fin.desktop.System.getMousePosition( mousePosition => {
+            const boundsContainerInDemo = document.querySelector('#demo-data-container');
+            const responseString = `Your cursor is at ${mousePosition.left}, ${mousePosition.top}`
+            boundsContainerInDemo.innerText = responseString;
+        } )
     }
 }
 
