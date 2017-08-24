@@ -317,6 +317,10 @@
                     {
                         "type": "code",
                         "content": "showDeveloperTools"
+                    },
+                    {
+                        "type": "docsLink",
+                        "content": "http://cdn.openfin.co/jsdocs/stable/tutorial-system.showDeveloperTools.html"
                     }
                 ]
             }
