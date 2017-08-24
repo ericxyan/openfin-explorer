@@ -246,8 +246,12 @@
                     {
                         "type": "code",
                         "content": "launchNotification"
+                    } ,
+                    {
+                        "type": "docsLink",
+                        "content": "http://cdn.openfin.co/jsdocs/stable/fin.desktop.Notification.html"
                     }
-                ]
+               ]
             },
             {
                 "header": "Message Passing",

@@ -86,7 +86,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
         function openUrlWithBrowser() {
             fin.desktop.System.openUrlWithBrowser(url);
         }
-        return (<div className='docs-link' onClick={openUrlWithBrowser} key={key}>See this method on our API Docs</div>);
+        return (<div className='docs-link sub-section' onClick={openUrlWithBrowser} key={key}>See this method on our API Docs</div>);
     }
 
     private toggleContent() {
