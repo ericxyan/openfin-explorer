@@ -17,6 +17,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
 
     private sectionContentConatiner() {
         if (this.state.showContent) {
+                //TODO case statement
             return (
                 <div className='of-section-content'>
                     {this.props.data.subSections.map((section, i) => {
@@ -28,6 +29,8 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                             return (this.sectionTypeText(section.content, i));
                         } else if (section.type === 'codeWithInput') {
                             return (this.sectionTypeCodeWithInput(section.content, i, section.inputLabel));
+                        } else if ( section.type === 'docsLink') {
+                            return (this.sectionTypeDocsLink(section.content, i));
                         }
                     })}
                 </div>
@@ -77,6 +80,13 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
 
     private sectionTypeText(text: string, key: number) {
         return (<div className='sub-section text' key={key}>{text}</div>);
+    }
+
+    private sectionTypeDocsLink(url: string, key: number) {
+        function openUrlWithBrowser() {
+            fin.desktop.System.openUrlWithBrowser(url);
+        }
+        return (<div className='docs-link sub-section' onClick={openUrlWithBrowser} key={key}>See this method on our API Docs</div>);
     }
 
     private toggleContent() {
