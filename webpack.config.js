@@ -17,9 +17,29 @@ const CopyWebpackPluginConfig = new CopyWebpackPlugin([
     { from: './public/notification.html', to: 'notification.html' }
 ]);
 
-module.exports = {
+module.exports = [{
     entry: {
         index: './public/js/index.tsx',
+    },
+    output: {
+        path: path.resolve('dist'),
+        filename: '[name]_bundle.js'
+    },
+    devtool: 'source-map',
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.json']
+    },
+    module: {
+        loaders: [
+            { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+            { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'], exclude: /node_modules/ },
+            { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
+        ]
+    },
+    plugins: [HtmlIndexFilePlugin, CopyWebpackPluginConfig]
+},
+{
+    entry: {
         child: './public/js/child.tsx'
     },
     output: {
@@ -37,5 +57,5 @@ module.exports = {
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
         ]
     },
-    plugins: [HtmlIndexFilePlugin, HtmlChildFilePlugin, CopyWebpackPluginConfig]
-};
+    plugins: [HtmlChildFilePlugin]
+}];
