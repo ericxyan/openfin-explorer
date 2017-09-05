@@ -198,6 +198,11 @@ var parentDemoModule = {
             () => { console.log('Hello from the dev tools!') },
             (err) => { console.log(`Error! ${err}`) }
         ); 
+    },
+    restartApplication: function() {
+        const thisApp = fin.desktop.Application.getCurrent();
+        thisApp.restart(() => { console.log('This message will not appear as the app has been restarted') },
+            (error) => { console.log(`Error restarting application: ${error}`) });
     }
 }
 

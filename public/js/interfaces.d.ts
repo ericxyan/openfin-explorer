@@ -17,7 +17,7 @@ interface PageSectionData {
 
 interface PageSectionProps { data: PageSectionData; }
 
-interface PageSectionState { showContent: boolean; }
+interface PageSectionState { showContent: boolean, inputValue: string; }
 
 interface PageComponentData {
     header: string;
