@@ -355,7 +355,7 @@
                         "content": "restartApplication"
                     },
                     {
-                        "type": "docslink",
+                        "type": "docsLink",
                         "content": "http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#restart"
                     }
                 ]
