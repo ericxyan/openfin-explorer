@@ -17,7 +17,7 @@ var parentDemoModule = {
     getBounds: function () {
         const thisWindow = fin.desktop.Window.getCurrent();
         thisWindow.getBounds(bounds => {
-            const boundsContainerInDemo = document.querySelector('#demo-data-container');
+            const boundsContainerInDemo = <HTMLElement>document.querySelector('#demo-data-container');
             const responseString = `The top of this window is at ${bounds.top}, the right side is at ${bounds.right}`
             boundsContainerInDemo.innerText = responseString;
         })
@@ -180,21 +180,21 @@ var parentDemoModule = {
     },
     getMonitorInfo: function() {
         fin.desktop.System.getMonitorInfo( (monitorInfo) => {
-            const boundsContainerInDemo = document.querySelector('#demo-data-container');
+            const boundsContainerInDemo = <HTMLElement>document.querySelector('#demo-data-container');
             const responseString = `You are using a ${monitorInfo.primaryMonitor.availableRect.right} x ${monitorInfo.primaryMonitor.availableRect.bottom} monitor`
             boundsContainerInDemo.innerText = responseString;
         } )
     },
     getMousePosition: function() {
         fin.desktop.System.getMousePosition( mousePosition => {
-            const boundsContainerInDemo = document.querySelector('#demo-data-container');
+            const boundsContainerInDemo = <HTMLElement>document.querySelector('#demo-data-container');
             const responseString = `Your cursor is at ${mousePosition.left}, ${mousePosition.top}`
             boundsContainerInDemo.innerText = responseString;
         } )
     },
     showDeveloperTools: function() {
         const thisApp = fin.desktop.Application.getCurrent();
-        fin.desktop.System.showDeveloperTools(thisApp.uuid, thisApp.name,
+        fin.desktop.System.showDeveloperTools(thisApp.uuid, thisApp.uuid,
             () => { console.log('Hello from the dev tools!') },
             (err) => { console.log(`Error! ${err}`) }
         ); 
