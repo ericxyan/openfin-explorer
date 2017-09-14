@@ -10,10 +10,6 @@
   version "6.0.85"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.85.tgz#ec02bfe54a61044f2be44f13b389c6a0e8ee05ae"
 
-"@types/openfin@^16.0.1":
-  version "16.0.2"
-  resolved "https://registry.yarnpkg.com/@types/openfin/-/openfin-16.0.2.tgz#2432dcd4b1ac116669b73e785ee631973a385e4c"
-
 "@types/react-dom@^15.5.2":
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-15.5.4.tgz#3f75ba86a2ce9a7d1d9e7d1ee3f186f3a9652d8f"

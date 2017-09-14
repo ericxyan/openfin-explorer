@@ -194,7 +194,7 @@ var parentDemoModule = {
     },
     showDeveloperTools: function() {
         const thisApp = fin.desktop.Application.getCurrent();
-        fin.desktop.System.showDeveloperTools(thisApp.uuid, thisApp.name,
+        fin.desktop.System.showDeveloperTools(thisApp.uuid, thisApp.uuid,
             () => { console.log('Hello from the dev tools!') },
             (err) => { console.log(`Error! ${err}`) }
         ); 
