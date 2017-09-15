@@ -3,7 +3,7 @@ import { HashRouter } from 'react-router-dom';
 
 import PageContainer from './components/Page-Container';
 import SideNav from './components/Side-Nav';
-const inititalData = require('../content.json');
+const content = require('../content');
 
 export default class App extends React.Component {
     constructor(props: any) {
@@ -13,8 +13,8 @@ export default class App extends React.Component {
     private makeSideNavData() {
         const navigation = {};
 
-        for (let i = 0; i < inititalData.length; i++) {
-            const page = inititalData[i];
+        for (let i = 0; i < content.length; i++) {
+            const page = content[i];
             const navItem = {
                 path: page.path,
                 header: page.header,
@@ -49,7 +49,7 @@ export default class App extends React.Component {
                             <SideNav data={this.makeSideNavData()} />
                         </div>
                         <div className='col-9'>
-                            <PageContainer data={inititalData} />
+                            <PageContainer data={content} />
                         </div>
                     </div>
                 </div>
