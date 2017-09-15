@@ -6,7 +6,7 @@ import App from '../public/react/App';
 import PageComponent from '../public/react/components/Page';
 import PageHeader from '../public/react/components/Page-Header';
 import PageSection from '../public/react/components/Page-Section';
-const content = require('../public/content.json');
+import content from '../public/content';
 
 describe('<App />', () => {
     const wrapper = mount(<App />);

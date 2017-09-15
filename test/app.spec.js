@@ -3,7 +3,7 @@ import * as assert from 'assert';
 import { mount } from 'enzyme';
 
 import App from '../public/react/App';
-import content from '../public/content.json';
+import content from '../public/content';
 
 describe('<App />', () => {
     const wrapper = mount(<App />);

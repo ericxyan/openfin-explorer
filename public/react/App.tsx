@@ -3,7 +3,7 @@ import { HashRouter } from 'react-router-dom';
 
 import PageContainer from './components/Page-Container';
 import SideNav from './components/Side-Nav';
-const content = require('../content');
+import content from '../content';
 
 export default class App extends React.Component {
     constructor(props: any) {
