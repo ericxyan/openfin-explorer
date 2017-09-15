@@ -1,64 +1,64 @@
 const systemSections = [
     {
-        "path": "/system/about",
-        "section": "system",
-        "sectionIcon": "desktop_windows",
-        "header": "System Info",
-        "subHeader": "An object representing the core of the OpenFin Runtime",
-        "description": "Retrieve system info, access logs, and interact with the Runtime on a system wide level",
-        "sections": [
+        path: '/system/about',
+        section: 'system',
+        sectionIcon: 'desktop_windows',
+        header: 'System Info',
+        subHeader: 'An object representing the core of the OpenFin Runtime',
+        description: 'Retrieve system info, access logs, and interact with the Runtime on a system wide level',
+        sections: [
             {
-                "header": "System Features",
-                "subHeader": "Use innocuous desktop info to customize apps for every desktop. Debug with app level logging. Clear the cache."
+                header: 'System Features',
+                subHeader: 'Use innocuous desktop info to customize apps for every desktop. Debug with app level logging. Clear the cache.'
             },
             {
-                "header": "Monitor Info",
-                "subHeader": "Retrieve info about the user's monitor(s)",
-                "subSections": [
+                header: 'Monitor Info',
+                subHeader: 'Retrieve info about the user\'s monitor(s)',
+                subSections: [
                     {
-                        "type": "text",
-                        "content": "The getMonitorInfo method enables mutli-monitor application development with ease."
+                        type: 'text',
+                        content: 'The getMonitorInfo method enables mutli-monitor application development with ease.'
                     },
                     {
-                        "type": "code",
-                        "content": "getMonitorInfo"
+                        type: 'code',
+                        content: 'getMonitorInfo'
                     }
                 ]
             },
             {
-                "header": "Mouse Position",
-                "subHeader": "Get the user's current mouse position for desktop-wide events",
-                "subSections": [
+                header: 'Mouse Position',
+                subHeader: 'Get the user\'s current mouse position for desktop-wide events',
+                subSections: [
                     {
-                        "type": "text",
-                        "content": "Use the mouse position to move items to the cursor location."
+                        type: 'text',
+                        content: 'Use the mouse position to move items to the cursor location.'
                     },
                     {
-                        "type": "code",
-                        "content": "getMousePosition"
+                        type: 'code',
+                        content: 'getMousePosition'
                     }
                 ]
             },
             {
-                "header": "Developer Tools",
-                "subHeader": "Built on Chromium, OpenFin gives developers access to the Chrome DevTools",
-                "subSections": [
+                header: 'Developer Tools',
+                subHeader: 'Built on Chromium, OpenFin gives developers access to the Chrome DevTools',
+                subSections: [
                     {
-                        "type": "text",
-                        "content": "Access the traditional way, with a right click -> Inspect, or make an API call to show the DevTools"
+                        type: 'text',
+                        content: 'Access the traditional way, with a right click -> Inspect, or make an API call to show the DevTools'
                     },
                     {
-                        "type": "code",
-                        "content": "showDeveloperTools"
+                        type: 'code',
+                        content: 'showDeveloperTools'
                     },
                     {
-                        "type": "docsLink",
-                        "content": "http://cdn.openfin.co/jsdocs/stable/tutorial-system.showDeveloperTools.html"
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/tutorial-system.showDeveloperTools.html'
                     }
                 ]
             }
         ]
     }
-]
+];
 
 export default systemSections;

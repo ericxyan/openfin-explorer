@@ -9,7 +9,8 @@ const notificationsSections = [
         sections: [
             {
                 header: 'About Notifications',
-                subHeader: 'Notifications are created just like an OpenFin window, but display in the bottom right corner of the user\'s screen.'
+                subHeader: 'Notifications are created just like an OpenFin window,' +
+                ' but display in the bottom right corner of the user\'s screen.'
             },
             {
                 header: 'Create Notification',
@@ -22,12 +23,12 @@ const notificationsSections = [
                     {
                         type: 'code',
                         content: 'launchNotification'
-                    } ,
+                    },
                     {
                         type: 'docsLink',
                         content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Notification.html'
                     }
-               ]
+                ]
             },
             {
                 header: 'Message Passing',
