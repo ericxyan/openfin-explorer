@@ -1,7 +1,9 @@
 @import 'partials/_colors';
 
 body {
-    font-family: Roboto, sans-serif;
+  overflow: auto;
+  height: 100vh;
+  font-family: Roboto, sans-serif;
 }
 
 #main {
@@ -13,10 +15,6 @@ body {
   }
 }
 
-#index-body {
-    height: 100%;
-}
-
 #root {
     height: 100%;
 }
@@ -26,14 +24,6 @@ body {
 }
 
 .row {
-	height: 100%;
-}
-
-.col-4 {
-	height: 100%;
-}
-
-.col-8 {
 	height: 100%;
 }
 

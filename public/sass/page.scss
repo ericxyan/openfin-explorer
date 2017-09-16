@@ -6,6 +6,7 @@
   background: $OF-Third;
   min-height: 500px;
   height: 100%;
+  overflow: auto;
 
   .page-header {
     border-bottom: 2px solid $OF-First;
