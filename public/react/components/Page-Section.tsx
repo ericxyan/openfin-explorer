@@ -49,7 +49,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
         };
 
         return (
-            <div className='sub-section code' key={key}>
+            <div className='sub-section codeWithDomUpdate' key={key}>
                 <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
                 <div id={updateableDivId}></div>
                 <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
@@ -88,7 +88,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
         };
 
         return (
-            <div className='sub-section codeWithInput' key={key}>
+            <div className='sub-section codeWithInputUpdateDom' key={key}>
                 <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
                 <div id={updateableDivId}></div>
                 <label>
