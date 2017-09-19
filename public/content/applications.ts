@@ -77,6 +77,20 @@ const applicationSections = [
                         content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#restart'
                     }
                 ]
+            },
+            {
+                header: 'Custom Event Listeners',
+                subHeader: 'Application specific event listeners',
+                subSections: [
+                    {
+                        type: 'text',
+                        content: 'Built on Chromium, all of the events you\'d use in the browser are available to you in an OpenFin application. Of course, since you\'re in a desktop application, you\'ll want some more to help expand your user\'s experience. Check out our documentation for a list of available events.'
+                    },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/tutorial-application.addEventListener.html'
+                    }
+                ]
             }
         ]
     }
