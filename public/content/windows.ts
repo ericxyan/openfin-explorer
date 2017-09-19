@@ -31,11 +31,11 @@ const windowsSections = [
             subSections: [
                 {
                     type: 'text',
-                    content: 'You can retrieve relevant information about the window via the OpenFin API.' + 
+                    content: 'You can retrieve relevant information about the window via the OpenFin API.' +
                     ' Let\'s retrieve the window bounds which we\'ll use to launch a window next to ours.'
                 },
                 {
-                    type: 'code',
+                    type: 'codeWithDomUpdate',
                     content: 'getBounds'
                 }
             ]

@@ -31,6 +31,10 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                             return (this.sectionTypeCodeWithInput(section.content, i, section.inputLabel));
                         } else if ( section.type === 'docsLink') {
                             return (this.sectionTypeDocsLink(section.content, i));
+                        } else if ( section.type === 'codeWithDomUpdate' ) {
+                            return (this.sectionTypeCodeDomUpdate(section.content, i));
+                        } else if (section.type === 'codeWithInputUpdateDom') {
+                            return (this.sectionTypeCodeWithInputDomUpdate(section.content, i, section.inputLabel));
                         }
                     })}
                 </div>
@@ -38,15 +42,18 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
         }
     }
 
-    private sectionTypeCode(code: any, key: number) {
+    private sectionTypeCodeDomUpdate(code: any, key: number) {
+        const updateableDivId = Math.random().toString() + '-div';
+
         const executable = () => {
-            parentDemoModule[code]();
+            const updateableDiv = document.getElementById(updateableDivId);
+            parentDemoModule[code](updateableDiv);
         };
 
         return (
             <div className='sub-section code' key={key}>
                 <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
-                <div id='demo-data-container'></div>
+                <div id={updateableDivId}></div>
                 <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
             </div>
         );
@@ -69,6 +76,41 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                     {label}
                     <input type='text' value={this.state.inputValue} onChange={this.handleChange} />
                 </label>
+                <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
+            </div>
+        );
+    }
+
+    private sectionTypeCodeWithInputDomUpdate(code: any, key: number, label: string) {
+        const updateableDivId = Math.random().toString() + '-div';
+
+        const executable = () => {
+            const updateableDiv = document.getElementById(updateableDivId);
+            parentDemoModule[code](this.state.inputValue, updateableDiv);
+        };
+
+        return (
+            <div className='sub-section codeWithInput' key={key}>
+                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
+                <div id={updateableDivId}></div>
+                <label>
+                    {label}
+                    <input type='text' value={this.state.inputValue} onChange={this.handleChange} />
+                </label>
+                <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
+            </div>
+        );
+    }
+
+    private sectionTypeCode(code: any, key: number) {
+        const executable = () => {
+            parentDemoModule[code]();
+        };
+
+        return (
+            <div className='sub-section code' key={key}>
+                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
+                <div id='demo-data-container'></div>
                 <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
             </div>
         );

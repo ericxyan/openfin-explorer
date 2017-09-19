@@ -1,15 +1,27 @@
 const applicationSections = [
     {
-        section: 'applications',
-        path: '/applications/about',
-        sectionIcon: 'call_to_action',
+        pageName: 'about',
         header: 'OpenFin Applications',
-        subHeader: 'An app operating on the OpenFin Runtime',
-        description: 'Control your multi-window application and add OS level features',
+        subHeader: 'An application operating on the OpenFin Runtime',
+        description: 'The Application class lets you control your multi-window application and add OS level features',
         sections: [
             {
-                header: 'text',
-                subHeader: 'Applications!'
+                header: 'Controlling Applications',
+                subHeader: 'You can launch other apps from within an app, etc.'
+            },
+            {
+                header: 'Creating An Application',
+                subHeader: 'Launch any web application with the OpenFin API.',
+                subSections: [
+                    {
+                        type: 'text',
+                        content: 'To launch an application, you\'ll need to assign a unique identifier, or UUID, and a URL for the app. Since OpenFin applications are built on modern day web technology, you can point to an existing web application right out of the box. Enter a valid URL in the box below to launch your site as an OpenFin Application.'
+                    },
+                    {
+                        type: 'codeWithInputUpdateDom',
+                        content: 'launchApplication'
+                    }
+                ]
             },
             {
                 header: 'Lifecycle Controls',
@@ -17,7 +29,7 @@ const applicationSections = [
                 subSections: [
                     {
                         type: 'text',
-                        content: 'You\'ll need to be able to close or restart your application outside of the OS window features'
+                        content: 'You\'ll need to be able to close or restart your application outside of the OS window features. Click the demo below to call restart on this application.'
                     },
                     {
                         type: 'code',
@@ -32,5 +44,11 @@ const applicationSections = [
         ]
     }
 ];
+
+applicationSections.forEach(page => {
+    page.section = 'applications';
+    page.sectionIcon = 'call_to_action';
+    page.path = `/applications/${page.pageName}/`;
+});
 
 export default applicationSections;

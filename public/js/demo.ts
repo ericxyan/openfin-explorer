@@ -14,12 +14,25 @@ function figureOutWhereThisWindowIs() {
 }
 
 var parentDemoModule = {
-    getBounds: function () {
+    launchApplication: function(applicationUrl, div) {
+        const yourApplication = new fin.desktop.Application({
+            url: applicationUrl,
+            uuid: Math.random().toString(),
+            name: Math.random().toString(),
+            mainWindowOptions: {
+                defaultHeight: 600,
+                defaultWidth: 800,
+                autoShow: true
+            }
+        },
+            () => { yourApplication.run() },
+            (error) => { div.innerText = `${error}` })
+    },
+    getBounds: function (div) {
         const thisWindow = fin.desktop.Window.getCurrent();
         thisWindow.getBounds(bounds => {
-            const boundsContainerInDemo = <HTMLElement>document.querySelector('#demo-data-container');
             const responseString = `The top of this window is at ${bounds.top}, the right side is at ${bounds.right}`
-            boundsContainerInDemo.innerText = responseString;
+            div.innerText = responseString;
         })
     },
 
@@ -178,18 +191,16 @@ var parentDemoModule = {
             message: message
         })
     },
-    getMonitorInfo: function() {
+    getMonitorInfo: function(div) {
         fin.desktop.System.getMonitorInfo( (monitorInfo) => {
-            const boundsContainerInDemo = <HTMLElement>document.querySelector('#demo-data-container');
             const responseString = `You are using a ${monitorInfo.primaryMonitor.availableRect.right} x ${monitorInfo.primaryMonitor.availableRect.bottom} monitor`
-            boundsContainerInDemo.innerText = responseString;
+            div.innerText = responseString;
         } )
     },
-    getMousePosition: function() {
+    getMousePosition: function(div) {
         fin.desktop.System.getMousePosition( mousePosition => {
-            const boundsContainerInDemo = <HTMLElement>document.querySelector('#demo-data-container');
             const responseString = `Your cursor is at ${mousePosition.left}, ${mousePosition.top}`
-            boundsContainerInDemo.innerText = responseString;
+            div.innerText = responseString;
         } )
     },
     showDeveloperTools: function() {

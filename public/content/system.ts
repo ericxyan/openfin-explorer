@@ -20,7 +20,7 @@ const systemSections = [
                         content: 'The getMonitorInfo method enables mutli-monitor application development with ease.'
                     },
                     {
-                        type: 'code',
+                        type: 'codeWithDomUpdate',
                         content: 'getMonitorInfo'
                     }
                 ]
@@ -34,7 +34,7 @@ const systemSections = [
                         content: 'Use the mouse position to move items to the cursor location.'
                     },
                     {
-                        type: 'code',
+                        type: 'codeWithDomUpdate',
                         content: 'getMousePosition'
                     }
                 ]
