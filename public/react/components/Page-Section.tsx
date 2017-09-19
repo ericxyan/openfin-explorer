@@ -23,8 +23,6 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                     {this.props.data.subSections.map((section, i) => {
                         if (section.type === 'code') {
                             return (this.sectionTypeCode(section.content, i));
-                        } else if (section.type === 'markdown') {
-                            return (this.sectionTypeMarkdown(section.content, i));
                         } else if (section.type === 'text') {
                             return (this.sectionTypeText(section.content, i));
                         } else if (section.type === 'codeWithInput') {
@@ -114,10 +112,6 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                 <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
             </div>
         );
-    }
-
-    private sectionTypeMarkdown(markdown: string, key: number) {
-        return (<div className='sub-section markdown' key={key}>{markdown}</div>);
     }
 
     private sectionTypeText(text: string, key: number) {
