@@ -10,6 +10,25 @@ const applicationSections = [
                 subHeader: 'You can launch other apps from within an app, etc.'
             },
             {
+                header: 'The Application Class',
+                subHeader: 'Interact with this application or any other on the Runtime.',
+                subSections: [
+                    {
+                        type: 'text',
+                        content: 'Retrieve the current application object with the OpenFin API'
+                    },
+                    {
+                        type: 'codeWithDomUpdate',
+                        content: 'getCurrentApplication'
+                    },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/tutorial-application.getCurrent.html'
+
+                    }
+                ]
+            },
+            {
                 header: 'Creating An Application',
                 subHeader: 'Launch any web application with the OpenFin API.',
                 subSections: [
@@ -20,6 +39,24 @@ const applicationSections = [
                     {
                         type: 'codeWithInputUpdateDom',
                         content: 'launchApplication'
+                    }
+                ]
+            },
+            {
+                header: 'Application Manifest',
+                subHeader: 'The entry point for your app.',
+                subSections: [
+                    {
+                        type: 'text',
+                        content: 'The application manifest is a JSON you host alongside your web application that contains configuration information for your app on startup. You can retrive the current application\'s manifest with the API.'
+                    },
+                    {
+                        type: 'codeWithDomUpdate',
+                        content: 'getAppManifest'
+                    },
+                    {
+                        type: 'externalLink',
+                        content: 'https://openfin.co/application-config/'
                     }
                 ]
             },

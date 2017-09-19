@@ -29,6 +29,8 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                             return (this.sectionTypeCodeWithInput(section.content, i, section.inputLabel));
                         } else if ( section.type === 'docsLink') {
                             return (this.sectionTypeDocsLink(section.content, i));
+                        } else if ( section.type === 'externalLink') {
+                            return (this.sectionTypeExternalLink(section.content, i));
                         } else if ( section.type === 'codeWithDomUpdate' ) {
                             return (this.sectionTypeCodeDomUpdate(section.content, i));
                         } else if (section.type === 'codeWithInputUpdateDom') {
@@ -123,6 +125,13 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
             fin.desktop.System.openUrlWithBrowser(url);
         }
         return (<div className='docs-link sub-section' onClick={openUrlWithBrowser} key={key}>See this method on our API Docs</div>);
+    }
+
+    private sectionTypeExternalLink(url: string, key: number) {
+        function openUrlWithBrowser() {
+            fin.desktop.System.openUrlWithBrowser(url);
+        }
+        return (<div className='docs-link sub-section' onClick={openUrlWithBrowser} key={key}>Learn More Here</div>);
     }
 
     private toggleContent() {

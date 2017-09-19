@@ -14,6 +14,19 @@ function figureOutWhereThisWindowIs() {
 }
 
 var parentDemoModule = {
+    getAppManifest: function(div) {
+        const thisApplication = fin.desktop.Application.getCurrent();
+        thisApplication.getManifest(manifest => {
+            div.innerText = `The manifest contains info like:
+Startup App Url: ${manifest.startup_app.url}
+Runtime Version: ${manifest.runtime.version}
+`
+        })
+    },
+    getCurrentApplication: function(div) {
+        const thisApplication = fin.desktop.Application.getCurrent();
+        div.innerText = `Calling .getCurrent() returns an ${typeof thisApplication}`
+    },
     launchApplication: function(applicationUrl, div) {
         const yourApplication = new fin.desktop.Application({
             url: applicationUrl,
