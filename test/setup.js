@@ -16,10 +16,17 @@ global.navigator = {
     userAgent: 'node.js'
 };
 
+//mocked app
+const mockedApp = {
+    getShortcuts: () => {}
+}
+
 // mock fin
 global.fin = {
     desktop: {
-        Application: () => { },
+        Application: {
+            getCurrent: () => { return  mockedApp }
+        },
         System: {
             getVersion: () => { }
         }

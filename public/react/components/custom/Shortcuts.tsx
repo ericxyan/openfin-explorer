@@ -46,7 +46,7 @@ export default class Shortcuts extends React.Component<ShortcutsSectionProps, Sh
 
     public render() {
         return (
-            <div>
+            <div className='sub-section'>
                 <input id='desktop' type='checkbox' checked={this.state.desktop} onChange={this.handleChange}/>
                 <label htmlFor='desktop'>Desktop</label>
                 <input id='startMenu' type='checkbox' checked={this.state.startMenu} onChange={this.handleChange}/>
