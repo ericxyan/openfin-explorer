@@ -14,6 +14,15 @@ function figureOutWhereThisWindowIs() {
 }
 
 var parentDemoModule = {
+    getShortcutInfo: function(div) {
+        const thisApp = fin.desktop.Application.getCurrent();
+        thisApp.getShortcuts(shortcuts => {
+            div.innerText = `Current Shortcut Configuration:
+Desktop Shortcut: ${shortcuts.desktop}
+StartMenu Shortcut: ${shortcuts.startMenu}
+Launch On Startip: ${shortcuts.systemStartup}`
+        })
+    },
     getAppManifest: function(div) {
         const thisApplication = fin.desktop.Application.getCurrent();
         thisApplication.getManifest(manifest => {

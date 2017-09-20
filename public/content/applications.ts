@@ -101,6 +101,20 @@ const applicationSections = [
         description: 'Step all the way out of the browser with your app with OS level shortcut features',
         sections: [
             {
+                header: 'Shortcut Information',
+                subHeader: 'Retrieve Info About Shortcuts',
+                subSections: [
+                    {
+                        type: 'text',
+                        content: 'Shortcut settings are configurable on launch in your application manifest. You can access the current applications shortcut info via the API. We\'ll use this in the next section to auto-populate the dom before you change the shortcut settings.'
+                    },
+                    {
+                        type: 'codeWithDomUpdate',
+                        content: 'getShortcutInfo'
+                    }
+                ]
+            },
+            {
                 header: 'Set Shortcuts',
                 subHeader: 'Create and update your application shortcuts',
                 subSections: [
