@@ -93,6 +93,28 @@ const applicationSections = [
                 ]
             }
         ]
+    },
+    {
+        pageName: 'shortcuts',
+        header: 'Shortcuts',
+        subHeader: 'Desktop, Start Menu, and System Startup',
+        description: 'Step all the way out of the browser with your app with OS level shortcut features',
+        sections: [
+            {
+                header: 'Set Shortcuts',
+                subHeader: 'Create and update your application shortcuts',
+                subSections: [
+                    {
+                        type: 'text',
+                        content: 'We\'ll use the API to retrieve the current shortcut information, then use another method to update them to your preferences. The shortcuts are originally set in your Application Manifest.'
+                    },
+                    {
+                        type: 'custom',
+                        content: 'shortcuts'
+                    }
+                ]
+            }
+        ]
     }
 ];
 

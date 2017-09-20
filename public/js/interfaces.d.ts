@@ -30,3 +30,11 @@ interface PageComponentData {
 interface PageComponentProps { data: PageComponentData; }
 
 interface ChildState { code: any; }
+
+interface ShortcutsSectionState {
+    desktop: boolean;
+    startMenu: boolean;
+    systemStartup: boolean;
+}
+
+interface ShortcutsSectionProps {}

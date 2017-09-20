@@ -2,6 +2,7 @@ import * as React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
 
+import custom from './custom';
 import { parentDemoModule } from '../../js/demo';
 
 export default class PageSection extends React.Component<PageSectionProps, PageSectionState> {
@@ -35,6 +36,9 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                             return (this.sectionTypeCodeDomUpdate(section.content, i));
                         } else if (section.type === 'codeWithInputUpdateDom') {
                             return (this.sectionTypeCodeWithInputDomUpdate(section.content, i, section.inputLabel));
+                        } else if (section.type === 'custom') {
+                            const ToRender = custom[section.content];
+                            return (< ToRender />);
                         }
                     })}
                 </div>

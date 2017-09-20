@@ -41,7 +41,7 @@ const systemSections = [
             },
             {
                 header: 'Developer Tools',
-                subHeader: 'Built on Chromium, OpenFin gives developers access to the Chrome DevTools',
+                subHeader: 'OpenFin gives developers access to the Chrome DevTools',
                 subSections: [
                     {
                         type: 'text',
