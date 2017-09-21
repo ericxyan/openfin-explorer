@@ -1,4 +1,4 @@
-import * as React from 'React';
+import * as React from 'react';
 
 export default class WindowOptions extends React.Component<WindowOptionsProps, WindowOptionsState> {
     constructor(props: WindowOptionsProps) {
