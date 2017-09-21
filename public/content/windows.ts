@@ -26,6 +26,24 @@ const windowsSections = [
             ]
         },
         {
+            header: 'Window Options',
+            subHeader: 'A configuration object for an OpenFin window.',
+            subSections: [
+                {
+                    type: 'text',
+                    content: 'The Window Options objects is required by the Window constructor. Here, you\'ll set your Window\'s URL and name, along with aesthetic preferences like height, width, and frame. Configure our default child window, just another HTML page included in this app, and launch it to see it in action.'
+                },
+                {
+                    type: 'custom',
+                    content: 'windowOptions'
+                },
+                {
+                    type: 'docsLink',
+                    content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Window.html#~options'
+                }
+            ]
+        },
+        {
             header: 'window details',
             subHeader: 'retrieve information about the current window',
             subSections: [

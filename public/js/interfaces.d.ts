@@ -38,3 +38,11 @@ interface ShortcutsSectionState {
 }
 
 interface ShortcutsSectionProps {}
+
+interface WindowOptionsState {
+    childFrame: boolean;
+    childDefaultWidth: number;
+    childDefaultHeight: number;
+}
+
+interface WindowOptionsProps {}

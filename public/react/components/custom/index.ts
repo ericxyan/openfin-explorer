@@ -1,7 +1,9 @@
 import Shortcuts from './Shortcuts';
+import WindowOptions from './WindowOptions';
 
 const customElements = {
-    shortcuts: Shortcuts
+    shortcuts: Shortcuts,
+    windowOptions: WindowOptions
 };
 
 export default customElements;
