@@ -8,26 +8,33 @@ export default class WindowOptions extends React.Component<WindowOptionsProps, W
         this.state = {
             childFrame: true,
             childDefaultWidth: 800,
-            childDefaultHeight: 600
+            childDefaultHeight: 600,
+            childSaveState: false
         };
     }
 
     private launchWindowWithPreferences() {
-        console.log(this.state.childDefaultHeight);
-        console.log(this.state.childDefaultWidth);
+        const windowName = 'windowOptionsChild';
         const windowConfig = {
             url: 'child.html',
-            name: Math.random().toString(),
+            name: windowName,
             frame: this.state.childFrame,
             defaultWidth: this.state.childDefaultWidth,
             defaultHeight: this.state.childDefaultHeight,
             autoShow: true,
-            saveWindowState: false
+            saveWindowState: this.state.childSaveState
         };
 
-        console.log(windowConfig);
-
-        return new fin.desktop.Window(windowConfig);
+        const thisApp = fin.desktop.Application.getCurrent();
+        thisApp.getChildWindows(childWindows => {
+            const appNames = childWindows.map(win => win.name);
+            if (appNames.includes(windowName)) {
+                const childWindow = fin.desktop.Window.wrap(thisApp.uuid, windowName);
+                childWindow.close(null, () => { return new fin.desktop.Window(windowConfig); });
+            } else {
+                return new fin.desktop.Window(windowConfig);
+            }
+        });
     }
 
     private handleChange(event: any) {
@@ -53,6 +60,10 @@ export default class WindowOptions extends React.Component<WindowOptionsProps, W
                 <label>
                     Frame?
                     <input name='childFrame' type='checkbox' checked={this.state.childFrame} onChange={this.handleChange} />
+                </label>
+                <label>
+                    Remember Window Position?
+                    <input name='childSaveState' type='checkbox' checked={this.state.childSaveState} onChange={this.handleChange} />
                 </label>
                 <input type='submit' value='Launch' onClick={this.launchWindowWithPreferences} />
             </div>

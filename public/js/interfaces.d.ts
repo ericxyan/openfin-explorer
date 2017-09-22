@@ -43,6 +43,7 @@ interface WindowOptionsState {
     childFrame: boolean;
     childDefaultWidth: number;
     childDefaultHeight: number;
+    childSaveState: boolean;
 }
 
 interface WindowOptionsProps {}
