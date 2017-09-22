@@ -2,10 +2,15 @@
 
 .side-nav {
   padding-top: 10px;
-  background: $OF-Second;
+  background: $OF-Fifth;
   border-right: 2px solid $OF-First;
   min-height: 500px;
   height: 100%;
+  cursor: default;
+
+  h1, h2, div {
+    color: white;
+  }
 
   .header {
     border-bottom: 2px solid $OF-First;
@@ -33,15 +38,21 @@
     margin-left: -15px;
     display: block;
     text-transform: capitalize;
+    color: white;
 
     &:hover {
       text-decoration: none;
       background-color: $OF-Third;
+      color: $OF-Fifth;
     }
 
     &:focus {
       text-decoration: none;
       background-color: $OF-Fourth;
+      color: $OF-Fifth;
     }
+  }
+  .material-icons {
+      color: $OF-Third;
   }
 }

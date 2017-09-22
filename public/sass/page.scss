@@ -3,13 +3,18 @@
 .page {
   padding-top: 10px;
   padding-bottom: 10px;
-  background: $OF-Third;
+  background: $OF-Fourth;
   min-height: 500px;
   height: 100%;
   overflow: auto;
 
+  h1, h2, div {
+    color: $OF-Fifth;
+  }
+
   .page-header {
     border-bottom: 2px solid $OF-First;
+    cursor: deafult;
 
     h2 {
       text-transform: capitalize;
@@ -27,6 +32,9 @@
       &::first-letter {
         text-transform: uppercase;
       }
+    }
+    h5, p {
+        color: $OF-Fifth;
     }
   }
 }
