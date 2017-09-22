@@ -7,10 +7,7 @@
         "target": "es6",
         "jsx": "react",
         "allowJs": true,
-        "typeRoots": ["./types", "./node_modules/@types"],
-        "lib": [
-            "es7"
-        ]
+        "typeRoots": ["./types", "./node_modules/@types"]
     },
     "include": [
         "./public/**/*",
