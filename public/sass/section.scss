@@ -43,12 +43,22 @@
   }
 
   .of-section-content {
-    background-color: $OF-Second;
+    background-color: white;
+
     margin: 10px 25px 25px 25px;
     padding: 10px;
 
     pre {
       margin-top: 10px;
     }
+  }
+
+  .codeBlock {
+    font-family: monospace;
+    font-size: 12px;
+  }
+
+  .text {
+    font-size: 14px;
   }
 }
