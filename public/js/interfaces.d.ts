@@ -47,3 +47,14 @@ interface WindowOptionsState {
 }
 
 interface WindowOptionsProps {}
+
+interface CodeWithInputUpdateDomProps {
+    defaultValue: string;
+    content: string;
+    key: number;
+    inputLabel: string;
+}
+
+interface CodeWithInputUpdateDomState {
+    inputValue: string;
+}

@@ -64,7 +64,7 @@ Runtime Version: ${manifest.runtime.version}
             }
         },
         () => { yourApplication.run(); },
-        (error) => { div.innerText = `${error}`; })
+        (e) => { div.innerText = `${e}`; })
     },
     getBounds: function (div) {
         const thisWindow = fin.desktop.Window.getCurrent();

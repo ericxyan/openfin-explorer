@@ -10,7 +10,7 @@ const applicationSections = [
                 subHeader: [
                     'The Application namespace is responsible for all of the features one would expect',
                     'from a desktop application.'
-                ]
+                ].join(' ')
             },
             {
                 header: 'The Application Class',
@@ -19,16 +19,14 @@ const applicationSections = [
                     {
                         type: 'text',
                         content: [
-                            'You can interact with your application by creating an object that represent it,',
+                            'You can interact with your application by creating an object that represents it,',
                             'or wrap an application if you know its unqiue identifer, or UUID.'
                         ].join(' ')
-                        
                     },
                     {
                         type: 'docsLink',
                         content: 'http://cdn.openfin.co/jsdocs/stable/tutorial-application.getCurrent.html'
-
-                    },                    
+                    },
                     {
                         type: 'codeWithDomUpdate',
                         content: 'getCurrentApplication'
@@ -61,9 +59,10 @@ const applicationSections = [
                         content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#Application'
                     },
                     {
-                        type: 'codeWithInputUpdateDom',
+                        type: 'codeWithInputUpdateDomCustom',
                         content: 'launchApplication',
-                        inputLabel: 'Enter a valid URL:'
+                        inputLabel: 'Enter a valid URL:',
+                        defaultVal: 'http://'
                     }
                 ]
             },

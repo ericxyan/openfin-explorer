@@ -146,7 +146,7 @@ const windowsSections = [
     section: 'windows',
     sectionIcon: 'open_in_browser',
     header: 'Control Windows',
-    subHeader: 'interact with windows using the OpenFin API',
+    subHeader: 'Interact with windows using the OpenFin API',
     description: 'move windows to a location or by a specific amount. add animations to make movements smoother.',
     sections: [
         {

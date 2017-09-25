@@ -39,6 +39,9 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                         } else if (section.type === 'custom') {
                             const ToRender = custom[section.content];
                             return (< ToRender key={i} />);
+                        } else if (section.type === 'codeWithInputUpdateDomCustom') {
+                            const CodeWithInputUpdateDom = custom.codeWithInputUpdateDom;
+                            return (< CodeWithInputUpdateDom key={i} content={section.content} inputLabel={section.inputLabel} defaultValue={section.defaultVal} />);
                         }
                     })}
                 </div>

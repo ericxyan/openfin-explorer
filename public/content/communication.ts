@@ -3,17 +3,19 @@ const communicationSection = [
         path: '/communication/shared-memory',
         section: 'communication',
         sectionIcon: 'phone_in_talk',
-        header: 'shared memory',
-        subHeader: 'access the DOM and javascript',
-        description: 'communicate between windows using javascript memory.',
+        header: 'Child <-> Parent',
+        subHeader: 'Communicate between child and parent windows',
+        description: 'Shared memory makes for fast, efficient communication',
         sections: [
             {
-                header: 'send data from child to parent',
-                subHeader: 'used shared memory to send data',
+                header: 'Directly interact via memory',
+                subHeader: 'Modify DOM Elements or access defined global variables',
                 subSections: [
                     {
                         type: 'text',
-                        content: 'try the demo below to send data to parent window.'
+                        content: [
+                            ''
+                        ]
                     },
                     {
                         type: 'code',
