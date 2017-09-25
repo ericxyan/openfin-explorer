@@ -3,28 +3,44 @@ const applicationSections = [
         pageName: 'about',
         header: 'OpenFin Applications',
         subHeader: 'An application operating on the OpenFin Runtime',
-        description: 'The Application class lets you control your multi-window application and add OS level features',
+        description: 'Control your application and add OS level features',
         sections: [
             {
-                header: 'Controlling Applications',
-                subHeader: 'You can launch other apps from within an app, etc.'
+                header: 'Applications',
+                subHeader: [
+                    'The Application namespace is responsible for all of the features one would expect',
+                    'from a desktop application.'
+                ]
             },
             {
                 header: 'The Application Class',
-                subHeader: 'Interact with this application or any other on the Runtime.',
+                subHeader: 'An object that represents an Application.',
                 subSections: [
                     {
                         type: 'text',
-                        content: 'Retrieve the current application object with the OpenFin API'
+                        content: [
+                            'You can interact with your application by creating an object that represent it,',
+                            'or wrap an application if you know its unqiue identifer, or UUID.'
+                        ].join(' ')
+                        
                     },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/tutorial-application.getCurrent.html'
+
+                    },                    
                     {
                         type: 'codeWithDomUpdate',
                         content: 'getCurrentApplication'
                     },
                     {
                         type: 'docsLink',
-                        content: 'http://cdn.openfin.co/jsdocs/stable/tutorial-application.getCurrent.html'
+                        content: 'http://cdn.openfin.co/jsdocs/stable/tutorial-application.wrap.html'
 
+                    },
+                    {
+                        type: 'codeWithDomUpdate',
+                        content: 'wrapThisApplication'
                     }
                 ]
             },
@@ -34,11 +50,20 @@ const applicationSections = [
                 subSections: [
                     {
                         type: 'text',
-                        content: 'To launch an application, you\'ll need to assign a unique identifier, or UUID, and a URL for the app. Since OpenFin applications are built on modern day web technology, you can point to an existing web application right out of the box. Enter a valid URL in the box below to launch your site as an OpenFin Application.'
+                        content: [
+                            'Getting an existing web application up and running on OpenFin is as simple as launching it',
+                            'on the runtime. We\'ll use the application constructor to launch an existing page with a random',
+                            'name and UUID.'
+                        ].join(' ')
+                    },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#Application'
                     },
                     {
                         type: 'codeWithInputUpdateDom',
-                        content: 'launchApplication'
+                        content: 'launchApplication',
+                        inputLabel: 'Enter a valid URL:'
                     }
                 ]
             },
@@ -48,7 +73,17 @@ const applicationSections = [
                 subSections: [
                     {
                         type: 'text',
-                        content: 'The application manifest is a JSON you host alongside your web application that contains configuration information for your app on startup. You can retrive the current application\'s manifest with the API.'
+                        content: [
+                            'While you can launch your application from an existing URL, you\'ll notice this application\'s',
+                            'default appearance is much different than what we just launched. This is where the application manifest',
+                            'comes in. The app manifest is a JSON you host alongside your web assets. In here you\'ll create default visual',
+                            'settings, as well as specify things like runtime versions, support information, and much more.'
+                        ].join(' ')
+
+                    },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#getManifest'
                     },
                     {
                         type: 'codeWithDomUpdate',
@@ -56,7 +91,8 @@ const applicationSections = [
                     },
                     {
                         type: 'externalLink',
-                        content: 'https://openfin.co/application-config/'
+                        content: 'https://openfin.co/application-config/',
+                        linkText: 'Check out the full list of available options here.'
                     }
                 ]
             },
@@ -66,16 +102,21 @@ const applicationSections = [
                 subSections: [
                     {
                         type: 'text',
-                        content: 'You\'ll need to be able to close or restart your application outside of the OS window features. Click the demo below to call restart on this application.'
-                    },
-                    {
-                        type: 'code',
-                        content: 'restartApplication'
+                        content: [
+                            'If you launched another page in the demo above, you\'ll notice that by default an application is wrapped in',
+                            'an OS frame. In this frameless window, we call close via the API when clicking the configured X in the top',
+                            'right corner. Rather than closing the app, try restarting it by clicking the demo below.'
+                        ].join(' ')
                     },
                     {
                         type: 'docsLink',
                         content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#restart'
+                    },
+                    {
+                        type: 'code',
+                        content: 'restartApplication'
                     }
+
                 ]
             },
             {
@@ -109,6 +150,10 @@ const applicationSections = [
                         content: 'Shortcut settings are configurable on launch in your application manifest. You can access the current applications shortcut info via the API. We\'ll use this in the next section to auto-populate the dom before you change the shortcut settings.'
                     },
                     {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#getShortcuts'
+                    },
+                    {
                         type: 'codeWithDomUpdate',
                         content: 'getShortcutInfo'
                     }
@@ -120,7 +165,15 @@ const applicationSections = [
                 subSections: [
                     {
                         type: 'text',
-                        content: 'We\'ll use the API to retrieve the current shortcut information, then use another method to update them to your preferences. The shortcuts are originally set in your Application Manifest.'
+                        content: [
+                            'Feel free to update this applications shortcuts by selecting or de-selecting one of the options below.',
+                            'Keep in mind, in the app manifest you can also point to an app specific icon with your own branding.'
+                        ].join(' ')
+
+                    },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#setShortcuts'
                     },
                     {
                         type: 'custom',

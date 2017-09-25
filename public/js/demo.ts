@@ -14,6 +14,10 @@ function figureOutWhereThisWindowIs() {
 }
 
 var parentDemoModule = {
+    wrapThisApplication: function(div) {
+        const app = fin.desktop.Application.wrap('OpenFinExplorer');
+        div.innerText = `app is an ${typeof app}`
+    },
     getShortcutInfo: function(div) {
         const thisApp = fin.desktop.Application.getCurrent();
         thisApp.getShortcuts(shortcuts => {
@@ -34,7 +38,7 @@ Runtime Version: ${manifest.runtime.version}
     },
     getCurrentApplication: function(div) {
         const thisApplication = fin.desktop.Application.getCurrent();
-        div.innerText = `Calling .getCurrent() returns an ${typeof thisApplication}`
+        div.innerText = `This application's UUID is ${thisApplication.uuid}`
     },
     launchApplication: function(applicationUrl, div) {
         const yourApplication = new fin.desktop.Application({
@@ -47,8 +51,8 @@ Runtime Version: ${manifest.runtime.version}
                 autoShow: true
             }
         },
-            () => { yourApplication.run() },
-            (error) => { div.innerText = `${error}` })
+        () => { yourApplication.run(); },
+        (error) => { div.innerText = `${error}`; })
     },
     getBounds: function (div) {
         const thisWindow = fin.desktop.Window.getCurrent();
@@ -234,8 +238,7 @@ Runtime Version: ${manifest.runtime.version}
     },
     restartApplication: function() {
         const thisApp = fin.desktop.Application.getCurrent();
-        thisApp.restart(() => { console.log('This message will not appear as the app has been restarted') },
-            (error) => { console.log(`Error restarting application: ${error}`) });
+        thisApp.restart();
     }
 }
 

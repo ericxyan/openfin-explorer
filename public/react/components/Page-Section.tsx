@@ -31,7 +31,7 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
                         } else if ( section.type === 'docsLink') {
                             return (this.sectionTypeDocsLink(section.content, i));
                         } else if ( section.type === 'externalLink') {
-                            return (this.sectionTypeExternalLink(section.content, i));
+                            return (this.sectionTypeExternalLink(section.content, i, section.linkText));
                         } else if ( section.type === 'codeWithDomUpdate' ) {
                             return (this.sectionTypeCodeDomUpdate(section.content, i));
                         } else if (section.type === 'codeWithInputUpdateDom') {
@@ -56,9 +56,9 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
 
         return (
             <div className='sub-section codeWithDomUpdate codeBlock' key={key}>
-                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
                 <div id={updateableDivId}></div>
                 <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
+                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
             </div>
         );
     }
@@ -74,13 +74,13 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
 
         return (
             <div className='sub-section codeWithInput codeBlock' key={key}>
-                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
                 <div id='demo-data-container'></div>
+                <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
                 <label>
                     {label}
-                    <input type='text' value={this.state.inputValue} onChange={this.handleChange} />
+                    <input type='text' value={this.state.inputValue} onChange={this.handleChange} className='codeInput'/>
                 </label>
-                <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
+                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
             </div>
         );
     }
@@ -95,13 +95,13 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
 
         return (
             <div className='sub-section codeWithInputUpdateDom codeBlock' key={key}>
-                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
                 <div id={updateableDivId}></div>
-                <label>
-                    {label}
-                    <input type='text' value={this.state.inputValue} onChange={this.handleChange} />
-                </label>
                 <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
+                <label className='section-input'>
+                    {label}
+                    <input type='text' value={this.state.inputValue} onChange={this.handleChange} className='codeInput'/>
+                </label>
+                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
             </div>
         );
     }
@@ -113,9 +113,9 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
 
         return (
             <div className='sub-section code  codeBlock' key={key}>
-                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
                 <div id='demo-data-container'></div>
                 <SyntaxHighlighter language='javascript' style={docco}>{parentDemoModule[code].toString()}</SyntaxHighlighter>
+                <button onClick={executable} className='btn btn-outline-primary'>Click to Demo</button>
             </div>
         );
     }
@@ -128,14 +128,14 @@ export default class PageSection extends React.Component<PageSectionProps, PageS
         function openUrlWithBrowser() {
             fin.desktop.System.openUrlWithBrowser(url);
         }
-        return (<div className='docs-link sub-section' onClick={openUrlWithBrowser} key={key}>See this method on our API Docs</div>);
+        return (<div className='docs-link sub-section' onClick={openUrlWithBrowser} key={key}>JS Docs</div>);
     }
 
-    private sectionTypeExternalLink(url: string, key: number) {
+    private sectionTypeExternalLink(url: string, key: number, linkText: string) {
         function openUrlWithBrowser() {
             fin.desktop.System.openUrlWithBrowser(url);
         }
-        return (<div className='docs-link sub-section' onClick={openUrlWithBrowser} key={key}>Learn More Here</div>);
+        return (<div className='external-link sub-section' onClick={openUrlWithBrowser} key={key}>{linkText}</div>);
     }
 
     private toggleContent() {

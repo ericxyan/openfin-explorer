@@ -3,9 +3,16 @@
   margin-top: 15px;
 
   div, p, span {
-    &::first-letter {
-      text-transform: uppercase;
-    }
+    // &::first-letter {
+    //   text-transform: uppercase;
+    // }
+  }
+  .of-section-header {
+    margin-right: 15px;
+  }
+
+  .of-section-sub-header {
+    margin-right: 15px;
   }
 
   .of-section-title {
@@ -56,9 +63,35 @@
   .codeBlock {
     font-family: monospace;
     font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .codeInput {
+    margin-top: 5px;
   }
 
   .text {
     font-size: 14px;
+  }
+
+  .btn {
+    display: block;
+    margin: auto;
+  }
+  .docs-link {
+    text-align: right;
+    font-size: x-small;
+    margin-top: 8px;
+  }
+  .external-link {
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  .set-shortcut-label {
+    display: block;
+    text-align: center;
+  }
+  .shortcut-check {
+    margin-right: 5px;
   }
 }
