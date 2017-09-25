@@ -19,8 +19,9 @@ const homepage = [
                 header: 'Code Examples',
                 subHeader: [
                     'Throughout this application, you\'ll find interactive demos that demonstrate',
-                    'the API\'s capabilities. This project is open sourced, for those interested in',
-                    'diving deeper.'
+                    'the API\'s capabilities. In the interest of brevity, some functions\' callbacks have',
+                    'been omitted. Check out the providing JS Docs links for the full signature.',
+                    'This project is open sourced, for those interested in diving deeper.'
                 ].join(' ')
             }
         ]

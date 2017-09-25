@@ -49,23 +49,23 @@ export default class WindowOptions extends React.Component<WindowOptionsProps, W
     public render() {
         return (
             <div className='sub-section'>
-                <label>
+                <label className='wo-label'>
                     Default Width:
-                    <input name='childDefaultWidth' type='number' value={this.state.childDefaultWidth} onChange={this.handleChange}/>
+                    <input name='childDefaultWidth' type='number' value={this.state.childDefaultWidth} onChange={this.handleChange} className='wo-input'/>
                 </label>
-                <label>
+                <label className='wo-label'>
                     Default Height:
-                    <input name='childDefaultHeight' type='number' value={this.state.childDefaultHeight} onChange={this.handleChange}/>
+                    <input name='childDefaultHeight' type='number' value={this.state.childDefaultHeight} onChange={this.handleChange} className='wo-input'/>
                 </label>
-                <label>
+                <label className='wo-label'>
                     Frame?
-                    <input name='childFrame' type='checkbox' checked={this.state.childFrame} onChange={this.handleChange} />
+                    <input name='childFrame' type='checkbox' checked={this.state.childFrame} onChange={this.handleChange} className='wo-input'/>
                 </label>
-                <label>
-                    Remember Window Position?
-                    <input name='childSaveState' type='checkbox' checked={this.state.childSaveState} onChange={this.handleChange} />
+                <label className='wo-label'>
+                    Save Window State?
+                    <input name='childSaveState' type='checkbox' checked={this.state.childSaveState} onChange={this.handleChange} className='wo-input'/>
                 </label>
-                <input type='submit' value='Launch' onClick={this.launchWindowWithPreferences} />
+                <input type='submit' value='Launch' onClick={this.launchWindowWithPreferences} className='btn btn-outline-primary'/>
             </div>
         );
     }

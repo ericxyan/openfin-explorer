@@ -2,18 +2,30 @@
 let topOfThisWindow;
 let rightSideOfThisWindow;
 
-function figureOutWhereThisWindowIs() {
-    return new Promise(resolve => {
-        const thisWindow = fin.desktop.Window.getCurrent();
-        thisWindow.getBounds(bounds => {
-            topOfThisWindow = bounds.top;
-            rightSideOfThisWindow = bounds.right;
-            resolve();
-        });
-    })
-}
-
 var parentDemoModule = {
+    showWrappedWindow: function(div) {
+        const windowName = Math.random().toString();
+        const launchedWin = new fin.desktop.Window({
+            name: windowName,
+            url: 'child.html',
+            autoShow: false //hide the window
+        }, () => {
+            const thisApp = fin.desktop.Application.getCurrent();
+            const wrappedWin = fin.desktop.Window.wrap(thisApp.uuid, windowName);
+            div.innerText = `wrappedWin is an ${typeof wrappedWin}`;
+            wrappedWin.close();
+        });
+    },
+    getState: function(div) {
+        const thisWin = fin.desktop.Window.getCurrent();
+        thisWin.getState(state => {
+            div.innerText = state;
+        })
+    },
+    getCurrentWindow: function(div) {
+        const thisWin = fin.desktop.Window.getCurrent();
+        div.innerText = `The Winodw is name ${thisWin.name}`;
+    },
     wrapThisApplication: function(div) {
         const app = fin.desktop.Application.wrap('OpenFinExplorer');
         div.innerText = `app is an ${typeof app}`
@@ -57,13 +69,13 @@ Runtime Version: ${manifest.runtime.version}
     getBounds: function (div) {
         const thisWindow = fin.desktop.Window.getCurrent();
         thisWindow.getBounds(bounds => {
-            const responseString = `The top of this window is at ${bounds.top}, the right side is at ${bounds.right}`
+            const responseString = `Window is at ${bounds.top} x ${bounds.right}`
             div.innerText = responseString;
         })
     },
 
     openWindow: function () {
-        const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
+        const name = `Child Window ${(Math.random() * 100).toString()}`;
         const newWindow = new fin.desktop.Window(
             {
                 name: name,
@@ -77,59 +89,57 @@ Runtime Version: ${manifest.runtime.version}
     },
 
     closeWindow: function () {
-        const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
+        const name = `Child Window: ${(Math.random() * 100).toString()}`;
         const newWindow = new fin.desktop.Window(
             {
                 name: name,
                 autoShow: true,
                 defaultCentered: true,
                 url: 'child.html'
-            },
-            (resp) => { console.log('success: ', resp) },
-            (e) => { console.log('error: ', e) }
-        );
-
-        const timeoutClose = window.setTimeout(() => {
-            newWindow.close();
-        }, 3000);
+            });
+        setTimeout(() => { newWindow.close(); }, 1500);
     },
 
     moveBy: function () {
         const currentWindow = fin.desktop.Window.getCurrent();
-        currentWindow.moveBy(
-            20, 30,
-            () => { console.log('success') },
-            (e) => { console.log('error: ', e) }
-        );
+        currentWindow.moveBy(20, 30);
     },
 
     moveTo: function () {
         const currentWindow = fin.desktop.Window.getCurrent();
-        currentWindow.moveTo(
-            100, 200,
-            () => { console.log('success') },
-            (e) => { console.log('error: ', e) }
-        );
+        currentWindow.moveTo(10, 10);
     },
 
-    animate: function () {
+    animatePosition: function () {
         const currentWindow = fin.desktop.Window.getCurrent();
         currentWindow.animate(
             {
                 position: {
                     left: 20,
                     top: 30,
-                    duration: 3000
+                    duration: 1000
                 }
             },
             {
                 interrupt: false
-            },
-            (resp) => { console.log('success') },
-            (e) => { console.log('error: ', e) }
-        );
+            });
     },
-
+    animateOpacity: function() {
+        const thisWindow = fin.desktop.Window.getCurrent();
+        thisWindow.getOptions(options => {
+            const currentOpacity = options.opacity;
+            const newOpacity = currentOpacity === 1 ? 0.5 : 1;
+            thisWindow.animate({
+                opacity: {
+                    opacity: newOpacity,
+                    duration: 1000
+                } 
+            },
+            {
+                interrupt: false
+            });
+        });
+    },
     sharedMemoryCommunication: function () {
         const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
         const newWindow = new fin.desktop.Window(
@@ -175,10 +185,22 @@ Runtime Version: ${manifest.runtime.version}
 
 
     groupWindows: function () {
-        // We'll figure out where the window is using .getBounds first
-        figureOutWhereThisWindowIs().then(function () {
+        function figureOutWhereThisWindowIs() {
+            return new Promise(resolve => {
+                const thisWindow = fin.desktop.Window.getCurrent();
+                thisWindow.getBounds(bounds => {
+                    const returnValue = {
+                        top: bounds.top,
+                        right: bounds.right
+                    }
+                    resolve(returnValue);
+                });
+            })
+        }
+
+        figureOutWhereThisWindowIs().then(function (value) {
             const mainWindow = fin.desktop.Window.getCurrent();
-            const name = `Child Window #: ${(Math.floor(Math.random() * 100)).toString()}`;
+            const name = `Child Window #: ${(Math.random() * 100).toString()}`;
             const childWindow =
                 new fin.desktop.Window(
                     {
@@ -186,8 +208,8 @@ Runtime Version: ${manifest.runtime.version}
                         autoShow: true,
                         url: 'child.html',
                         customData: 'leaveGroup',
-                        defaultTop: topOfThisWindow,
-                        defaultLeft: rightSideOfThisWindow,
+                        defaultTop: value.top,
+                        defaultLeft: value.right,
                         saveWindowState: false
                     },
                     function () {
@@ -198,11 +220,7 @@ Runtime Version: ${manifest.runtime.version}
     },
     groupWindowsMoveyBy: function () {
         const mainWindow = fin.desktop.Window.getCurrent();
-        mainWindow.moveBy(
-            20, 30,
-            () => { console.log('success') },
-            (e) => { console.log('error: ', e) }
-        );
+        mainWindow.moveBy(20, 30);
     },
 
     launchNotification: function () {
