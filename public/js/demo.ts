@@ -281,20 +281,23 @@ Runtime Version: ${manifest.runtime.version}
     },
     getMousePosition: function(div) {
         fin.desktop.System.getMousePosition( mousePosition => {
-            const responseString = `Your cursor is at ${mousePosition.left}, ${mousePosition.top}`
+            const left = mousePosition.left;
+            const top = mousePosition.top
+            const responseString = `Your cursor is at ${left}, ${top}`
             div.innerText = responseString;
         } )
     },
     showDeveloperTools: function() {
         const thisApp = fin.desktop.Application.getCurrent();
-        fin.desktop.System.showDeveloperTools(thisApp.uuid, thisApp.uuid,
-            () => { console.log('Hello from the dev tools!') },
-            (err) => { console.log(`Error! ${err}`) }
-        ); 
+        fin.desktop.System.showDeveloperTools(thisApp.uuid, thisApp.uuid); 
     },
     restartApplication: function() {
         const thisApp = fin.desktop.Application.getCurrent();
         thisApp.restart();
+    },
+    openThisCode: function() {
+        const github = 'https://github.com/openfin/openfin-explorer/';
+        fin.desktop.System.openUrlWithBrowser(github);
     }
 }
 

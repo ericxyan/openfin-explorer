@@ -17,7 +17,16 @@ const systemSections = [
                 subSections: [
                     {
                         type: 'text',
-                        content: 'The getMonitorInfo method enables mutli-monitor application development with ease.'
+                        content: [
+                            'To truly break out of the browers, you\'ll need to be able to account for',
+                            'all types of monitor configurations. The getMonitorInfo call returns info for',
+                            'all of the monitors your user has up and running. In this demo we\'ll read the',
+                            'dimensions of your primary screen.'
+                        ].join(' ')
+                    },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.System.html#.getMonitorInfo'
                     },
                     {
                         type: 'codeWithDomUpdate',
@@ -31,7 +40,16 @@ const systemSections = [
                 subSections: [
                     {
                         type: 'text',
-                        content: 'Use the mouse position to move items to the cursor location.'
+                        content: [
+                            'Now that we\'re dealing with the whole monitor, it stands to reason we\'ll',
+                            'need to know the user\'s mouse position relative to that monitor. Click the demo',
+                            'below to return your cursor position.'
+                        ].join(' ')
+
+                    },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.System.html#.getMousePosition'
                     },
                     {
                         type: 'codeWithDomUpdate',
@@ -45,15 +63,41 @@ const systemSections = [
                 subSections: [
                     {
                         type: 'text',
-                        content: 'Access the traditional way, with a right click -> Inspect, or make an API call to show the DevTools'
-                    },
-                    {
-                        type: 'code',
-                        content: 'showDeveloperTools'
+                        content: [
+                            'If you have right-clicked at all you\'ll notice the context menu is still enabled in',
+                            'this application. You can turn this off if you\'d like and access the developer tools with',
+                            'an API call.'
+                        ].join(' ')
                     },
                     {
                         type: 'docsLink',
                         content: 'http://cdn.openfin.co/jsdocs/stable/tutorial-system.showDeveloperTools.html'
+                    },
+                    {
+                        type: 'code',
+                        content: 'showDeveloperTools'
+                    }
+                ]
+            },
+            {
+                header: 'Back to the Browser',
+                subHeader: 'Open a link in your default browser',
+                subSections: [
+                    {
+                        type: 'text',
+                        content: [
+                            'If you\'ve clicked on any of the JS Docs links to this point you\'ll notice',
+                            'we are able to open links in the browser. Click the demo below to check out this',
+                            'app\'s code on Github.'
+                        ].join(' ')
+                    },
+                    {
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.System.html#.openUrlWithBrowser'
+                    },
+                    {
+                        type: 'code',
+                        content: 'openThisCode'
                     }
                 ]
             }
