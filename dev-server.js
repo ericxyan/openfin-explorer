@@ -25,7 +25,7 @@ function launchOpenFin() {
             url: target + '/index.html',
             applicationIcon: target + '/favicon.ico',
             saveWindowState: false,
-            defaultWidth: 800,
+            defaultWidth: 850,
             defaultHeight: 850,
             defaultTop: 50,
             defaultLeft: 10

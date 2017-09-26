@@ -14,7 +14,7 @@ const communicationSection = [
                     {
                         type: 'text',
                         content: [
-                            ''
+                            'Launch a whild window to update a dom element in this application.'
                         ]
                     },
                     {
@@ -29,39 +29,53 @@ const communicationSection = [
         path: '/communication/inter-app-bus',
         section: 'communication',
         sectionIcon: 'phone_in_talk',
-        header: 'inter application bus',
-        subHeader: 'communicate between different applications',
-        description: 'emit event messages that can be subscribed to by other applicaitons and windows.',
+        header: 'InterApplicationBus',
+        subHeader: 'Communicate between different applications',
+        description: 'Publish, Subscribe or directly Send messages to other Apps',
         sections: [
             {
-                header: 'subscribe',
-                subHeader: 'subscribe to data sent by other applications.',
+                header: 'Subscribe',
+                subHeader: 'Listen for messages from a publishing application',
                 subSections: [
                     {
                         type: 'text',
-                        content: 'try the demo below to send data to a subscribed application.'
+                        content: [
+                            'The InterApplicationBus follows the standard publish-subscribe paradigm.',
+                            'The demo below will launch another application and then subscribe to messages specifically',
+                            'from that application. You can also subscribe to specific topics from any application with *.'
+                        ].join(' ')
                     },
                     {
-                        type: 'code',
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.InterApplicationBus.html#.subscribe'
+                    },
+                    {
+                        type: 'codeWithDomUpdate',
                         content: 'interAppBusSubscribe'
-                    },
-                    {
-                        type: 'text',
-                        content: 'publish from the new window to send data to the original application.'
                     }
                 ]
             },
             {
-                header: 'publish',
-                subHeader: 'publish data to other applications that are subscribed.',
+                header: 'Publish',
+                subHeader: 'Publish data to other applications that are subscribed',
                 subSections: [
                     {
                         type: 'text',
-                        content: 'publish data through the bus to subcribers.'
+                        content: [
+                            'The other side of the coin is publishing a message. You can always publish,',
+                            'it\'s up to other applications to subcribe and process the message. A message can be any',
+                            'primitive or collection of key-value pairs. In this demo, we\'ll launch another application',
+                            'that is pre-programmed to listen for messages from this app.'
+                        ].join(' ')
                     },
                     {
-                        type: 'code',
-                        content: 'interAppBusPublish'
+                        type: 'docsLink',
+                        content: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.InterApplicationBus.html#.publish'
+                    },
+                    {
+                        type: 'codeWithInput',
+                        content: 'interAppBusPublish',
+                        inputLabel: 'Your Portion of the Message: '
                     }
                 ]
             }

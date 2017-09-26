@@ -4,11 +4,16 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/styles';
 
 import { childDemoModule } from '../js/demo';
+import childWindowContent from '../content/children';
 
 export default class Child extends React.Component<any, ChildState> {
     constructor(props: any) {
         super(props);
-        this.state = { code: '' };
+        this.state = { 
+            code: '',
+            headline: '',
+            description: ''
+        };
         this.setTitle();
         this.getInitialData();
     }
@@ -21,7 +26,7 @@ export default class Child extends React.Component<any, ChildState> {
 
     private runChildFunction() {
         return (
-            <button onClick={this.state.code} className='btn btn-outline-primary'>Click</button>
+            <button onClick={this.state.code} className='btn btn-primary'>Run Code</button>
         );
     }
 
@@ -31,14 +36,23 @@ export default class Child extends React.Component<any, ChildState> {
         );
     }
 
+
     private getInitialData(): void {
         const current = fin.desktop.Window.getCurrent();
         current.getOptions((opt) => {
             const funcName = opt.customData;
             if (funcName) {
-                this.setState({ code: childDemoModule[funcName] });
+                this.setState({ 
+                    code: childDemoModule[funcName],
+                    headline: childWindowContent[funcName].headline,
+                    description: childWindowContent[funcName].description 
+                });
             } else {
-                this.setState({ code: childDemoModule.closeCurrent });
+                this.setState({ 
+                    code: childDemoModule.closeCurrent,
+                    headline: 'Child Window',
+                    description: 'Click the button below to call close.'
+                });
             }
         });
     }
@@ -48,9 +62,10 @@ export default class Child extends React.Component<any, ChildState> {
             <div className='container-fluid'>
                 <div className='row no-gutters'>
                     <div className='col-12'>
-                        <h1>Child window created!</h1>
-                        {this.runChildFunction()}
+                        <h1>{this.state.headline}</h1>
+                        <p>{this.state.description}</p>
                         {this.displayChildFunction()}
+                        {this.runChildFunction()}                        
                     </div>
                 </div>
             </div>

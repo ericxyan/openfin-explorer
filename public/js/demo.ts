@@ -141,7 +141,7 @@ Runtime Version: ${manifest.runtime.version}
         });
     },
     sharedMemoryCommunication: function () {
-        const name = `Child Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
+        const name = `Child Window ID: ${(Math.random() * 100).toString()}`;
         const newWindow = new fin.desktop.Window(
             {
                 name: name,
@@ -149,38 +149,68 @@ Runtime Version: ${manifest.runtime.version}
                 defaultCentered: true,
                 url: 'child.html',
                 customData: 'sharedMemory'
-            },
-            (resp) => { console.log('success: ', resp) },
-            (e) => { console.log('error: ', e) }
-        );
+            });
     },
-
-    interAppBusSubscribe: function () {
-        const name = `Sibling Window ID: ${(Math.floor(Math.random() * 100)).toString()}`;
+    interAppBusSubscribe: function (div) {
+        const appName = 'iabPublisher';
         const newApp = new fin.desktop.Application(
             {
-                url: "http://localhost:8081/index.html", // TODO: make a new sibling html/react file
-                uuid: name,
-                name: name,
+                url: `${window.location.origin}/iabPublisher.html`,
+                uuid: appName,
+                name: appName,
                 mainWindowOptions: {
                     autoShow: true,
-                    defaultCentered: true
+                    defaultCentered: true,
+                    defaultHeight: 300,
+                    defaultWidth: 600,
+                    saveWindowState: false
+
                 }
             },
             (resp) => { newApp.run() },
-            (e) => { console.log('error: ', e) }
+            (e) => { div.innerText = `${e}` }
         );
 
-        fin.desktop.InterApplicationBus.subscribe('*', 'a topic', function (message, uuid, name) {
-            alert(`a message was received throught the bus! From: ${name}`);
+        fin.desktop.InterApplicationBus.subscribe(appName, 'demoMessage', (message) => {
+            div.innerText = `${message.input}`;
         });
     },
 
-    interAppBusPublish: function () {
-        fin.desktop.InterApplicationBus.publish('a topic', {
-            field1: "value1",
-            field2: "value2"
-        });
+    interAppBusPublish: function (yourInput) {
+        const sendMessage = function() {
+            fin.desktop.InterApplicationBus.publish('A Topic', {
+                yourMessage: yourInput,
+                otherKey: "other value"
+            });  
+        } 
+
+        fin.desktop.System.getAllApplications(applications => {
+            const names = applications.map(app => app.uuid);
+            if (!names.includes('iabSubscriber')) {
+                const subscriberApp = new fin.desktop.Application({
+                    uuid: 'iabSubscriber',
+                    name: 'iabSubscriber',
+                    url: `${window.location.origin}/iabSubscriber.html`,
+                    mainWindowOptions: {
+                        autoShow: true,
+                        defaultWidth: 600,
+                        defaultHeight: 300,
+                        saveWindowState: false,
+                        defaultCentered: true
+                    }
+                },
+                () => { subscriberApp.run(() => { sendMessage() })})
+            } else {
+                const subscriberApp = fin.desktop.Application.wrap('iabSubscriber')
+                subscriberApp.isRunning(running => {
+                    if (running) {
+                        sendMessage()
+                    } else {
+                        subscriberApp.run(() => { sendMessage() });
+                    }
+                })
+            }
+        })
     },
 
 

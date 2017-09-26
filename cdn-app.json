@@ -9,6 +9,8 @@
         "defaultTop": 50,
         "defaultLeft": 10,
         "frame": false,
+        "defaultHeight": 850,
+        "defaultWidth": 850,
         "cornerRounding": {
             "height": 8,
             "width": 8

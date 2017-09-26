@@ -29,7 +29,11 @@ interface PageComponentData {
 
 interface PageComponentProps { data: PageComponentData; }
 
-interface ChildState { code: any; }
+interface ChildState { 
+    code: any;
+    headline: string;
+    description: string;
+}
 
 interface ShortcutsSectionState {
     desktop: boolean;
