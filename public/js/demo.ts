@@ -3,6 +3,12 @@ let topOfThisWindow;
 let rightSideOfThisWindow;
 
 var parentDemoModule = {
+    onClickNotification: function(div) {
+        new fin.desktop.Notification({
+            url: 'notification.html',
+            onClick: () => { div.innerText = 'You Click Me!' }
+        })
+    },
     showWrappedWindow: function(div) {
         const windowName = Math.random().toString();
         const launchedWin = new fin.desktop.Window({
@@ -267,7 +273,9 @@ Runtime Version: ${manifest.runtime.version}
     },
     getMonitorInfo: function(div) {
         fin.desktop.System.getMonitorInfo( (monitorInfo) => {
-            const responseString = `You are using a ${monitorInfo.primaryMonitor.availableRect.right} x ${monitorInfo.primaryMonitor.availableRect.bottom} monitor`
+            const width = monitorInfo.primaryMonitor.availableRect.right;
+            const height = monitorInfo.primaryMonitor.availableRect.bottom;
+            const responseString = `You are using a ${width} x ${height} monitor`
             div.innerText = responseString;
         } )
     },
