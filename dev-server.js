@@ -24,15 +24,11 @@ function launchOpenFin() {
         startup_app: {
             url: target + '/index.html',
             applicationIcon: target + '/favicon.ico',
-            saveWindowState: true,
-            defaultWidth: 800,
-            maxWidth: 800,
-            minWidth: 800,
-            maxHeight: 500,
-            defaultHeight: 500,
-            minHeight: 500,
+            saveWindowState: false,
+            defaultWidth: 850,
+            defaultHeight: 850,
             defaultTop: 50,
-            defaultLeft: 10,
+            defaultLeft: 10
         },
         runtime: {
             arguments: '--remote-debugging-port=9090 --v=1 --enable-logging --debug',
@@ -43,13 +39,13 @@ function launchOpenFin() {
         }
     }, configPath)
         .then(openfinLauncher.launchOpenFin({ configPath: configPath }).then(() => {
-                console.log('OpenFin closed')
-                watching.close(() => {
-                    console.log('Watcher closed')
-                    liveServer.shutdown();
-                    console.log('live-server shutdown')
-                })
+            console.log('OpenFin closed')
+            watching.close(() => {
+                console.log('Watcher closed')
+                liveServer.shutdown();
+                console.log('live-server shutdown')
             })
+        })
         )
         .catch(err => console.log(err));
 }
@@ -60,7 +56,7 @@ const watching = compiler.watch({}, (err, stats) => {
         //Start the server server and launch our app.
         liveServer.start(serverParams).on('listening', () => {
             const { address, port } = liveServer.server.address();
-            target = `http://localhost:${ port }`;
+            target = `http://localhost:${port}`;
             launchOpenFin();
         });
         initialLaunch = false;

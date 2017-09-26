@@ -1,10 +1,49 @@
 @import 'partials/_colors';
 
+body {
+  overflow: auto;
+  height: 100vh;
+  font-family: Roboto, sans-serif;
+}
+
 #main {
   padding-left: 0;
   padding-right: 0;
 
-  h1, p, h2, div {
-    color: $OF-Fifth;
-  }
+}
+
+#root {
+    height: 100%;
+}
+
+#main {
+	height: 100%;
+}
+
+.row {
+	height: 100%;
+}
+
+#index-html {
+	height: 100%;
+}
+
+.page-header, .header {
+    -webkit-app-region: drag;
+}
+
+.closebutton {
+    float: right;
+    margin-right: 10px;
+    font-size: small;
+    -webkit-app-region: no-drag;
+}
+
+.closebutton:hover {
+    font-size: large;
+    cursor: pointer;
+}
+
+.docs-link:hover {
+    cursor: pointer;
 }

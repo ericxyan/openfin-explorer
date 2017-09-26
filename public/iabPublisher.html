@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>IAB Publisher</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2f4263;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+        }
+        #sendMessage {
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+        #message {
+            display: block;
+            margin: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='headlineDiv'>
+        <h1>InterApplicationBus Publisher</h1>
+    </div>
+    <input type='text' id='message'>
+    <button id='sendMessage' class='btn btn-primary-outline'>Send IAB Message</button>
+    <script type="text/javascript">
+        const button = document.getElementById('sendMessage');
+        const buttonInput = document.getElementById('message');
+        button.onclick = () => {
+            fin.desktop.InterApplicationBus.publish('demoMessage', { input: buttonInput.value });
+        }
+    </script>
+</body>
+
+</html>

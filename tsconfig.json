@@ -4,12 +4,14 @@
         "sourceMap": true,
         "noImplicitAny": false,
         "module": "commonjs",
-        "target": "es5",
+        "target": "es6",
         "jsx": "react",
-        "allowJs": true
+        "allowJs": true,
+        "typeRoots": ["./types", "./node_modules/@types"]
     },
     "include": [
         "./public/**/*",
-        "./test/**/*"
+        "./test/**/*",
+        "./types/*"
     ]
 }

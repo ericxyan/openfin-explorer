@@ -20,9 +20,6 @@ function launchOpenFin() {
             applicationIcon: target + '/favicon.ico',
             saveWindowState: true,
             defaultWidth: 800,
-            maxWidth: 800,
-            minWidth: 800,
-            maxHeight: 500,
             defaultHeight: 500,
             minHeight: 500,
             defaultTop: 50,
@@ -44,6 +41,6 @@ function launchOpenFin() {
 //Start the server server and launch our app.
 liveServer.start(serverParams).on('listening', () => {
     const { address, port } = liveServer.server.address();
-    target = `http://localhost:${ port }`;
+    target = `http://localhost:${port}`;
     launchOpenFin();
 });
