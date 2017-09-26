@@ -6,7 +6,7 @@ The OpenFin Explorer is an OpenFin Application designed to acquaint users with t
 
 #### Windows
 
-An executable launcher for Windows.
+The current version is hosted on our CDN.
 
 [Windows Launcher](https://dl.openfin.co/services/download?fileName=OpenFinExplorer&config=http://cdn.openfin.co/demos/openfin-explorer/app.json)
 
@@ -21,12 +21,17 @@ openfin --launch --config http://cdn.openfin.co/demos/openfin-explorer/app.json
 
 ### Development & Contribution
 
-`yarn install`
+This project is built using [React](https://facebook.github.io/react/) and [TypeScript](https://www.typescriptlang.org/)
 
-To run locally
-`$ yarn start`
+```shell
+yarn install
+yarn build
+```
 
-For live reload development server
+Build is compiled in the `dist` directory.
+
+For live reload development server:
+
 `$ yarn dev`
 
 ### Testing
@@ -36,32 +41,3 @@ For live reload development server
 ### Linting
 
 `$ yarn lint`
-
-### Adding Content
-
-Currently all app content is hosted in the [content.json](openfin-explorer/public/content.json) file. Code snippets are in the [demo.ts](openfin-explorer/public/js/demo.ts) file.
-
-`content.json` is:
-- An array of page objects.
-- Pages MUST have:
-	- path
-	- section
-- Pages CAN have:
-	- header
-	- subHeader
-	- description
-	- sections (array)
-		- header
-		- subHeader
-		- subSections
-			- type (code, markdown, text)
-
-### Deploying
-
-This project is built with [React](https://facebook.github.io/react/). To build the project for hosting:
-
-```bash
-yarn build
-```
-
-The build process will copy the necessary HTML, Javascript, and [Application Manifest](https://openfin.co/application-config/) files to the `dist` folder. Host that directory as a static site and target `app.json` to launch the application.
