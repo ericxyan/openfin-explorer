@@ -193,8 +193,8 @@ Runtime Version: ${manifest.runtime.version}
         } 
 
         fin.desktop.System.getAllApplications(applications => {
-            const names = applications.map(app => app.uuid);
-            if (!names.includes('iabSubscriber')) {
+            const app: any = applications.filter(app => app.uuid === 'iabSubscriber');
+            if (app.length === 0) {
                 const subscriberApp = new fin.desktop.Application({
                     uuid: 'iabSubscriber',
                     name: 'iabSubscriber',
@@ -209,14 +209,12 @@ Runtime Version: ${manifest.runtime.version}
                 },
                 () => { subscriberApp.run(() => { sendMessage() })})
             } else {
-                const subscriberApp = fin.desktop.Application.wrap('iabSubscriber')
-                subscriberApp.isRunning(running => {
-                    if (running) {
-                        sendMessage()
-                    } else {
-                        subscriberApp.run(() => { sendMessage() });
-                    }
-                })
+                if (app[0].isRunning) {
+                    sendMessage()
+                } else {
+                    const subscriberApp = fin.desktop.Application.wrap('iabSubscriber')
+                    subscriberApp.run(() => { sendMessage() });
+                }
             }
         })
     },
