@@ -1,4 +1,5 @@
 {
+    "license_key": "52d2d84b-e95b-4f6f-8e4e-1a0ccc69fee7",
     "startup_app": {
         "name": "OpenFin Explorer",
         "url": "http://cdn.openfin.co/demos/openfin-explorer/index.html",

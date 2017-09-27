@@ -1,6 +1,9 @@
 const applicationSections = [
     {
         pageName: 'about',
+        section: 'applications',
+        sectionIcon: 'call_to_action',
+        path: '/applications/about',
         header: 'OpenFin Applications',
         subHeader: 'An application operating on the OpenFin Runtime',
         description: 'Control your application and add OS level features',
@@ -139,6 +142,9 @@ const applicationSections = [
         header: 'Shortcuts',
         subHeader: 'Desktop, Start Menu, and System Startup',
         description: 'Step all the way out of the browser with your app with OS level shortcut features',
+        section: 'applications',
+        sectionIcon: 'call_to_action',
+        path: '/applications/shortcuts',
         sections: [
             {
                 header: 'Shortcut Information',
@@ -183,11 +189,5 @@ const applicationSections = [
         ]
     }
 ];
-
-applicationSections.forEach(page => {
-    page.section = 'applications';
-    page.sectionIcon = 'call_to_action';
-    page.path = `/applications/${page.pageName}/`;
-});
 
 export default applicationSections;

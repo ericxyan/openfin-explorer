@@ -236,7 +236,7 @@ Runtime Version: ${manifest.runtime.version}
             })
         }
 
-        figureOutWhereThisWindowIs().then(function (value) {
+        figureOutWhereThisWindowIs().then(function (value: any) {
             const mainWindow = fin.desktop.Window.getCurrent();
             const name = `Child Window #: ${(Math.random() * 100).toString()}`;
             const childWindow =
