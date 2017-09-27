@@ -29,7 +29,7 @@ export default class CodeWithInputUpdateDom extends React.Component <CodeWithInp
 
     public render() {
         return (
-            <div className='sub-section codeWithInputUpdateDomCustom codeBlock' key={this.props.key}>
+            <div className='sub-section codeWithInputUpdateDomCustom codeBlock' key={this.props.myKey}>
                 <div id={this.updateDivId}></div>
                 <SyntaxHighlighter language='javascript' style={docco}>{this.executable.toString()}</SyntaxHighlighter>
                 <label className='section-input'>

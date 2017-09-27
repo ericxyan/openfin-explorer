@@ -29,7 +29,7 @@ interface PageComponentData {
 
 interface PageComponentProps { data: PageComponentData; }
 
-interface ChildState { 
+interface ChildState {
     code: any;
     headline: string;
     description: string;
@@ -55,7 +55,7 @@ interface WindowOptionsProps {}
 interface CodeWithInputUpdateDomProps {
     defaultValue: string;
     content: string;
-    key: number;
+    myKey: number;
     inputLabel: string;
 }
 
