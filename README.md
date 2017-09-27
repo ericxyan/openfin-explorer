@@ -19,6 +19,14 @@ npm install --global openfin-cli
 openfin --launch --config http://cdn.openfin.co/demos/openfin-explorer/app.json
 ```
 
+### Meetup Links
+
+Register your Community Application [here](https://openfin.co/community-edition/)
+
+In addition to our CLI, check out our open source code [here](https://github.com/hadoukenio/)
+
+See more demos [here](https://openfin.co/tutorial-directory/) as well as [supplemental documenation](https://openfin.co/developers/documentation-2/)
+
 ### Development & Contribution
 
 This project is built using [React](https://facebook.github.io/react/) and [TypeScript](https://www.typescriptlang.org/)
