@@ -11,6 +11,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>
         body {
             background-color: #d1d8e4;
@@ -32,6 +33,11 @@
         .updateSpan {
             font-weight: normal;
         }
+        pre {
+            margin-left: 100px;
+            margin-right: 100px;
+            font-size: x-small;
+        }
     </style>
 </head>
 
@@ -40,11 +46,23 @@
         <div class='update'>Your Message: <span id='custommessage' class='updateSpan'></span></div>
         <div class='update'>Other Key: <span id='codedmessage' class='updateSpan'></span></div>
         <div class='update'>Messages Received: <span id='messagecount' class='updateSpan'>0</span></div>
+        <pre>
+            <code class='javascript'>
+// In this app we subscribe to the messages from OpenFinExplorer
+fin.desktop.InterApplicationBus.subscribe('OpenFinExplorer', 'A Topic', function(message, uuid, name) {
+    customMessageDiv.innerText = message.yourMessage;
+    codedMessageDiv.innerText = message.otherKey;
+    counter.innerText = (parseInt(counter.innerText) + 1).toString();
+})
+            </code>
+        </pre>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
             const customMessageDiv = document.getElementById('custommessage');
             const codedMessageDiv = document.getElementById('codedmessage');
             const counter = document.getElementById('messagecount');
-            fin.desktop.InterApplicationBus.subscribe('OpenFinExplorer', 'A Topic', function(message, uuid, name) {
+            fin.desktop.InterApplicationBus.subscribe('OpenFinExplorer', 'A Topic', function (message, uuid, name) {
                 customMessageDiv.innerText = message.yourMessage;
                 codedMessageDiv.innerText = message.otherKey;
                 counter.innerText = (parseInt(counter.innerText) + 1).toString();

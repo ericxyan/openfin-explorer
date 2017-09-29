@@ -11,6 +11,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
     <style>
         body {
             background-color: #2f4263;
@@ -29,6 +30,11 @@
             margin: auto;
             margin-top: 10px;
         }
+        pre {
+            margin-left: 100px;
+            margin-right: 100px;
+            font-size: x-small;
+        }
     </style>
 </head>
 
@@ -38,7 +44,17 @@
     </div>
     <input type='text' id='message'>
     <button id='sendMessage' class='btn btn-primary-outline'>Send IAB Message</button>
+    <pre>
+        <code class='javascript'>
+// In this app we publish messages to OpenFinExplorer
+button.onclick = () => {
+    fin.desktop.InterApplicationBus.publish('demoMessage', { input: buttonInput.value });
+}
+        </code>
+    </pre>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script type="text/javascript">
+        hljs.initHighlightingOnLoad();
         const button = document.getElementById('sendMessage');
         const buttonInput = document.getElementById('message');
         button.onclick = () => {

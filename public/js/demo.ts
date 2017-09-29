@@ -158,7 +158,8 @@ Runtime Version: ${manifest.runtime.version}
             });
     },
     interAppBusSubscribe: function (div) {
-        const hostedAt = 'http://cdn.openfin.co/demos/openfin-explorer';
+        // const hostedAt = 'http://cdn.openfin.co/demos/openfin-explorer';
+        const hostedAt = 'http://localhost:8081/'
         const appName = 'iabPublisher';
         const newApp = new fin.desktop.Application(
             {
@@ -168,8 +169,8 @@ Runtime Version: ${manifest.runtime.version}
                 mainWindowOptions: {
                     autoShow: true,
                     defaultCentered: true,
-                    defaultHeight: 300,
-                    defaultWidth: 600,
+                    defaultHeight: 345,
+                    defaultWidth: 735,
                     saveWindowState: false
 
                 }
@@ -184,7 +185,8 @@ Runtime Version: ${manifest.runtime.version}
     },
 
     interAppBusPublish: function (yourInput) {
-        const hostedAt = 'http://cdn.openfin.co/demos/openfin-explorer';
+        // const hostedAt = 'http://cdn.openfin.co/demos/openfin-explorer';
+        const hostedAt = 'http://localhost:8081/'
         const sendMessage = function() {
             fin.desktop.InterApplicationBus.publish('A Topic', {
                 yourMessage: yourInput,
@@ -201,8 +203,8 @@ Runtime Version: ${manifest.runtime.version}
                     url: `${hostedAt}/iabSubscriber.html`,
                     mainWindowOptions: {
                         autoShow: true,
-                        defaultWidth: 600,
-                        defaultHeight: 300,
+                        defaultWidth: 800,
+                        defaultHeight: 465,
                         saveWindowState: false,
                         defaultCentered: true
                     }
