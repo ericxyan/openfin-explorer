@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { HashRouter } from 'react-router-dom';
 
+import NavBar from './components/nav-bar';
 import PageContainer from './components/Page-Container';
 import SideNav from './components/Side-Nav';
 import content from '../content';
@@ -46,7 +47,7 @@ export default class App extends React.Component {
                 <div id='main' className='container-fluid'>
                     <div className='row no-gutters'>
                         <div className='col-3'>
-                            <SideNav data={this.makeSideNavData()} />
+                            <NavBar />
                         </div>
                         <div className='col-9'>
                             <PageContainer data={content} />

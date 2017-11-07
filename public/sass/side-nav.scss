@@ -1,58 +1,53 @@
 @import 'partials/_colors';
 
-.side-nav {
-  padding-top: 10px;
-  background: $OF-Fifth;
-  border-right: 2px solid $OF-First;
-  min-height: 500px;
-  height: 100%;
-  cursor: default;
+.nav-bar {
+    background-color: #171726;
+    -webkit-app-region: drag;
+    height: 100%;
+    position: relative;
 
-  h1, h2, div {
-    color: white;
-  }
-
-  .header {
-    border-bottom: 2px solid $OF-First;
-    h1 {
-      margin-left: 15px;
-    }
-  }
-
-  .of-list-section {
-    margin-top: 25px;
-    margin-left: 15px;
-
-    i {
-      vertical-align: bottom;
-      margin-right: 5px;
-    }
-  }
-
-  .of-list-section-label {
-    text-transform: uppercase;
-  }
-
-  .of-list-item {
-    padding-left: 45px;
-    margin-left: -15px;
-    display: block;
-    text-transform: capitalize;
-    color: white;
-
-    &:hover {
-      text-decoration: none;
-      background-color: $OF-Third;
-      color: $OF-Fifth;
+    .menu {
+        width: 75%;
+        list-style: none;
+        padding: inherit;
+        margin: auto;
+        -webkit-app-region: no-drag;
+    };
+    
+    .active-sub-menu {
+        color: #8E8CFF;
+        font-size: 13px;
+        max-height: 500px;
+        opacity: 1;
+        transition: max-height .5s linear, opacity 1s linear;
     }
 
-    &:focus {
-      text-decoration: none;
-      background-color: $OF-Fourth;
-      color: $OF-Fifth;
+    .inactive-sub-menu {
+        opacity: 0;
+        max-height: 0;
     }
-  }
-  .material-icons {
-      color: $OF-Third;
-  }
+
+    .title {
+        color: #FFF;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .right-inactive {
+        float: right;
+        vertical-align: middle;
+        transform: rotate(0deg);
+        transition: transform .5s linear;
+    }
+
+    .right-active {
+        float: right;
+        vertical-align: middle;
+        transform: rotate(90deg);
+        transition: transform .5s linear;        
+    };
+
+    .content-blocks-list {
+        padding-left: 15px;
+    }
 }

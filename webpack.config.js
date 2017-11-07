@@ -16,7 +16,8 @@ const CopyWebpackPluginConfig = new CopyWebpackPlugin([
     { from: 'cdn-app.json', to: 'app.json' },
     { from: './public/notification.html', to: 'notification.html' },
     { from: './public/iabPublisher.html', to: 'iabPublisher.html' },
-    { from: './public/iabSubscriber.html', to: 'iabSubscriber.html' }
+    { from: './public/iabSubscriber.html', to: 'iabSubscriber.html' },
+    { from: './public/openfin-logo.png', to: 'openfin-logo.png' }
 ]);
 
 module.exports = [{
