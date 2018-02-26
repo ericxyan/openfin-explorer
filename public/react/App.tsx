@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom';
 import NavBar from './components/nav-bar';
 import PageContainer from './components/Page-Container';
 import SideNav from './components/Side-Nav';
+import Pages from './components/pages';
 import content from '../content';
 
 export default class App extends React.Component {
@@ -50,7 +51,7 @@ export default class App extends React.Component {
                             <NavBar />
                         </div>
                         <div className='col-9'>
-                            <PageContainer data={content} />
+                            <Pages />
                         </div>
                     </div>
                 </div>

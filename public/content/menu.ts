@@ -2,7 +2,7 @@ const sections = [
     {
         name: 'Home',
         iconName: 'home',
-        rootPath: '/applications/about',
+        rootPath: '/',
         pages: [
             {
                 name: 'index'
@@ -12,7 +12,7 @@ const sections = [
     {
         name: 'Getting Started',
         iconName: 'gettingStarted',
-        rootPath: '/applications/about',
+        rootPath: '/getting-started',
         pages: [
             {
 
@@ -39,7 +39,7 @@ const sections = [
     {
         name: 'Applications',
         iconName: 'applications',
-        rootPath: '/applications/about',
+        rootPath: '/applications',
         pages: [
             {
                 name: 'OpenFin Applications',

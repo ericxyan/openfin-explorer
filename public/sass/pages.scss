@@ -1,0 +1,21 @@
+.pages-wrapper {
+    -webkit-app-region: drag;
+    height: 100%;
+
+    .application-bar {
+        width: 100%;
+        .application-controls {
+            height: 40px;
+            margin-right: 14px;
+    
+            .controls-icon {
+                -webkit-app-region: no-drag;
+                margin: 15px 2px 2px 2px;
+                float: right;
+            }
+            .controls-icon:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

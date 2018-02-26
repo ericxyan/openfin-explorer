@@ -22,7 +22,7 @@ const serverParams = {
 function launchOpenFin() {
     openfinConfigBuilder.update({
         startup_app: {
-            url: target + '/index.html',
+            url: 'http://localhost:8081/index.html',
             applicationIcon: target + '/favicon.ico',
             saveWindowState: false,
             defaultWidth: 850,
