@@ -18,4 +18,41 @@
             }
         }
     }
+
+    .pages-content {
+        margin: 0px 64px 0px 64px;
+
+        .menu-section-name {
+            height: 11px;	
+            opacity: 0.6;	
+            color: #171726;	
+            font-size: 11px;	
+            letter-spacing: 1px;	
+            line-height: 13px;
+        }
+
+        .page-headline { 
+            width: 379.27px;	
+            color: #171726;	
+            font-size: 34px;	
+            line-height: 41px;
+            margin: 10px 0px 10px 0px;
+        }
+
+        .page-headline-caption { 	
+            opacity: 0.67;	
+            color: #000000;	
+            font-size: 18px;	
+            line-height: 24px;
+            margin: 10px 0px 10px 0px;
+        }
+
+        .divider {
+            box-sizing: border-box;	
+            height: 3px;	
+            border: 1px solid #979797;	
+            opacity: 0.3;
+        }
+    }
+
 }

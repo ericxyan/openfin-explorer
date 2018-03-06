@@ -1,14 +1,18 @@
 import * as React from 'react';
-import SubMenu from './SubMenu';
+import SubMenu from './subMenu';
+import { Link } from 'react-router-dom';
 
 interface MenuItemProps {
     section: any;
     listLength: number;
     itemNumber: any;
-    active: any;
 }
 
-export default class MenuItem extends React.Component <MenuItemProps, {}> {
+interface MenuItemState {
+	active: boolean;
+}
+
+export default class MenuItem extends React.Component <MenuItemProps, MenuItemState> {
     private itemStyle;
 
     constructor(props: MenuItemProps) {
@@ -18,18 +22,30 @@ export default class MenuItem extends React.Component <MenuItemProps, {}> {
             borderColor: '#55538B',
             borderStyle: 'solid'
         };
+		this.state = {
+			active: false
+		}
         const lastItemStyle = {
         };
         this.itemStyle = this.props.itemNumber !== this.props.listLength ? liStyle : lastItemStyle;
+		this.handleClick = this.handleClick.bind(this);
     }
+
+	private handleClick() {
+		this.setState(previousState => {
+			return { active: !previousState.active }
+		});
+	}
 
     public render() {
         return (
             <li style={this.itemStyle} >
-                <img src={`icons/${this.props.section.iconName}.png`}  height='16' width='16' />
-                <span className='title'>{this.props.section.name}</span>
-                <img src='icons/right.png' className={this.props.active ? 'right-active' : 'right-inactive'} height='10' width='10' />
-                <SubMenu pages={this.props.section.pages} active={this.props.active}/>
+				<Link to={this.props.section.rootPath} onClick={this.handleClick}>
+					<img src={`icons/${this.props.section.iconName}.png`}  height='16' width='16' />
+					<span className='title'>{this.props.section.name}</span>
+					<img src='icons/right.png' className={this.state.active ? 'right-active' : 'right-inactive'} height='10' width='10' />
+				</Link>
+				{this.state.active ? <SubMenu pages={this.props.section.pages} /> : null }
             </li>
         );
 

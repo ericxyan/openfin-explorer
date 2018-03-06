@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 const SubMenu = (props) => {
-    const pages = props.pages.map(page => {
+    const pages = props.pages.map(( page, index ) => {
         let contentBlocks;
 
         if (page.contentBlocks) {
-            contentBlocks = page.contentBlocks.map(contentBlock => {
+            contentBlocks = page.contentBlocks.map(( contentBlock, index ) => {
                 return (
-                    <li>{contentBlock.name}</li>
+                    <li key={index}>{contentBlock.name}</li>
                 );
             });
         } else {
@@ -15,14 +15,14 @@ const SubMenu = (props) => {
         }
 
         return (
-            <li>
+            <li key={index}>
                 {page.name}
                 <ol type='A' className='content-blocks-list'>{contentBlocks}</ol>
             </li>
         );
     });
 
-    return <ol type='1' className={ props.active ? 'active-sub-menu' : 'inactive-sub-menu'}>{pages}</ol>;
+    return <ol type='1' >{pages}</ol>;
 };
 
 export default SubMenu;
