@@ -14,15 +14,9 @@ export default class App extends React.Component <{}, {}> {
     public render() {
         return (
             <HashRouter>
-                <div id='main' className='container-fluid'>
-                    <div className='row no-gutters'>
-                        <div className='col-3'>
-                            <NavBar />
-                        </div>
-                        <div className='col-9'>
-                            <Pages />
-                        </div>
-                    </div>
+                <div className='container'>
+                    <NavBar />
+                    <Pages />
                 </div>
             </HashRouter>
         );

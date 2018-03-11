@@ -3,6 +3,7 @@
     -webkit-app-region: drag;
     height: 100%;
     position: relative;
+    flex: 1;
 
     .logo {
         text-align: center;
@@ -66,8 +67,6 @@
             };
 
             .sub-menu {
-
-
                 padding-left: 20px;
                 color: #8E8CFF;
                 font-size: 13px;
