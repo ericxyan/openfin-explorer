@@ -1,8 +1,5 @@
 import * as React from 'react';
 
-interface SearchProps {}
-interface SearchState {}
-
 const searchStyle = {
     position: 'absolute' as 'absolute',
     bottom: 0,
@@ -11,8 +8,8 @@ const searchStyle = {
     height: '42px'
 };
 
-export default class Search extends React.Component <SearchProps, SearchState> {
-    constructor(props: SearchProps) {
+export default class Search extends React.Component <{}, {}> {
+    constructor(props: any) {
         super(props);
     }
 

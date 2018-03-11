@@ -1,31 +1,19 @@
 import * as React from 'react';
 import MenuItem from './menuItem';
-import menuSections from '../../../content/menu';
+import menuContent from './menuContent';
 
-interface MenuState { activeMenuItem: number; }
-
-export default class Menu extends React.Component <{}, MenuState> {
-    constructor(props: {}) {
-        super(props);
-    }
-
-    public render() {
+const Menu = () => {
+    const menuItems = menuContent.map((item, index) => {
         return (
-            <ul className='menu'>
-                {
-                    menuSections.map((section, index, menuSections) => {
-                        const arrayListLength = menuSections.length;
-						return (
-							<MenuItem section={section} key={index} />
-						);
-                    })
-                }
-            </ul>
+            <MenuItem section={item} key={index} />
         );
-    }
-}
-                        // return (
-                        //     <Link key={index} to={section.rootPath}>
-                        //         <MenuItem section={section} listLength={arrayListLength} itemNumber={index + 1} />
-                        //     </Link>
-                        // );
+    });
+
+    return (
+        <ul className='menu'>
+            {menuItems}
+        </ul>
+    );
+};
+
+export default Menu;

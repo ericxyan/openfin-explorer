@@ -4,12 +4,10 @@ import { Link } from 'react-router-dom';
 
 interface MenuItemProps {
     section: any;
-    listLength: number;
-    itemNumber: any;
 }
 
 interface MenuItemState {
-	active: boolean;
+    active: boolean;
 }
 
 export default class MenuItem extends React.Component <MenuItemProps, MenuItemState> {
@@ -22,30 +20,29 @@ export default class MenuItem extends React.Component <MenuItemProps, MenuItemSt
             borderColor: '#55538B',
             borderStyle: 'solid'
         };
-		this.state = {
-			active: false
-		}
-        const lastItemStyle = {
+        this.state = {
+            active: false
         };
-        this.itemStyle = this.props.itemNumber !== this.props.listLength ? liStyle : lastItemStyle;
-		this.handleClick = this.handleClick.bind(this);
+        //styling needs to be back into the menu
+        this.itemStyle = liStyle;
+        this.handleClick = this.handleClick.bind(this);
     }
 
-	private handleClick() {
-		this.setState(previousState => {
-			return { active: !previousState.active }
-		});
-	}
+    private handleClick() {
+        this.setState(previousState => {
+            return { active: !previousState.active }
+        });
+    }
 
     public render() {
         return (
             <li style={this.itemStyle} >
-				<Link to={this.props.section.rootPath} onClick={this.handleClick}>
-					<img src={`icons/${this.props.section.iconName}.png`}  height='16' width='16' />
-					<span className='title'>{this.props.section.name}</span>
-					<img src='icons/right.png' className={this.state.active ? 'right-active' : 'right-inactive'} height='10' width='10' />
-				</Link>
-				{this.state.active ? <SubMenu pages={this.props.section.pages} /> : null }
+                <Link to={this.props.section.rootPath} onClick={this.handleClick}>
+                    <img src={`icons/${this.props.section.iconName}.png`}  height='16' width='16' />
+                    <span className='title'>{this.props.section.name}</span>
+                    <img src='icons/right.png' className={this.state.active ? 'right-active' : 'right-inactive'} height='10' width='10' />
+                </Link>
+                {this.state.active && this.props.section.rootPath !== '/' ? <SubMenu pages={this.props.section.pages} /> : null }
             </li>
         );
 

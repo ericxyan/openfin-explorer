@@ -1,5 +1,4 @@
 .pages-wrapper {
-    -webkit-app-region: drag;
     height: 100%;
 
     .application-bar {
@@ -21,6 +20,7 @@
 
     .pages-content {
         margin: 0px 64px 0px 64px;
+        -webkit-app-region: drag;
 
         .menu-section-name {
             height: 11px;	
