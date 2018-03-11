@@ -27,7 +27,7 @@ const SubMenu = (props) => {
         );
     });
 
-    return <ol type='1' >{pages}</ol>;
+    return <ol type='1' className='sub-menu'>{pages}</ol>;
 };
 
 export default SubMenu;

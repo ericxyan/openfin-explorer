@@ -1,10 +1,27 @@
-@import 'partials/_colors';
-
 .nav-bar {
     background-color: #171726;
     -webkit-app-region: drag;
     height: 100%;
     position: relative;
+
+    .logo {
+        text-align: center;
+        padding-top: 52px;
+        padding-bottom: 52px;
+
+        .title {
+            color: #8E8CFF;
+            font-size: 11px;
+        }
+    }
+
+    .search {
+        position: absolute;
+        bottom: 0;
+        background-color: #000;
+        width: 100%;
+        height: 42px;
+    }
 
     .menu {
         width: 75%;
@@ -12,42 +29,60 @@
         padding: inherit;
         margin: auto;
         -webkit-app-region: no-drag;
+
+        .menu-item {
+            border-style: solid;
+            border-width: 0px 0px 1px;
+            border-color: #55538B;
+            margin: 0 0 10px 0;
+
+            .title {
+                color: #FFF;
+                font-size: 14px;
+                margin-left: 5px;
+            }
+
+            .section-icon {
+                height: 16px;
+                width: 16px;
+            }
+
+            .right {
+                height: 10px;
+                width: 10px;
+            }
+
+            .right-inactive {
+                float: right;
+                vertical-align: middle;
+                transform: rotate(0deg);
+            }
+        
+            .right-active {
+                float: right;
+                vertical-align: middle;
+                transform: rotate(90deg);
+                transition: transform .25s linear;        
+            };
+
+            .sub-menu {
+
+
+                padding-left: 20px;
+                color: #8E8CFF;
+                font-size: 13px;
+
+                a {
+                    color: inherit;
+                }
+
+                .content-blocks-list {
+                    color: #A0A0C9;
+                    padding-left: 15px;
+                }
+            }
+        }
     };
-    
-    .active-sub-menu {
-        color: #8E8CFF;
-        font-size: 13px;
-        max-height: 500px;
-        opacity: 1;
-        transition: max-height .5s linear, opacity 1s linear;
-    }
 
-    .inactive-sub-menu {
-        opacity: 0;
-        max-height: 0;
-    }
 
-    .title {
-        color: #FFF;
-        font-size: 14px;
-        margin-left: 5px;
-    }
-
-    .right-inactive {
-        float: right;
-        vertical-align: middle;
-        transform: rotate(0deg);
-        transition: transform .5s linear;
-    }
-
-    .right-active {
-        float: right;
-        vertical-align: middle;
-        transform: rotate(90deg);
-        transition: transform .5s linear;        
-    };
-
-    .content-blocks-list {
-        padding-left: 15px;
-    }
 }

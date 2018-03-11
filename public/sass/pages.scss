@@ -3,6 +3,8 @@
 
     .application-bar {
         width: 100%;
+        -webkit-app-region: drag;
+ 
         .application-controls {
             height: 40px;
             margin-right: 14px;
@@ -20,7 +22,6 @@
 
     .pages-content {
         margin: 0px 64px 0px 64px;
-        -webkit-app-region: drag;
 
         .menu-section-name {
             height: 11px;	

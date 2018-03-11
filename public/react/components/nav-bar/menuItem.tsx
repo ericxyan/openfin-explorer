@@ -2,6 +2,7 @@ import * as React from 'react';
 import SubMenu from './subMenu';
 import { Link } from 'react-router-dom';
 
+// TODO define this interface
 interface MenuItemProps {
     section: any;
 }
@@ -15,32 +16,27 @@ export default class MenuItem extends React.Component <MenuItemProps, MenuItemSt
 
     constructor(props: MenuItemProps) {
         super(props);
-        const liStyle = {
-            borderWidth: '0px 0px 1px',
-            borderColor: '#55538B',
-            borderStyle: 'solid'
-        };
+
         this.state = {
             active: false
         };
-        //styling needs to be back into the menu
-        this.itemStyle = liStyle;
+
         this.handleClick = this.handleClick.bind(this);
     }
 
     private handleClick() {
         this.setState(previousState => {
-            return { active: !previousState.active }
+            return { active: !previousState.active };
         });
     }
 
     public render() {
         return (
-            <li style={this.itemStyle} >
+            <li className='menu-item'>
                 <Link to={this.props.section.rootPath} onClick={this.handleClick}>
-                    <img src={`icons/${this.props.section.iconName}.png`}  height='16' width='16' />
+                    <img src={`icons/${this.props.section.iconName}.png`} className='section-icon' />
                     <span className='title'>{this.props.section.name}</span>
-                    <img src='icons/right.png' className={this.state.active ? 'right-active' : 'right-inactive'} height='10' width='10' />
+                    <img src='icons/right.png' className={this.state.active ? 'right right-active' : 'right right-inactive'} />
                 </Link>
                 {this.state.active && this.props.section.rootPath !== '/' ? <SubMenu pages={this.props.section.pages} /> : null }
             </li>
