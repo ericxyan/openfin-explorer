@@ -23,14 +23,14 @@ const Page = (props) => {
 
     return (
         <div className='page'>
-        <MenuSectionName sectionName={props.content.header} />
-        <PageHeadline headline={props.content.headline} />
-        <PageHeadlineCaption caption={props.content.headlineCaption} />
-        <DividerLine />
+            <MenuSectionName sectionName={props.content.header} />
+            <PageHeadline headline={props.content.headline} />
+            <PageHeadlineCaption caption={props.content.headlineCaption} />
+            <DividerLine />
             <ol type='A' className='sections'>
                 {sections}
             </ol>
-    </div>
+        </div>
     );
 };
 

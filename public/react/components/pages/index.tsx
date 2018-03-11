@@ -25,6 +25,7 @@ const Pages = () => {
                     {constructedPages}
                 </Switch>
             </div>
+            <div className='pages-footer'></div>
         </div>
     );
 };

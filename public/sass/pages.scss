@@ -1,10 +1,14 @@
 .pages-wrapper {
     height: 100%;
     flex: 3;
-    
+    max-height: 100vh;
+    display: flex;
+    flex-flow: column;
+
     .application-bar {
         width: 100%;
         -webkit-app-region: drag;
+        flex: 0 0 auto;
  
         .application-controls {
             height: 40px;
@@ -21,8 +25,18 @@
         }
     }
 
+    .pages-footer {
+        flex: 0 0 auto;
+        height: 10px;
+    }
+
     .pages-content {
-        margin: 0px 64px 0px 64px;
+        width: 95%;
+        margin: auto;
+        margin-top: 0;
+        padding: 0 10px 0 20px;
+        flex: 0 1 auto;
+        overflow-y: scroll;
 
         .menu-section-name {
             height: 11px;	
