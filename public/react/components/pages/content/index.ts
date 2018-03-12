@@ -17,12 +17,16 @@ const content = [
                     needToKnow: 'The Application namespace is responsible for all of the features you expect from a desktop application.',
                     sampleCodeText: [
                         'function () {',
-                        '   console.log("hello");',
+                        '   const demoDiv = document.getElementById("demo-div")',
+                        '   const thisApplication = fin.desktop.Application.getCurrent();',
+                        '   demoDiv.innerText = `This application\'s UUID is \${thisApplication.uuid}`',
                         '}'
                     ],
                     sampleCode: () => {
-                        return true;
-                    }
+                        const thisApp = fin.desktop.Application.getCurrent();
+                        return `This application's UUID is ${thisApp.uuid}`;
+                    },
+                    docsLink: 'http://cdn.openfin.co/jsdocs/stable/fin.desktop.Application.html#.getCurrent'
                 },
                 {
                     title: 'Creating An Application',
@@ -121,7 +125,7 @@ const content = [
                         '}'
                     ],
                     sampleCode: () => {
-                        return true;
+                        window.alert('hello');
                     }
                 },
                 {

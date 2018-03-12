@@ -69,6 +69,86 @@
             border: 1px solid #979797;	
             opacity: 0.3;
         }
+
+        .sections {
+            .section-title {
+                font-size: 22px;
+                color: #171726;
+
+                .section-description {
+                    color: #000;
+                    font-size: 16px;
+                }
+
+                .need-to-know {
+                    margin-top: 10px;
+                    border-left: 3px solid #504CFF;
+
+                    .need-to-know-title {
+                        padding-left: 10px;
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+
+                    .section-need-to-know {
+                        padding-left: 10px;
+                        font-size: 16px;
+                        color: #000;
+                    }
+                }
+
+                .demo-code {
+                    display: block;
+                    font-size: 14px;
+                }
+
+                .section-jsdocs {
+                    float: right;
+                    font-size: 12px;
+                    cursor: pointer;
+
+                    .color-right {
+                        height: 10px;
+                        width: 10px;
+                    }
+                }
+
+                .section-demo-button {
+                    background-color: white;
+                    border: 1px solid #504CFF;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    color: #504CFF;
+                    width: 137px;
+                    height: 35px;
+                    cursor: pointer;
+
+                    .enter-icon {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+
+                .section-demo-result {
+                    background-color: #EBEBEB;
+                    border-radius: 5px;
+                    margin-top: 10px;
+
+                    .section-demo-result-title {
+                        font-size: 10px;
+                        color: #30303E;
+                        opacity: 0.5;
+                        letter-spacing: 1px;
+                        padding: 15px 0px 0px 15px;
+                    }
+
+                    .section-demo-result-value {
+                        font-size: 14px;
+                        padding: 15px;
+                    }
+                }
+            }
+        }
     }
 
 }
