@@ -27,7 +27,7 @@
 
     .pages-footer {
         flex: 0 0 auto;
-        height: 10px;
+        height: 40px;
     }
 
     .pages-content {
@@ -38,117 +38,151 @@
         flex: 0 1 auto;
         overflow-y: scroll;
 
-        .menu-section-name {
-            height: 11px;	
-            opacity: 0.6;	
-            color: #171726;	
-            font-size: 11px;	
-            letter-spacing: 1px;	
-            line-height: 13px;
-        }
+        .page {
+            margin-right: 15px;
 
-        .page-headline { 
-            width: 379.27px;	
-            color: #171726;	
-            font-size: 34px;	
-            line-height: 41px;
-            margin: 10px 0px 10px 0px;
-        }
+            .menu-section-name {
+                height: 11px;	
+                opacity: 0.6;	
+                color: #171726;	
+                font-size: 11px;	
+                letter-spacing: 1px;	
+                line-height: 13px;
+                padding: 0px 0px 20px;
+            }
+    
+            .page-headline { 
+                width: 379.27px;	
+                color: #171726;	
+                font-size: 34px;	
+                line-height: 41px;
+                margin: 10px 0px 10px 0px;
+            }
+    
+            .page-headline-caption { 	
+                opacity: 0.67;	
+                color: #000000;	
+                font-size: 18px;	
+                line-height: 24px;
+                margin: 10px 0px 10px 0px;
+            }
+    
+            .divider {
+                box-sizing: border-box;	
+                height: 3px;	
+                border: 1px solid #979797;	
+                opacity: 0.3;
+            }
+    
+            .sections {
+                list-style-position: inside;
+                padding-left: 10px;
+    
+                .section-title {
+                    font-size: 22px;
+                    color: #171726;
+                    margin-bottom: 30px;
+    
+                    pre {
+                        white-space: pre-wrap;
+                        margin-left: 20px;
+                        margin-right: 20px;
+                        background-color: #30303E;
+                        padding: 5px;
+                        border-radius: 4px;
+                        color: #B9B9DF;
+                        counter-reset: line;
 
-        .page-headline-caption { 	
-            opacity: 0.67;	
-            color: #000000;	
-            font-size: 18px;	
-            line-height: 24px;
-            margin: 10px 0px 10px 0px;
-        }
-
-        .divider {
-            box-sizing: border-box;	
-            height: 3px;	
-            border: 1px solid #979797;	
-            opacity: 0.3;
-        }
-
-        .sections {
-            .section-title {
-                font-size: 22px;
-                color: #171726;
-
-                .section-description {
-                    color: #000;
-                    font-size: 16px;
-                }
-
-                .need-to-know {
-                    margin-top: 10px;
-                    border-left: 3px solid #504CFF;
-
-                    .need-to-know-title {
-                        padding-left: 10px;
-                        font-size: 16px;
-                        font-weight: bold;
+                        code {
+                            counter-increment: line;
+                            display: block;
+                        }
+                        code:before {
+                            content: counter(line);
+                            color: #FFF;
+                            background-color: #171726;
+                            padding: 0px 2px 0px 2px;
+                        }
                     }
-
-                    .section-need-to-know {
-                        padding-left: 10px;
-                        font-size: 16px;
+    
+                    .section-description {
                         color: #000;
+                        font-size: 16px;
+                        padding: 10px 0px 10px 0px;
                     }
-                }
-
-                .demo-code {
-                    display: block;
-                    font-size: 14px;
-                }
-
-                .section-jsdocs {
-                    float: right;
-                    font-size: 12px;
-                    cursor: pointer;
-
-                    .color-right {
-                        height: 10px;
-                        width: 10px;
+    
+                    .need-to-know {
+                        margin-top: 10px;
+                        border-left: 3px solid #504CFF;
+                        margin-left: 5px;
+    
+                        .need-to-know-title {
+                            padding: 10px;
+                            font-size: 16px;
+                            font-weight: bold;
+                        }
+    
+                        .section-need-to-know {
+                            padding: 10px;
+                            font-size: 16px;
+                            color: #000;
+                        }
                     }
-                }
-
-                .section-demo-button {
-                    background-color: white;
-                    border: 1px solid #504CFF;
-                    border-radius: 4px;
-                    font-size: 14px;
-                    color: #504CFF;
-                    width: 137px;
-                    height: 35px;
-                    cursor: pointer;
-
-                    .enter-icon {
-                        height: 20px;
-                        width: 20px;
-                    }
-                }
-
-                .section-demo-result {
-                    background-color: #EBEBEB;
-                    border-radius: 5px;
-                    margin-top: 10px;
-
-                    .section-demo-result-title {
-                        font-size: 10px;
-                        color: #30303E;
-                        opacity: 0.5;
-                        letter-spacing: 1px;
-                        padding: 15px 0px 0px 15px;
-                    }
-
-                    .section-demo-result-value {
+    
+                    .demo-code {
+                        display: block;
                         font-size: 14px;
-                        padding: 15px;
+                    }
+    
+                    .section-jsdocs {
+                        float: right;
+                        font-size: 12px;
+                        cursor: pointer;
+                        margin-right: 20px;
+    
+                        .color-right {
+                            height: 10px;
+                            width: 10px;
+                        }
+                    }
+    
+                    .section-demo-button {
+                        background-color: white;
+                        border: 1px solid #504CFF;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        color: #504CFF;
+                        width: 137px;
+                        height: 35px;
+                        cursor: pointer;
+                        margin-left: 20px;
+    
+                        .enter-icon {
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+    
+                    .section-demo-result {
+                        background-color: #EBEBEB;
+                        border-radius: 5px;
+                        margin: 20px 20px 5px 20px;
+    
+                        .section-demo-result-title {
+                            font-size: 10px;
+                            color: #30303E;
+                            opacity: 0.5;
+                            letter-spacing: 1px;
+                            padding: 15px 0px 0px 15px;
+                        }
+    
+                        .section-demo-result-value {
+                            font-size: 14px;
+                            padding: 15px;
+                        }
                     }
                 }
             }
         }
     }
-
 }

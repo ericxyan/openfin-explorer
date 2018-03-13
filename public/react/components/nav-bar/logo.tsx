@@ -7,7 +7,7 @@ const Title = () => {
 const Logo = () => {
     return (
         <div className='logo'>
-            <img src='openfin-logo.png' alt='OpenFin Logo' height='30px' width='100.8px' />
+            <img src='openfin-logo.png' alt='OpenFin Logo' height='30px' width='115px' />
             <Title />
         </div>
     );

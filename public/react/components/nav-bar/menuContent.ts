@@ -59,7 +59,7 @@ const items = [
                         hashLink: 'lifecycle-controls'
                     },
                     {
-                        name: 'Custome Event Listeners',
+                        name: 'Custom Event Listeners',
                         hashLink: 'custom-event-listeners'
                     }
                 ]

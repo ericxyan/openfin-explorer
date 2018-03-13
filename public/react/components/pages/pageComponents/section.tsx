@@ -11,6 +11,18 @@ const DemoResult = (props) => {
     );
 };
 
+const CodeBlock = (props) => {
+    const lines = props.codeBlockArray.map((line, index) => {
+        return <code key={index}>{line}</code>;
+    });
+
+    return (
+        <pre className='demo-code'>
+            {lines}
+        </pre>
+    );
+};
+
 export default class Section extends React.Component <{ section: any }, { demoClicked: boolean; demoValue: string }> {
     constructor(props: any) {
         super(props);
@@ -43,7 +55,10 @@ export default class Section extends React.Component <{ section: any }, { demoCl
                     <div className='need-to-know-title'>Need to Know</div>
                     <div className='section-need-to-know'>{this.props.section.needToKnow}</div>
                 </div>
-                <code className='demo-code'>{this.props.section.sampleCodeText}</code>
+                <CodeBlock codeBlockArray={this.props.section.sampleCodeText} />
+                {/* <pre>
+                <code className='demo-code'>{this.props.section.sampleCodeText.join('\n')}</code>
+                </pre> */}
                 <button className='section-demo-button' onClick={this.handleClick}>
                     Click to demo<img src='icons/enter.png' className='enter-icon'/>
                 </button>
